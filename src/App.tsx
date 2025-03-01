@@ -1,13 +1,15 @@
-import Button from "./components/button/Button";
-import Input from "./components/input/Input";
+import HomePage from "./pages/home/HomePage";
+import Layout from "./pages/layout/Layout";
+
+import { Routes, Route } from "react-router";
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <Input label="Test" placeholder="Write something here" />
-      <Button onClick={() => console.log("Clicked")}>Click me</Button>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Layout>
   );
 }
 

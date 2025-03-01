@@ -1,0 +1,28 @@
+.layout-main {
+  background-color: var(--theme-background);
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--theme-stroke);
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--theme-stroke);
+}
+
+.header .nav-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-md);
+}
+
+.header .nav-links .nav-link {
+  border-right: 1px solid var(--theme-stroke);
+}
+
+.header .nav-link {
+  padding: var(--space-5) var(--space-7);
+  color: var(--color-foreground);
+  text-decoration: none;
+}

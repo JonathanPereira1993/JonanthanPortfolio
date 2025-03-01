@@ -296,3 +296,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: var(--theme-backdrop);
+  height: 100vh;
+  width: 100%;
+  padding: 70px;
+}
