@@ -5,6 +5,6 @@ type Props = React.ButtonHTMLAttributes<HTMLElement> & {
   children: React.ReactNode;
 };
 
-export default function Button({ children }: Props) {
-  return <button>{children}</button>;
+export default function Button({ children, ...props }: Props) {
+  return <button {...props}>{children}</button>;
 }
