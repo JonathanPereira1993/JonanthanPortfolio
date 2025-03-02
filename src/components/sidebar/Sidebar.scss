@@ -1,0 +1,38 @@
+.sidebar {
+  position: relative;
+  padding: var(--space-base) var(--space-l);
+  border-right: 1px solid var(--theme-stroke);
+  width: var(--sidebar-width);
+  height: 100%;
+  transition: all 300ms ease;
+
+  &-content {
+    overflow: hidden;
+  }
+
+  &.sidebar-closed {
+    padding: 0;
+    width: 0px;
+  }
+
+  &-toggle {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    transition: all 300ms ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-closed &-toggle {
+    transform: translateX(55px) translateY(25px) rotate(90deg);
+    background-color: var(--primary-background);
+    padding: 2px var(--space-s);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.home-section {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+
+  .comments {
+    margin-top: 75px;
+    font-size: var(--font-size-md);
+  }
+
+  .github-link {
+    margin-top: var(--space-base);
+    font-size: var(--font-size-md);
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--link-foreground);
+        text-decoration-thickness: 1px;
+      }
+    }
+  }
+}

@@ -2,27 +2,94 @@
   background-color: var(--theme-background);
   border-radius: var(--border-radius-4);
   border: 1px solid var(--theme-stroke);
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--theme-stroke);
+
+    > * {
+      padding: var(--space-base) var(--space-xl);
+      border-right: 1px solid var(--theme-stroke);
+    }
+
+    .footer-link {
+      padding-left: var(--space-base);
+      padding-right: var(--space-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--color-slate-300);
+
+      &:hover {
+        color: var(--color-slate-50);
+      }
+    }
+  }
 }
 
 .header {
   width: 100%;
   border-bottom: 1px solid var(--theme-stroke);
-}
 
-.header .nav-links {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-size: var(--font-size-md);
-}
+  .nav-links {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-size-md);
+  }
 
-.header .nav-links .nav-link {
-  border-right: 1px solid var(--theme-stroke);
-}
+  .nav-links > div {
+    display: flex;
+    align-items: center;
+  }
 
-.header .nav-link {
-  padding: var(--space-5) var(--space-7);
-  color: var(--color-foreground);
-  text-decoration: none;
+  .nav-link {
+    position: relative;
+    padding: var(--space-base) var(--space-xl);
+    color: var(--color-slate-300);
+    text-decoration: none;
+    border-right: 1px solid var(--theme-stroke);
+
+    &.nav-link-right {
+      border-right: 0;
+      border-left: 1px solid var(--theme-stroke);
+    }
+
+    &:not(.nav-logo):before {
+      content: "";
+      position: absolute;
+      transition: height 300ms ease;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0px;
+      background-color: var(--primary-background);
+      width: 100%;
+    }
+
+    &:hover,
+    &.active {
+      color: var(--color-slate-50);
+
+      &:before {
+        height: 3px;
+      }
+    }
+  }
+
+  .nav-logo {
+    min-width: var(--sidebar-width);
+  }
 }

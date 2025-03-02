@@ -1,3 +1,4 @@
+import AboutPage from "./pages/about/AboutPage";
 import HomePage from "./pages/home/HomePage";
 import Layout from "./pages/layout/Layout";
 
@@ -8,6 +9,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Layout>
   );

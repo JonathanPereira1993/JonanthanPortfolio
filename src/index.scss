@@ -14,6 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --sidebar-width: 300px;
+
   // --------------------------------------------------------
   // --                 Color variables                    --
   // --------------------------------------------------------
@@ -268,17 +270,16 @@
   // --                 Space variables                    --
   // --------------------------------------------------------
 
-  --space-0: 0px;
-  --space-1: 2px;
-  --space-2: 4px;
-  --space-3: 8px;
-  --space-4: 12px;
-  --space-5: 16px;
-  --space-6: 24px;
-  --space-7: 32px;
-  --space-8: 40px;
-  --space-9: 48px;
-  --space-10: 64px;
+  --space-none: 0px;
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-base: 16px;
+  --space-m: 24px;
+  --space-l: 32px;
+  --space-xl: 40px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
 
   // --------------------------------------------------------
   // --                Radius variables                    --
@@ -297,9 +298,18 @@
   box-sizing: border-box;
 }
 
+html,
+#root {
+  height: 100%;
+}
+
 body {
   background-color: var(--theme-backdrop);
-  height: 100vh;
   width: 100%;
   padding: 70px;
+  height: 100vh;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
 }
