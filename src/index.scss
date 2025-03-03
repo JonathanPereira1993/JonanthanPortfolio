@@ -190,17 +190,17 @@
   --color-yellow-950: #432004;
 
   // Yellow Alpha
-  --color-yellow-50: rgba(254, 252, 232, 0.02);
-  --color-yellow-100: rgba(254, 249, 194, 0.04);
-  --color-yellow-200: rgba(255, 240, 133, 0.06);
-  --color-yellow-300: rgba(255, 223, 32, 0.08);
-  --color-yellow-400: rgba(253, 199, 0, 0.12);
-  --color-yellow-500: rgba(240, 177, 0, 0.14);
-  --color-yellow-600: rgba(208, 135, 0, 0.16);
-  --color-yellow-700: rgba(166, 95, 0, 0.2);
-  --color-yellow-800: rgba(137, 75, 0, 0.24);
-  --color-yellow-900: rgba(115, 62, 10, 0.28);
-  --color-yellow-950: rgba(67, 32, 4, 0.3);
+  --color-yellow-alpha-50: rgba(254, 252, 232, 0.02);
+  --color-yellow-alpha-100: rgba(254, 249, 194, 0.04);
+  --color-yellow-alpha-200: rgba(255, 240, 133, 0.06);
+  --color-yellow-alpha-300: rgba(255, 223, 32, 0.08);
+  --color-yellow-alpha-400: rgba(253, 199, 0, 0.12);
+  --color-yellow-alpha-500: rgba(240, 177, 0, 0.14);
+  --color-yellow-alpha-600: rgba(208, 135, 0, 0.16);
+  --color-yellow-alpha-700: rgba(166, 95, 0, 0.2);
+  --color-yellow-alpha-800: rgba(137, 75, 0, 0.24);
+  --color-yellow-alpha-900: rgba(115, 62, 10, 0.28);
+  --color-yellow-alpha-950: rgba(67, 32, 4, 0.3);
 
   // Theme colors
   --theme-backdrop: var(--color-slate-950);

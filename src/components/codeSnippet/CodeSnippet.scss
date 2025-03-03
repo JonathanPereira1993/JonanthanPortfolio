@@ -22,10 +22,33 @@
   }
 
   &__description {
+    display: flex;
+    white-space: pre-wrap;
     background-color: var(--theme-backdrop);
     border: 1px solid var(--theme-stroke);
     border-radius: var(--border-radius-4);
     padding: var(--space-base);
     margin-top: var(--space-s);
+    font-family: "Fira Code", monospace;
+  }
+
+  &__line-numbers {
+    padding-right: var(--space-base);
+    text-align: right;
+    user-select: none;
+    color: var(--color-grey-400);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    min-width: 30px;
+  }
+
+  &__line-number {
+    padding-right: var(--space-xs);
+    color: var(--color-slate-400);
+  }
+
+  &__text {
+    font-size: var(--font-size-md);
+    color: var(--color-slate-200);
   }
 }

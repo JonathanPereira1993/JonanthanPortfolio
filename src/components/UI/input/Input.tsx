@@ -7,10 +7,10 @@ type Props = React.InputHTMLAttributes<HTMLElement> & {
 
 const Input = ({ label, ...props }: Props) => {
   return (
-    <>
-      <label>{label}</label>
-      <input {...props}></input>
-    </>
+    <div className="input-container">
+      <label className="input-container__label">{label}</label>
+      <input className="input-container__input" {...props}></input>
+    </div>
   );
 };
 

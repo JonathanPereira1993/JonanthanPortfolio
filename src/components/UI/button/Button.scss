@@ -1,0 +1,88 @@
+.btn {
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--border-radius-4);
+  font-size: var(--font-size-sm);
+  border: 0;
+  cursor: pointer;
+
+  &-primary {
+    background-color: var(--primary-background);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+
+  &-default {
+    background-color: var(--color-slate-600);
+    color: var(--heading-foreground);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--color-slate-500);
+    }
+  }
+
+  &-ghost {
+    background-color: transparent;
+    border: 1px solid var(--color-slate-50);
+    color: var(--color-slate-50);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--color-slate-800);
+      border-color: transparent;
+    }
+  }
+
+  &-success {
+    background-color: var(--success-background);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--success-hover);
+    }
+  }
+
+  &-error {
+    background-color: var(--error-background);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--error-hover);
+    }
+  }
+
+  &-warning {
+    background-color: var(--warning-background);
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--warning-hover);
+    }
+  }
+
+  &-disabled {
+    background-color: var(--color-slate-700);
+    color: var(--color-slate-500);
+    cursor: not-allowed;
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: var(--color-slate-700);
+    }
+  }
+
+  &-link {
+    padding: 0px;
+    text-decoration: underline;
+    color: var(--link-foreground);
+    background-color: transparent;
+    transition: all 200ms ease;
+
+    &:hover {
+      color: var(--link-hover-foreground);
+    }
+  }
+}
