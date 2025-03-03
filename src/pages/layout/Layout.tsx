@@ -15,7 +15,10 @@ export default function Layout({ children }: Props) {
     <div className="layout-main">
       <Header>
         <div>
-          <div className="nav-link nav-logo">
+          <div
+            className="nav-link nav-logo"
+            title="My name is Jonathan Pereira"
+          >
             {useTypingEffect({
               text: "jonathan-pereira",
               cursorBlink: false,

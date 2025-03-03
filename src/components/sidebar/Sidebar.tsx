@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
 
 import "./Sidebar.scss";
 
@@ -21,7 +22,11 @@ const Sidebar = ({ children, open = false }: Props) => {
       }`}
     >
       <div onClick={onOpenSidebarHandler} className="sidebar-toggle">
-        {sidebarOpened ? "close" : "open"}
+        {sidebarOpened ? (
+          <LuPanelLeftOpen title="Close sidebar" size={24} />
+        ) : (
+          <LuPanelRightOpen title="Open sidebar" size={24} />
+        )}
       </div>
       <div className="sidebar-content">{children}</div>
     </div>

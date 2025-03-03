@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
+import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
+
+import "./AboutPage.scss";
+import ContentLayout from "../../components/contentLayout/ContentLayout";
 
 const sidebarItems = [
   {
@@ -40,7 +44,33 @@ const AboutPage = () => {
             {item.field}
           </SidebarItem>
         ))}
-      </Sidebar>
+      </Sidebar>{" "}
+      {itemSelected === 1 && <ContentLayout title="_bio">Bio</ContentLayout>}
+      {itemSelected === 2 && (
+        <ContentLayout title="_interests">Interests</ContentLayout>
+      )}
+      {itemSelected === 3 && (
+        <ContentLayout title="_education">
+          <CodeSnippet
+            title="IPLeiria"
+            username="jonathanpereira1993"
+            date="11/12/2020"
+            description="Teste de email e de texto etc etc"
+          />
+          <CodeSnippet
+            title="IPLeiria"
+            username="jonathanpereira1993"
+            date="11/12/2020"
+            description="Teste de email e de texto etc etc"
+          />
+          <CodeSnippet
+            title="IPLeiria"
+            username="jonathanpereira1993"
+            date="11/12/2020"
+            description="Teste de email e de texto etc etc"
+          />
+        </ContentLayout>
+      )}
     </section>
   );
 };

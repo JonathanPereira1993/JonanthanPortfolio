@@ -22,7 +22,11 @@ const HomePage = () => {
             <span style={{ color: "var(--color-indigo-500)" }}>const </span>
             <span style={{ color: "var(--color-teal-500)" }}>githubLink</span>
             <span> = </span>
-            <a href="https://github.com/JonathanPereira1993" target="_blank">
+            <a
+              href="https://github.com/JonathanPereira1993"
+              target="_blank"
+              title="Visit my github page"
+            >
               <span style={{ color: "var(--link-foreground)" }}>
                 "https://github.com/JonathanPereira1993"
               </span>
