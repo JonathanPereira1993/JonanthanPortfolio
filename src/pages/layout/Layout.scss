@@ -4,12 +4,13 @@
   border: 1px solid var(--theme-stroke);
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: calc(100vh - 140px);
+  margin: 70px;
 
   &__content {
     display: flex;
     flex: 1;
-    height: 100%;
+    overflow: auto;
   }
 
   &__footer {

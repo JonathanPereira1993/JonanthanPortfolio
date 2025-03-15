@@ -1,5 +1,7 @@
 .content-layout {
   padding: var(--space-xl) var(--space-3xl);
+  overflow-y: auto;
+  max-height: 100%;
   flex: 1;
 
   &__title {
