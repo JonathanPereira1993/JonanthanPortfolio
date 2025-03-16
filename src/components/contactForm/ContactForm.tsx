@@ -36,6 +36,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
       <div>
         <Input
           label="_name"
+          placeholder="Your name"
+          valid={!errors.name}
           name="name"
           value={formData.name}
           onChange={handleChange}
@@ -46,6 +48,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
       <div>
         <Input
           label="_email"
+          valid={!errors.email}
+          placeholder="Your email"
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -56,6 +60,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
       <div>
         <Input
           label="_message"
+          valid={!errors.message}
+          placeholder="Your message"
           name="message"
           value={formData.message}
           onChange={handleChange}

@@ -15,12 +15,12 @@ const sidebarItems = [
   },
   {
     id: 2,
-    field: "interests",
+    field: "education",
     selected: false,
   },
   {
     id: 3,
-    field: "education",
+    field: "interests",
     selected: false,
   },
 ];
@@ -59,6 +59,24 @@ Before diving into web development, I studied Web Development & Multimedia, foll
         </ContentLayout>
       )}
       {itemSelected === 2 && (
+        <ContentLayout title="_education">
+          <CodeSnippet
+            title="School of Technology and Management (IPL)"
+            subtitle="Web development and multimedia (TeSP)"
+            date="2016 - 2018"
+            description="Here I learned the world of web development, starting with HTML and CSS basics to
+advanced databases and JavaScript concepts."
+          />
+          <CodeSnippet
+            title="School of Technology and Management (IPL)"
+            subtitle="Bachelor in Games and Multimedia"
+            date="2018 - present"
+            description="I learned all about game and multimedia technologies and web development. I was
+introduced to object-oriented programming working with C++, C#, Java and JavaScript."
+          />
+        </ContentLayout>
+      )}
+      {itemSelected === 3 && (
         <ContentLayout title="_interests">
           <Button type="primary">I´m a button</Button>
           <Button type="default">I´m a button</Button>
@@ -68,28 +86,6 @@ Before diving into web development, I studied Web Development & Multimedia, foll
           <Button type="warning">I´m a button</Button>
           <Button type="disabled">I´m a button</Button>
           <Button type="link">I´m a button</Button>
-        </ContentLayout>
-      )}
-      {itemSelected === 3 && (
-        <ContentLayout title="_education">
-          <CodeSnippet
-            title="IPLeiria"
-            username="jonathanpereira1993"
-            date="11/12/2020"
-            description="Teste de email e de texto etc etc"
-          />
-          <CodeSnippet
-            title="IPLeiria"
-            username="jonathanpereira1993"
-            date="11/12/2020"
-            description="Teste de email e de texto etc etc"
-          />
-          <CodeSnippet
-            title="IPLeiria"
-            username="jonathanpereira1993"
-            date="11/12/2020"
-            description="Teste de email e de texto etc etc"
-          />
         </ContentLayout>
       )}
     </section>

@@ -9,6 +9,12 @@
     align-items: flex-start;
   }
 
+  &__subtitle {
+    color: var(--color-slate-300);
+    font-weight: 500;
+    font-size: var(--font-size-md);
+  }
+
   &__title-username {
     color: var(--color-indigo-400);
     font-weight: 500;

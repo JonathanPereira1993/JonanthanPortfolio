@@ -3,6 +3,7 @@ import "./CodeSnippet.scss";
 
 type Props = {
   title?: string;
+  subtitle?: string;
   username?: string;
   date?: string;
   description?: string;
@@ -12,6 +13,7 @@ type Props = {
 
 const CodeSnippet = ({
   title,
+  subtitle,
   username,
   date,
   description,
@@ -64,7 +66,8 @@ const CodeSnippet = ({
             </>
           )}
         </h3>
-        {date && <span className="code-snippet__date">Date: {date}</span>}
+        <h4 className="code-snippet__subtitle">{subtitle}</h4>
+        {date && <span className="code-snippet__date">{date}</span>}
       </div>
 
       <div className="code-snippet__description">

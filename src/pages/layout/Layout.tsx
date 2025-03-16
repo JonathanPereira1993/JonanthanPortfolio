@@ -45,12 +45,12 @@ export default function Layout({ children }: Props) {
       <main className="layout-main__content">{children}</main>
       <Footer>
         <div>find me in:</div>
-        <a href="#" title="Jonathan's Linkedin account" className="footer-link">
+        <a href="#" title="Jonathan's Linkedin profile" className="footer-link">
           <IoLogoLinkedin size={24} />
         </a>
         <a
           href="#"
-          title="Jonathan's Instagram account"
+          title="Jonathan's Instagram profile"
           className="footer-link"
         >
           <IoLogoInstagram size={24} />
