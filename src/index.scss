@@ -315,3 +315,8 @@ body {
 h1 {
   font-size: var(--font-size-h1);
 }
+
+.error-text {
+  color: var(--color-red-500);
+  font-size: var(--font-size-sm);
+}
