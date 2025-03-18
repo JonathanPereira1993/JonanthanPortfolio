@@ -3,10 +3,15 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
 import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 
+// Images of books
+import FortyEightRules from "../../assets/books/48RulesOfPower.jpg";
+import FourThousandWeeks from "../../assets/books/4000Weeks.jpg";
+
 import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
-import Button from "../../components/UI/button/Button";
 import Accordion from "../../components/accordion/Accordion";
+import BookItem from "../../components/bookItem/BookItem";
+import GridContainer from "../../components/gridContainer/GridContainer";
 
 const sidebarItems = [
   {
@@ -106,15 +111,28 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
         </ContentLayout>
       )}
       {itemSelected === 3 && (
-        <ContentLayout title="_interests">
-          <Button type="primary">I´m a button</Button>
-          <Button type="default">I´m a button</Button>
-          <Button type="ghost">I´m a button</Button>
-          <Button type="success">I´m a button</Button>
-          <Button type="error">I´m a button</Button>
-          <Button type="warning">I´m a button</Button>
-          <Button type="disabled">I´m a button</Button>
-          <Button type="link">I´m a button</Button>
+        <ContentLayout title="_books">
+          <span>
+            I want to share with you some of my favourite books! Thats a way for
+            you to know me better.
+          </span>
+          <GridContainer columns="5" gap="20px">
+            <BookItem
+              image={FortyEightRules}
+              title="Hello"
+              description="Description goes here"
+            />
+            <BookItem
+              image={FourThousandWeeks}
+              title="Hello"
+              description="Description goes here"
+            />
+          </GridContainer>
+        </ContentLayout>
+      )}
+      {itemSelected === 4 && (
+        <ContentLayout title="_hobbies">
+          <CodeSnippet description="Some things I love to do." />
         </ContentLayout>
       )}
     </section>
