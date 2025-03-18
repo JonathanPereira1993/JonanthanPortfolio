@@ -49,11 +49,19 @@ const AboutPage = () => {
       {itemSelected === 1 && (
         <ContentLayout title="_bio">
           <CodeSnippet
-            formattedDescription="I’m Jonathan, an autodidact front-end developer based in Portugal 🇵🇹.
+            formattedDescription="Jonathan – Front-End Developer | Portugal 🇵🇹
 
-With over two years of experience in a tech company, I started my journey working with Outsystems (a low-code platform), collaborating with UX/UI teams. Beyond that, I write JavaScript, style with CSS/SCSS, and continuously expand my skills by exploring new technologies. Currently, I’m building personal projects with ReactJS and TailwindCSS, constantly challenging myself to grow as a developer.
+I’m Jonathan, a self-taught front-end developer passionate about crafting modern, user-friendly web experiences. Based in Portugal, I have over three years of experience in the tech industry, where I started working with OutSystems (a low-code platform) and closely collaborating with UX/UI teams.
 
-Before diving into web development, I studied Web Development & Multimedia, followed by a Games & Multimedia bachelor’s degree. This academic background introduced me to design, programming, and digital media, equipping me with the skills to navigate the corporate world and take on real-world projects."
+Beyond low-code, I write JavaScript, style with CSS/SCSS, and continuously explore new technologies to refine my craft. Currently, I’m building personal projects with ReactJS and TailwindCSS, always pushing myself to grow as a developer.
+
+My journey into tech began with a background in Web Development & Multimedia, followed by a bachelor’s degree in Games & Multimedia. This academic foundation gave me a strong grasp of design, programming, and digital media—skills that allow me to bridge the gap between aesthetics and functionality in web development.
+
+Creativity is at the core of everything I do. Whether it’s coding, designing, or playing the drums—one of my biggest hobbies—I love expressing myself through different forms of creation. I’m always eager to be part of projects that make a difference, collaborating with like-minded people to build meaningful and impactful experiences.
+
+Beyond tech, I’m constantly seeking personal growth. I love reading great books that challenge my thinking, expand my knowledge, and help me become a better version of myself. For me, learning never stops—whether it’s through code, music, or the wisdom found in a good book.
+
+Driven by curiosity and a problem-solving mindset, I thrive on learning, adapting, and pushing boundaries to create seamless digital experiences."
             showLineNumbers={true}
           />
         </ContentLayout>
