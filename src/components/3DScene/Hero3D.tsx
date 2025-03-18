@@ -27,13 +27,13 @@ const RotatingCube = () => {
 export default function Hero3D() {
   return (
     <Canvas
-      camera={{ position: [2, 2, 5] }} // Set camera position
-      style={{ width: "100%", height: "400px" }} // Adjust canvas size
+      camera={{ position: [2, 2, 5] }}
+      style={{ width: "100%", height: "400px" }}
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[2, 2, 5]} />
       <RotatingCube />
-      <OrbitControls /> {/* Allows mouse control */}
+      <OrbitControls />
     </Canvas>
   );
 }

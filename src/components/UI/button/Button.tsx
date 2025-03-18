@@ -28,7 +28,7 @@ export default function Button({
     <motion.button
       onClick={onClick}
       disabled={type === "disabled"}
-      whileTap={{ scale: 0.99 }}
+      whileTap={{ scale: 0.99, opacity: 0.8 }}
       className={`btn btn-${type}`}
       {...props}
     >
