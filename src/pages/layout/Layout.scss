@@ -1,11 +1,14 @@
 .layout-main {
-  background-color: var(--theme-background);
+  background-color: var(--theme-backdrop-glossy);
   border-radius: var(--border-radius-4);
   border: 1px solid var(--theme-stroke);
   display: flex;
+  position: relative;
   flex-direction: column;
   height: calc(100vh - 140px);
   margin: 70px;
+  z-index: 10;
+  backdrop-filter: blur(60px);
 
   &__content {
     display: flex;

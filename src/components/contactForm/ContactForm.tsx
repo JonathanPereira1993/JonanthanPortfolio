@@ -33,7 +33,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
-      <div>
+      <div className="relative">
         <Input
           label="_name"
           placeholder="Your name"
@@ -45,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         {errors.name && <p className="error-text">{errors.name}</p>}
       </div>
 
-      <div>
+      <div className="relative">
         <Input
           label="_email"
           valid={!errors.email}
@@ -57,8 +57,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
         {errors.email && <p className="error-text">{errors.email}</p>}
       </div>
 
-      <div>
+      <div className="relative">
         <Input
+          as="textarea"
+          rows={5}
           label="_message"
           valid={!errors.message}
           placeholder="Your message"

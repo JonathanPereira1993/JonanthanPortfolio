@@ -1,16 +1,31 @@
 import React from "react";
 import "./Input.scss";
 
-type Props = React.InputHTMLAttributes<HTMLElement> & {
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  as?: "input";
+};
+
+type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  as: "textarea";
+};
+
+type Props = (InputProps | TextareaProps) & {
   label: string;
   valid?: boolean;
 };
 
-const Input = ({ label, valid = true, ...props }: Props) => {
+const Input = ({ label, valid = true, as = "input", ...props }: Props) => {
   return (
     <div className={`input-container ${!valid && "input-container--invalid"}`}>
       <label className="input-container__label">{label}</label>
-      <input className="input-container__input" {...props}></input>
+      {as === "textarea" ? (
+        <textarea
+          className="input-container__input input-container__textarea"
+          {...(props as TextareaProps)}
+        />
+      ) : (
+        <input className="input-container__input" {...(props as InputProps)} />
+      )}
     </div>
   );
 };

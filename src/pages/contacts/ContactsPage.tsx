@@ -127,11 +127,19 @@ const ContactsPage = () => {
             submitting={isSubmitting}
           />
         </div>
-        <div>
+        <div className="syntax-break">
           <SyntaxHighlighter
             language="javascript"
             style={oneDark}
             showLineNumbers
+            wrapLongLines={true}
+            customStyle={{
+              whiteSpace: "pre-wrap",
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              overflowX: "auto",
+              maxWidth: "100%",
+            }}
           >
             {emailSent ? successfulCodeString : normalCodeString}
           </SyntaxHighlighter>

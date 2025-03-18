@@ -6,7 +6,7 @@ import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
 import Button from "../../components/UI/button/Button";
-import Accordion from "../../components/Accordion/Accordion";
+import Accordion from "../../components/accordion/Accordion";
 
 const sidebarItems = [
   {

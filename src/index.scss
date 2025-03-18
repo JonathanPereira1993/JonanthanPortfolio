@@ -204,6 +204,7 @@
 
   // Theme colors
   --theme-backdrop: var(--color-slate-950);
+  --theme-backdrop-glossy: rgba(15, 23, 43, 0.8);
   --theme-background: var(--color-slate-900);
   --theme-stroke: var(--color-slate-700);
   --heading-foreground: var(--color-slate-50);
@@ -317,6 +318,12 @@ h1 {
 }
 
 .error-text {
+  position: absolute;
+  top: calc(100% + var(--space-xxs));
   color: var(--color-red-500);
   font-size: var(--font-size-sm);
+}
+
+.relative {
+  position: relative;
 }

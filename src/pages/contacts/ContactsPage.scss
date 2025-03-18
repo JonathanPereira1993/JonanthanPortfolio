@@ -6,4 +6,13 @@
   align-items: center;
   height: 100%;
   flex: 1;
+  max-width: 1500px;
+
+  .syntax-break {
+    display: block;
+    overflow-wrap: anywhere !important;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: normal !important;
+  }
 }
