@@ -9,4 +9,9 @@
   &.active {
     color: var(--heading-foreground);
   }
+
+  &--child {
+    margin-left: var(--space-m);
+    padding: var(--space-xxs) var(--space-base);
+  }
 }

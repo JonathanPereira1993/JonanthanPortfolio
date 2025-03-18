@@ -5,11 +5,18 @@ import "./SidebarItem.scss";
 type Props = {
   children: React.ReactNode;
   selected: boolean;
+  isChild?: boolean;
   onClick: (id: number) => void;
   id: number;
 };
 
-const SidebarItem = ({ id, children, onClick, selected = false }: Props) => {
+const SidebarItem = ({
+  id,
+  children,
+  onClick,
+  selected = false,
+  isChild = false,
+}: Props) => {
   const onClickHandler = () => {
     onClick(id);
   };
@@ -17,7 +24,7 @@ const SidebarItem = ({ id, children, onClick, selected = false }: Props) => {
   return (
     <div
       onClick={onClickHandler}
-      className={`sidebar-item ${selected && "active"}`}
+      className={`sidebar-item ${isChild && "sidebar-item--child"} ${selected && "active"}`}
     >
       <div className="sidebar-item__icon">
         {selected ? <AiFillFolderOpen size={24} /> : <AiFillFolder size={24} />}

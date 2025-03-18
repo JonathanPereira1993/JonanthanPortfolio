@@ -6,6 +6,7 @@ import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
 import Button from "../../components/UI/button/Button";
+import Accordion from "../../components/Accordion/Accordion";
 
 const sidebarItems = [
   {
@@ -18,9 +19,17 @@ const sidebarItems = [
     field: "education",
     selected: false,
   },
+];
+
+const sidebarItemsInterests = [
   {
     id: 3,
-    field: "interests",
+    field: "books",
+    selected: true,
+  },
+  {
+    id: 4,
+    field: "hobbies",
     selected: false,
   },
 ];
@@ -45,6 +54,18 @@ const AboutPage = () => {
             {item.field}
           </SidebarItem>
         ))}
+        <Accordion isExpanded headerText="Interests">
+          {sidebarItemsInterests.map((interestItem) => (
+            <SidebarItem
+              key={interestItem.id}
+              id={interestItem.id}
+              onClick={onItemClickHandler}
+              selected={itemSelected === interestItem.id ? true : false}
+            >
+              {interestItem.field}
+            </SidebarItem>
+          ))}
+        </Accordion>
       </Sidebar>{" "}
       {itemSelected === 1 && (
         <ContentLayout title="_bio">

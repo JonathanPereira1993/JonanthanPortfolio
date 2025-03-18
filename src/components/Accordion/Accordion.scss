@@ -1,0 +1,42 @@
+.accordion {
+  transition: all 300ms ease;
+
+  svg {
+    transition: transform 300ms ease;
+  }
+
+  &--expanded {
+    .accordion__content {
+      max-height: var(--dynamic-height);
+      opacity: 1;
+    }
+
+    .accordion__header {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 50px;
+    cursor: pointer;
+    padding: var(--space-s) var(--space-base);
+    border-top: 1px solid var(--theme-stroke);
+    border-bottom: 1px solid var(--theme-stroke);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 300ms ease,
+      opacity 300ms ease;
+  }
+}
