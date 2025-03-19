@@ -5,6 +5,7 @@ import Layout from "./pages/layout/Layout";
 
 import { Routes, Route } from "react-router";
 import ProjectsPage from "./pages/projects/ProjectsPage";
+import ProjectDetailsPage from "./pages/projects/ProjectDetailsPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:pid" element={<ProjectDetailsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
     </Layout>

@@ -1,0 +1,14 @@
+.project-details {
+  padding: var(--space-l);
+  max-width: var(--max-screen-size);
+  margin: 0 auto;
+
+  &__content {
+    width: 100%;
+
+    &-title {
+      font-size: var(--font-size-h2);
+      margin-bottom: var(--space-l);
+    }
+  }
+}

@@ -19,6 +19,7 @@ type Props = {
   children: React.ReactNode;
   type?: ButtonType;
   size?: ButtonSize;
+  title?: string;
 };
 
 export default function Button({
@@ -26,11 +27,13 @@ export default function Button({
   onClick,
   type = "primary",
   size = "medium",
+  title,
   ...props
 }: Props) {
   return (
     <motion.button
       onClick={onClick}
+      title={title}
       disabled={type === "disabled"}
       whileTap={{ scale: 0.99, opacity: 0.8 }}
       className={`btn btn-${type} btn-${size}`}

@@ -1,6 +1,6 @@
 .sidebar {
   position: relative;
-  padding: var(--space-xl) var(--space-none);
+  padding: var(--space-2xl) var(--space-none);
   border-right: 1px solid var(--theme-stroke);
   width: var(--sidebar-width);
   height: 100%;
@@ -11,7 +11,6 @@
   }
 
   &.sidebar-closed {
-    padding: 0;
     width: 0px;
   }
 

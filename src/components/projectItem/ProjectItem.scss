@@ -1,3 +1,8 @@
+.project-item-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .project-item {
   position: relative;
   background-color: var(--color-slate-950);
@@ -5,6 +10,18 @@
   overflow: hidden;
   max-height: 300px;
   border: 1px solid var(--theme-stroke);
+
+  &-title {
+    color: var(--foreground);
+    font-size: var(--font-size-md);
+    font-weight: 300;
+    margin-bottom: var(--space-s);
+
+    .project-number {
+      font-weight: 700;
+      color: var(--color-indigo-500);
+    }
+  }
 
   &-icon {
     position: absolute;
@@ -37,10 +54,10 @@
     right: 0;
     background-color: var(--color-slate-950);
     border-top: 1px solid var(--theme-stroke);
-    padding: var(--space-l);
+    padding: var(--space-l) var(--space-m);
 
-    &-title {
-      font-size: var(--font-size-lg);
+    &-smallDescription {
+      font-size: var(--font-size-md);
       font-weight: 400;
       color: var(--foreground);
     }

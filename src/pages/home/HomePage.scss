@@ -6,7 +6,7 @@
   align-items: center;
   height: 100%;
   flex: 1;
-  max-width: 1500px;
+  max-width: var(--max-screen-size);
 
   .comments {
     margin-top: 75px;

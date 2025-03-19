@@ -33,6 +33,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
+      max-width: var(--sidebar-width);
       color: var(--color-slate-300);
 
       &:hover {
