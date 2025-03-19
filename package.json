@@ -12,7 +12,7 @@
   "dependencies": {
     "@react-email/components": "^0.0.33",
     "@react-email/render": "^1.0.5",
-    "@react-three/drei": "^10.0.3",
+    "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.0.4",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",

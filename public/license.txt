@@ -1,0 +1,11 @@
+Model Information:
+* title:	Chibi Space Man
+* source:	https://sketchfab.com/3d-models/chibi-space-man-7bb6cf2695ff418f8535de0e0c86f8cd
+* author:	Jorge (https://sketchfab.com/J0rge)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Chibi Space Man" (https://sketchfab.com/3d-models/chibi-space-man-7bb6cf2695ff418f8535de0e0c86f8cd) by Jorge (https://sketchfab.com/J0rge) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

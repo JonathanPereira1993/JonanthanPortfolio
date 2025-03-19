@@ -3,14 +3,15 @@
   background: linear-gradient(
     135deg,
     rgba(23, 85, 83, 0.8) 0%,
-    rgba(67, 217, 173, 0.8) 100%
+    rgba(67, 217, 173, 0.9) 100%
   );
+  backdrop-filter: blur(30px);
   border: 1px solid var(--theme-stroke);
   border-radius: var(--border-radius-4);
   backdrop-filter: blur(64px);
 
   &__inner {
-    background-color: var(--color-slate-800);
+    background-color: var(--color-slate-900);
     border-radius: var(--border-radius-4);
     box-shadow: 1px 5px 11px 0 #02121b inset;
   }
