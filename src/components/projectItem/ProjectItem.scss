@@ -1,0 +1,52 @@
+.project-item {
+  position: relative;
+  background-color: var(--color-slate-950);
+  border-radius: var(--border-radius-5);
+  overflow: hidden;
+  max-height: 300px;
+  border: 1px solid var(--theme-stroke);
+
+  &-icon {
+    position: absolute;
+    top: var(--space-s);
+    right: var(--space-s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-3);
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-slate-600);
+  }
+
+  &-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-slate-950);
+    border-top: 1px solid var(--theme-stroke);
+    padding: var(--space-l);
+
+    &-title {
+      font-size: var(--font-size-lg);
+      font-weight: 400;
+      color: var(--foreground);
+    }
+
+    .btn {
+      margin-top: var(--space-base);
+    }
+  }
+}
