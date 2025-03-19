@@ -8,6 +8,8 @@ import ContactForm from "../../components/contactForm/ContactForm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 type FormData = {
   name: string;
   email: string;
@@ -20,6 +22,12 @@ const ContactsPage = () => {
     email: "",
     message: "",
   });
+
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.7 } },
+    exit: { opacity: 0, transition: { duration: 0.5 } },
+  };
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -115,37 +123,45 @@ const ContactsPage = () => {
     };`;
 
   return (
-    <section className="contacts-section">
-      <ToastContainer />
-      <GridContainer columns="2" gap="var(--space-3xl)">
-        <div>
-          <ContactForm
-            formData={formData}
-            setFormData={setFormData}
-            errors={errors}
-            onSubmit={handleSubmit}
-            submitting={isSubmitting}
-          />
-        </div>
-        <div className="syntax-break">
-          <SyntaxHighlighter
-            language="javascript"
-            style={oneDark}
-            showLineNumbers
-            wrapLongLines={true}
-            customStyle={{
-              whiteSpace: "pre-wrap",
-              wordBreak: "break-word",
-              overflowWrap: "break-word",
-              overflowX: "auto",
-              maxWidth: "100%",
-            }}
-          >
-            {emailSent ? successfulCodeString : normalCodeString}
-          </SyntaxHighlighter>
-        </div>
-      </GridContainer>
-    </section>
+    <AnimatePresence mode="wait">
+      <motion.section
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="contacts-section"
+      >
+        <ToastContainer />
+        <GridContainer columns="2" gap="var(--space-3xl)">
+          <div>
+            <ContactForm
+              formData={formData}
+              setFormData={setFormData}
+              errors={errors}
+              onSubmit={handleSubmit}
+              submitting={isSubmitting}
+            />
+          </div>
+          <div className="syntax-break">
+            <SyntaxHighlighter
+              language="javascript"
+              style={oneDark}
+              showLineNumbers
+              wrapLongLines={true}
+              customStyle={{
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+                overflowX: "auto",
+                maxWidth: "100%",
+              }}
+            >
+              {emailSent ? successfulCodeString : normalCodeString}
+            </SyntaxHighlighter>
+          </div>
+        </GridContainer>
+      </motion.section>
+    </AnimatePresence>
   );
 };
 

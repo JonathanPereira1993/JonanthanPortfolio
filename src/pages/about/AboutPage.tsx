@@ -116,16 +116,16 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
             I want to share with you some of my favourite books! Thats a way for
             you to know me better.
           </span>
-          <GridContainer columns="5" gap="20px">
+          <GridContainer columns="4" gap="20px" className="grid-row-height">
             <BookItem
               image={FortyEightRules}
-              title="Hello"
-              description="Description goes here"
+              title="The 48 laws of Power"
+              author="Robert Greene"
             />
             <BookItem
               image={FourThousandWeeks}
-              title="Hello"
-              description="Description goes here"
+              title="Four Thousand Weeks"
+              author="Oliver Burkeman"
             />
           </GridContainer>
         </ContentLayout>
