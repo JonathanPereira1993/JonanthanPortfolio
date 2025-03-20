@@ -1,0 +1,17 @@
+.floating-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: relative;
+
+  &-title {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: var(--space-xs);
+  }
+}
+
+.floating-tag {
+  position: relative;
+}

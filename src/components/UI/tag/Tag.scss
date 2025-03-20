@@ -1,0 +1,11 @@
+.tag {
+  display: flex;
+  pointer-events: none;
+  align-items: center;
+  gap: var(--space-s);
+  border: 1px solid var(--theme-stroke);
+  border-radius: 50px;
+  background-color: var(--theme-backdrop-glossy);
+  padding: var(--space-xs) var(--space-base);
+  backdrop-filter: filter(30px);
+}
