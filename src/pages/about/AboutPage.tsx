@@ -3,15 +3,14 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
 import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 
-// Images of books
-import FortyEightRules from "../../assets/books/48RulesOfPower.jpg";
-import FourThousandWeeks from "../../assets/books/4000Weeks.jpg";
+import { books, hobbies } from "../../constants/Constants";
 
 import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
 import Accordion from "../../components/accordion/Accordion";
 import BookItem from "../../components/bookItem/BookItem";
 import GridContainer from "../../components/gridContainer/GridContainer";
+import HobbieItem from "../../components/hobbieItem/HobbieItem";
 
 const sidebarItems = [
   {
@@ -116,23 +115,34 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
             I want to share with you some of my favourite books! Thats a way for
             you to know me better.
           </span>
-          <GridContainer columns="4" gap="20px" className="grid-row-height">
-            <BookItem
-              image={FortyEightRules}
-              title="The 48 laws of Power"
-              author="Robert Greene"
-            />
-            <BookItem
-              image={FourThousandWeeks}
-              title="Four Thousand Weeks"
-              author="Oliver Burkeman"
-            />
+          <GridContainer columns="4" gap="40px" className="grid-row-height">
+            {books.map((book) => (
+              <BookItem
+                key={book.id}
+                image={book.image}
+                title={book.title}
+                author={book.author}
+              />
+            ))}
           </GridContainer>
         </ContentLayout>
       )}
       {itemSelected === 4 && (
         <ContentLayout title="_hobbies">
-          <CodeSnippet description="Some things I love to do." />
+          <span>Some things I love to do.</span>
+          <GridContainer columns="3" gap="40px" className="grid-row-height">
+            {hobbies.map((hobbie) => (
+              <HobbieItem
+                key={hobbie.id}
+                hobbieNum={hobbie.id}
+                cover={hobbie.cover}
+                title={hobbie.title}
+                subtitle={hobbie.subtitle}
+                onClick={() => {}}
+                buttonText={hobbie.buttonText}
+              />
+            ))}
+          </GridContainer>
         </ContentLayout>
       )}
     </section>

@@ -1,5 +1,31 @@
 import { FaReact } from "react-icons/fa";
 
+// Book images
+import FortyEightRulesOfPower from "../assets/books/48RulesOfPower.png";
+import FourThousandWeeks from "../assets/books/4000Weeks.png";
+import AtomicHabits from "../assets/books/AtomicHabits.png";
+import BillionsAndBillions from "../assets/books/BillionsAndBillions.png";
+import CantHurtMe from "../assets/books/CantHurtMe.png";
+import Cosmos from "../assets/books/Cosmos.png";
+import ElonMusk from "../assets/books/ElonMusk.png";
+import HowToTalkToAnyone from "../assets/books/HowToTalkToAnyone.png";
+import LifeThreePointZero from "../assets/books/Life3_0.png";
+import PsychologyOfMoney from "../assets/books/PsycologyOfMoney.png";
+import RichDadPoorDad from "../assets/books/RichDadPoorDad.png";
+import SecretsOfMillionaireMind from "../assets/books/SecretsMillionaire.png";
+import TheMonkWhoSoldHisFerrari from "../assets/books/TheMonkWhoSoldHisFerrari.png";
+import ThinkAndGrowRich from "../assets/books/ThinkAndGetRich.png";
+
+// Hobbies cover
+import Drums from "../assets/Hobbies/Drums.jpg";
+import Planes from "../assets/Hobbies/Planes.jpg";
+
+// Aviation Photos
+import FlightSimulator from "../assets/Hobbies/AviationFotos/FlightSimulator.jpg";
+import Plane1 from "../assets/Hobbies/AviationFotos/Plane1.jpg";
+import Plane2 from "../assets/Hobbies/AviationFotos/Plane2.jpg";
+import Plane3 from "../assets/Hobbies/AviationFotos/Plane3.jpg";
+
 import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 
@@ -59,5 +85,130 @@ export const projects = [
         },
       ],
     },
+  },
+];
+
+export const books = [
+  {
+    id: 1,
+    title: "The 48 Laws of Power",
+    author: "Robert Greene",
+    image: FortyEightRulesOfPower,
+  },
+  {
+    id: 2,
+    title: "4000 Weeks: Time Management for Mortals",
+    author: "Oliver Burkeman",
+    image: FourThousandWeeks,
+  },
+  {
+    id: 3,
+    title: "Atomic Habits",
+    author: "James Clear",
+    image: AtomicHabits,
+  },
+  {
+    id: 4,
+    title:
+      "Billions and Billions: Thoughts on Life and Death at the Brink of the Millennium",
+    author: "Carl Sagan",
+    image: BillionsAndBillions,
+  },
+  {
+    id: 5,
+    title: "Can't Hurt Me: Master Your Mind and Defy the Odds",
+    author: "David Goggins",
+    image: CantHurtMe,
+  },
+  {
+    id: 6,
+    title: "Cosmos",
+    author: "Carl Sagan",
+    image: Cosmos,
+  },
+  {
+    id: 7,
+    title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
+    author: "Ashlee Vance",
+    image: ElonMusk,
+  },
+  {
+    id: 8,
+    title:
+      "How to Talk to Anyone: 92 Little Tricks for Big Success in Relationships",
+    author: "Leil Lowndes",
+    image: HowToTalkToAnyone,
+  },
+  {
+    id: 9,
+    title: "Life 3.0: Being Human in the Age of Artificial Intelligence",
+    author: "Max Tegmark",
+    image: LifeThreePointZero,
+  },
+  {
+    id: 10,
+    title:
+      "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+    author: "Morgan Housel",
+    image: PsychologyOfMoney,
+  },
+  {
+    id: 11,
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki",
+    image: RichDadPoorDad,
+  },
+  {
+    id: 12,
+    title:
+      "Secrets of the Millionaire Mind: Mastering the Inner Game of Wealth",
+    author: "T. Harv Eker",
+    image: SecretsOfMillionaireMind,
+  },
+  {
+    id: 13,
+    title: "The Monk Who Sold His Ferrari",
+    author: "Robin Sharma",
+    image: TheMonkWhoSoldHisFerrari,
+  },
+  {
+    id: 14,
+    title: "Think and Grow Rich",
+    author: "Napoleon Hill",
+    image: ThinkAndGrowRich,
+  },
+];
+
+export const hobbies = [
+  {
+    id: "drums",
+    title: "Playing Drums",
+    cover: Drums,
+    subtitle: " My Journey with Drums",
+    phrase: "Life’s better with a beat!",
+    description: "",
+    photos: [Drums],
+    buttonText: "Hit the Groove",
+    mainDescription:
+      "Ever since I was 7 years old, I’ve been drawn to the power of rhythm. The first time I picked up a pair of drumsticks, I knew I had found something special—something that spoke to me in a way words never could. Drumming wasn’t just about keeping time; it was about feeling the music, shaping the groove, and driving the energy forward.\n\n Over the years, I’ve played in different bands, exploring various styles and learning how drums can transform a song. Whether it was jamming with friends, performing live, or simply getting lost in a beat, drumming has always been my way of expressing creativity.\n\n I even took my passion to YouTube, recording drum covers of songs that inspired me. It was an amazing way to share my love for rhythm with others and challenge myself with new techniques.\n\n For me, the drums are more than just an instrument—they’re the heartbeat of the music. They bring everything together, give it movement, and create that undeniable pulse that makes people feel. And that’s why I love them. No matter where life takes me, I know the rhythm will always be with me.",
+    link: "https://www.youtube.com/@jonathanwhite1004",
+    linkTitle:
+      "You can check the Youtube channel where I post Drum covers bellow",
+  },
+  {
+    id: "aviation",
+    title: "All about aviation",
+    cover: Planes,
+    subtitle: "I love to fly and all about aviation",
+    phrase:
+      "A mile of road takes you a mile. A mile of runway can take you anywhere.",
+    description: "",
+    photos: [FlightSimulator, Plane1, Plane2, Plane3, Planes],
+    buttonText: "Take off",
+    mainDescription:
+      "Since I was a child, I’ve always dreamed of becoming a pilot. The idea of soaring through the skies, navigating vast distances, and being in control of such powerful machines has always fascinated me. Even as a young kid, I would spend hours watching technical videos about airplanes, learning how they work, and understanding what it takes to pilot an aircraft—whether it’s a sleek Airbus or a robust Boeing.\n\n Over the years, my passion for aviation has only grown stronger. I’ve spent countless hours diving deep into the technical side of flying, watching tutorials, and exploring the mechanics of flight. The thrill of understanding how these complex machines operate and the precision needed to fly them is something that never gets old.\n\n I’ve taken my passion to the next level by piloting flight simulators, creating realistic journeys that make me feel like I’m actually flying. These virtual flights have given me a taste of what it would be like to navigate through different weather conditions, manage air traffic, and execute flawless landings. It’s a glimpse into the world I hope to be a part of.\n\n But this is just the beginning. One day, I’ll earn my private pilot license, and I’ll be able to take to the skies for real. Whether it’s flying for fun or exploring new destinations, aviation will always be a dream I’m determined to turn into reality.",
+    link: "https://www.youtube.com/@SkyportWatch",
+    linkTitle:
+      "I record some take-offs and landings with great views. You can check in the link bellow my youtube channel.",
   },
 ];

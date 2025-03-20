@@ -1,0 +1,35 @@
+.hobbie-item {
+  background-color: var(--theme-backdrop-glossy);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--theme-stroke);
+  border-radius: var(--border-radius-5);
+  overflow: hidden;
+
+  &:hover {
+    .hobbie-item__image {
+      filter: grayscale(0%);
+    }
+  }
+
+  &__image {
+    filter: grayscale(100%);
+    transition: all 300ms ease;
+    object-fit: cover;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__content {
+    padding: var(--space-base);
+
+    &-subtitle {
+      color: var(--foreground);
+      margin-bottom: var(--space-s);
+    }
+
+    .btn {
+      min-width: 120px;
+    }
+  }
+}
