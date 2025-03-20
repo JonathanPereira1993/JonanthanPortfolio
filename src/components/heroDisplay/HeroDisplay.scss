@@ -16,3 +16,17 @@
     box-shadow: 1px 5px 11px 0 #02121b inset;
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .hero-display-container {
+    padding: var(--space-xl);
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .hero-display-container {
+    padding: var(--space-l);
+  }
+}

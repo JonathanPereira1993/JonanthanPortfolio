@@ -28,3 +28,39 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .home-section {
+    padding: var(--space-base);
+    width: 100%;
+
+    .github-link {
+      margin-top: var(--space-base);
+      font-size: var(--font-size-md);
+
+      a {
+        text-decoration: none;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .home-section {
+    padding: var(--space-base);
+    width: 100%;
+
+    .github-link {
+      margin-top: var(--space-base);
+      font-size: var(--font-size-md);
+
+      a {
+        text-decoration: none;
+        word-break: break-word;
+      }
+    }
+  }
+}

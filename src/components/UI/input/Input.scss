@@ -23,3 +23,21 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .input-container {
+    &__input {
+      min-height: 54px;
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .input-container {
+    &__input {
+      min-height: 54px;
+    }
+  }
+}

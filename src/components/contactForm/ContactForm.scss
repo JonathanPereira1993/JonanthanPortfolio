@@ -27,3 +27,31 @@
     transform: rotate(360deg);
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    button {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    button {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+}

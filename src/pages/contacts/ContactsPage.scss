@@ -16,3 +16,21 @@
     white-space: normal !important;
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .contacts-section {
+    .syntax-break {
+      display: none;
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .contacts-section {
+    .syntax-break {
+      display: none;
+    }
+  }
+}
