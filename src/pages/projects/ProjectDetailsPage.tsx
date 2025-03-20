@@ -51,6 +51,11 @@ const ProjectDetailsPage = () => {
             <p className="project-details__content-why">
               {project.details?.why}
             </p>
+            <div className="project-details__content-column__image">
+              <img src={project.image} alt={project.title} />
+            </div>
+          </div>
+          <div>
             <LineBreak
               className="project-details__content-mainDescription"
               text={project.details?.mainDescription}

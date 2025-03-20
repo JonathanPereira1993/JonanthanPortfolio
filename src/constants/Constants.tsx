@@ -1,5 +1,7 @@
 import { FaReact } from "react-icons/fa";
-import imageTest from "../assets/books/BillionsAndBillions.jpg";
+
+import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
+import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 
 // ProjectFilters
 export const projectFilters = [
@@ -16,7 +18,7 @@ export const projects = [
     id: "1",
     title: "This portfolio!",
     icon: <FaReact />,
-    image: imageTest,
+    image: PersonalPortfolioCover,
     description: "Made this portfolio with love",
     tags: ["React", "TypeScript", "Web", "SCSS"],
     details: {
@@ -35,9 +37,9 @@ export const projects = [
     id: "2",
     title: "TODO mobile app",
     icon: <FaReact />,
-    image: imageTest,
+    image: TodoAppCover,
     description: "My first React Native App",
-    tags: ["React", "ReactNative", "Mobile", "Firebase"],
+    tags: ["React", "ReactNative", "Expo", "Mobile", "Firebase"],
     details: {
       subtitle:
         "Mobile Application to practice what I lerned in the React Native course",

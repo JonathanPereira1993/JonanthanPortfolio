@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"; // Ensure correct import
 import { IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
+import MobileMenu from "./MobileMenu";
+
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 
 import "./Layout.scss";
@@ -30,20 +32,39 @@ export default function Layout({ children }: Props) {
                 cursorStopDelay: 2000,
               })}
             </div>
-            <NavLink className="nav-link" to={"/"}>
-              _hello
-            </NavLink>
-            <NavLink className="nav-link" to={"/about"}>
-              _about-me
-            </NavLink>
-            <NavLink className="nav-link" to={"/projects"}>
-              _projects
-            </NavLink>
+            <div className="nav-links-desktop">
+              <NavLink className="nav-link" to={"/"}>
+                _hello
+              </NavLink>
+              <NavLink className="nav-link" to={"/about"}>
+                _about-me
+              </NavLink>
+              <NavLink className="nav-link" to={"/projects"}>
+                _projects
+              </NavLink>
+            </div>
           </div>
 
           <NavLink className="nav-link nav-link-right" to="/contacts">
             _contacts
           </NavLink>
+          <MobileMenu
+            isOpen={false}
+            navLinks={[
+              <NavLink className="nav-link" to={"/"}>
+                _hello
+              </NavLink>,
+              <NavLink className="nav-link" to={"/about"}>
+                _about-me
+              </NavLink>,
+              <NavLink className="nav-link" to={"/projects"}>
+                _projects
+              </NavLink>,
+              <NavLink className="nav-link" to="/contacts">
+                _contacts
+              </NavLink>,
+            ]}
+          />
         </Header>
         <main className="layout-main__content">{children}</main>
         <Footer>
