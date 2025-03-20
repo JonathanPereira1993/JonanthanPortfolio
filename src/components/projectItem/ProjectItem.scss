@@ -1,6 +1,12 @@
 .project-item-wrapper {
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    .project-item__image {
+      transform: scale(1.015);
+    }
+  }
 }
 
 .project-item {
@@ -34,6 +40,7 @@
     width: 28px;
     height: 28px;
     background-color: var(--color-slate-600);
+    z-index: 10;
   }
 
   &-icon svg {
@@ -45,6 +52,7 @@
     width: 100%;
     object-fit: cover;
     object-position: top;
+    transition: transform 300ms ease;
   }
 
   &__content {
