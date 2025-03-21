@@ -25,6 +25,8 @@ import FlightSimulator from "../assets/Hobbies/AviationFotos/FlightSimulator.jpg
 import Plane1 from "../assets/Hobbies/AviationFotos/Plane1.jpg";
 import Plane2 from "../assets/Hobbies/AviationFotos/Plane2.jpg";
 import Plane3 from "../assets/Hobbies/AviationFotos/Plane3.jpg";
+import SimulatorCockpit from "../assets/Hobbies/AviationFotos/SimulatorCockpit.jpg";
+import SimulatorCertification from "../assets/Hobbies/AviationFotos/SimulatorCertification.jpg";
 
 import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
@@ -203,7 +205,15 @@ export const hobbies = [
     phrase:
       "A mile of road takes you a mile. A mile of runway can take you anywhere.",
     description: "",
-    photos: [FlightSimulator, Plane1, Plane2, Plane3, Planes],
+    photos: [
+      FlightSimulator,
+      Plane1,
+      Plane2,
+      Plane3,
+      Planes,
+      SimulatorCockpit,
+      SimulatorCertification,
+    ],
     buttonText: "Take off",
     mainDescription:
       "Since I was a child, I’ve always dreamed of becoming a pilot. The idea of soaring through the skies, navigating vast distances, and being in control of such powerful machines has always fascinated me. Even as a young kid, I would spend hours watching technical videos about airplanes, learning how they work, and understanding what it takes to pilot an aircraft—whether it’s a sleek Airbus or a robust Boeing.\n\n Over the years, my passion for aviation has only grown stronger. I’ve spent countless hours diving deep into the technical side of flying, watching tutorials, and exploring the mechanics of flight. The thrill of understanding how these complex machines operate and the precision needed to fly them is something that never gets old.\n\n I’ve taken my passion to the next level by piloting flight simulators, creating realistic journeys that make me feel like I’m actually flying. These virtual flights have given me a taste of what it would be like to navigate through different weather conditions, manage air traffic, and execute flawless landings. It’s a glimpse into the world I hope to be a part of.\n\n But this is just the beginning. One day, I’ll earn my private pilot license, and I’ll be able to take to the skies for real. Whether it’s flying for fun or exploring new destinations, aviation will always be a dream I’m determined to turn into reality.",

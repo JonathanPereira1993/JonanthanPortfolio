@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
 import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
+import { useLocation, useNavigate } from "react-router";
 
 import { books, hobbies } from "../../constants/Constants";
 
@@ -39,11 +40,30 @@ const sidebarItemsInterests = [
 ];
 
 const AboutPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [itemSelected, setItemSelected] = useState<number>(1);
 
-  const onItemClickHandler = (id: number) => {
+  const onItemClickHandler = (id: number, sectionName: string) => {
     setItemSelected(id);
+    navigate(`/about?section=${sectionName}`);
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const section = params.get("section");
+
+    if (!section) {
+      navigate("/about?section=bio", { replace: true });
+      setItemSelected(1);
+      return;
+    }
+
+    if (section === "bio") setItemSelected(1);
+    if (section === "education") setItemSelected(2);
+    if (section === "books") setItemSelected(3);
+    if (section === "hobbies") setItemSelected(4);
+  }, [location]);
 
   return (
     <section className="about-section">
@@ -52,7 +72,8 @@ const AboutPage = () => {
           <SidebarItem
             key={item.id}
             id={item.id}
-            onClick={onItemClickHandler}
+            sectionName={item.field}
+            onClick={() => onItemClickHandler(item.id, item.field)}
             selected={itemSelected === item.id ? true : false}
           >
             {item.field}
@@ -63,7 +84,10 @@ const AboutPage = () => {
             <SidebarItem
               key={interestItem.id}
               id={interestItem.id}
-              onClick={onItemClickHandler}
+              sectionName={interestItem.field}
+              onClick={() =>
+                onItemClickHandler(interestItem.id, interestItem.field)
+              }
               selected={itemSelected === interestItem.id ? true : false}
             >
               {interestItem.field}
@@ -112,10 +136,10 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
       {itemSelected === 3 && (
         <ContentLayout title="_books">
           <span>
-            I want to share with you some of my favourite books! Thats a way for
-            you to know me better.
+            // Let me share some of my favorite books with you! Each one has
+            shaped my perspective, inspired me, and reflects a part of who I am.
           </span>
-          <GridContainer columns="4" gap="40px" className="grid-row-height">
+          <GridContainer columns="4" gap="40px" className="max-width-books">
             {books.map((book) => (
               <BookItem
                 key={book.id}
@@ -129,7 +153,13 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
       )}
       {itemSelected === 4 && (
         <ContentLayout title="_hobbies">
-          <span>Some things I love to do.</span>
+          <span>
+            // I’ve always been a curious mind, constantly exploring new
+            interests and diving into different passions. Whether it’s music,
+            aviation, technology, or anything that sparks my curiosity, I love
+            the thrill of learning and discovering something new. Here are some
+            of the things that keep me inspired!
+          </span>
           <GridContainer columns="3" gap="40px" className="grid-row-height">
             {hobbies.map((hobbie) => (
               <HobbieItem

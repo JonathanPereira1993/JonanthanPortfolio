@@ -34,7 +34,11 @@ const HobbieDetailsPage = () => {
         className="hobbie-details"
       >
         <div className="hobbie-details-back-action">
-          <Button onClick={() => navigate(-1)} type="ghost" size="big">
+          <Button
+            onClick={() => navigate("/about?section=hobbies")}
+            type="ghost"
+            size="big"
+          >
             <FaArrowLeft size={20} />
           </Button>
         </div>

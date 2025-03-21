@@ -6,19 +6,21 @@ type Props = {
   children: React.ReactNode;
   selected: boolean;
   isChild?: boolean;
-  onClick: (id: number) => void;
+  onClick: (id: number, sectionName: string) => void;
   id: number;
+  sectionName: string;
 };
 
 const SidebarItem = ({
   id,
+  sectionName,
   children,
   onClick,
   selected = false,
   isChild = false,
 }: Props) => {
   const onClickHandler = () => {
-    onClick(id);
+    onClick(id, sectionName);
   };
 
   return (

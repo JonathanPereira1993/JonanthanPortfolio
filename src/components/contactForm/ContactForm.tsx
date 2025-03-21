@@ -71,7 +71,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         {errors.message && <p className="error-text">{errors.message}</p>}
       </div>
 
-      <Button type="primary">
+      <Button type="primary" size="big">
         {submitting ? <span className="loader"></span> : "submit-message"}
       </Button>
     </form>

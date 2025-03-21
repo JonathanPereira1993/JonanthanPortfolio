@@ -28,5 +28,10 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+
+    > span:first-child {
+      color: var(--color-slate-400);
+      font-size: var(--font-size-md);
+    }
   }
 }

@@ -35,7 +35,9 @@ export default function Button({
       onClick={onClick}
       title={title}
       disabled={type === "disabled"}
-      whileTap={{ scale: 0.99, opacity: 0.8 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.92 }}
+      transition={{ duration: 0.05, ease: "linear" }}
       className={`btn btn-${type} btn-${size}`}
       {...props}
     >
