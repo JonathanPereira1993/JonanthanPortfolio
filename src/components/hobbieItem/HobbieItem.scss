@@ -22,6 +22,10 @@
 
   &__content {
     padding: var(--space-base);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &-subtitle {
       color: var(--foreground);
@@ -29,7 +33,7 @@
     }
 
     .btn {
-      min-width: 120px;
+      max-width: 120px;
     }
   }
 }

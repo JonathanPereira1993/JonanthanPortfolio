@@ -1,8 +1,17 @@
 .grid-container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  &:not(:has(.staggered-list)) {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  &:has(.staggered-list) {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
 }
 
 // Tablet

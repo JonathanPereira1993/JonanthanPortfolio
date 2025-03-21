@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 
 import "./ContactsPage.scss";
 import GridContainer from "../../components/gridContainer/GridContainer";
@@ -8,7 +7,7 @@ import ContactForm from "../../components/contactForm/ContactForm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { motion, AnimatePresence } from "framer-motion";
+import ContentLayout from "../../components/contentLayout/ContentLayout";
 
 type FormData = {
   name: string;
@@ -22,12 +21,6 @@ const ContactsPage = () => {
     email: "",
     message: "",
   });
-
-  const fadeVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.7 } },
-    exit: { opacity: 0, transition: { duration: 0.5 } },
-  };
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -73,15 +66,6 @@ const ContactsPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success("📧 Email sent successfully!", {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "dark",
-        });
         setFormData({ name: "", email: "", message: "" });
         emailSentHandler();
         setIsSubmitting(false);
@@ -91,10 +75,6 @@ const ContactsPage = () => {
         console.error("Error sending email: ", data.error);
       }
     } catch (error) {
-      toast.error("🚨 Failed to send email. Try again later.", {
-        position: "bottom-right",
-        autoClose: 3000,
-      });
       setIsSubmitting(false);
       console.error("Failed to send email. Try again later.", error);
     } finally {
@@ -123,45 +103,36 @@ const ContactsPage = () => {
     };`;
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.section
-        variants={fadeVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className="contacts-section"
-      >
-        <ToastContainer />
-        <GridContainer columns="2" gap="var(--space-3xl)">
-          <div>
-            <ContactForm
-              formData={formData}
-              setFormData={setFormData}
-              errors={errors}
-              onSubmit={handleSubmit}
-              submitting={isSubmitting}
-            />
-          </div>
-          <div className="syntax-break">
-            <SyntaxHighlighter
-              language="javascript"
-              style={oneDark}
-              showLineNumbers
-              wrapLongLines={true}
-              customStyle={{
-                whiteSpace: "pre-wrap",
-                wordBreak: "break-word",
-                overflowWrap: "break-word",
-                overflowX: "auto",
-                maxWidth: "100%",
-              }}
-            >
-              {emailSent ? successfulCodeString : normalCodeString}
-            </SyntaxHighlighter>
-          </div>
-        </GridContainer>
-      </motion.section>
-    </AnimatePresence>
+    <ContentLayout title="_contacts">
+      <GridContainer columns="2" gap="var(--space-3xl)" className="flex-1">
+        <div>
+          <ContactForm
+            formData={formData}
+            setFormData={setFormData}
+            errors={errors}
+            onSubmit={handleSubmit}
+            submitting={isSubmitting}
+          />
+        </div>
+        <div className="syntax-break">
+          <SyntaxHighlighter
+            language="javascript"
+            style={oneDark}
+            showLineNumbers
+            wrapLongLines={true}
+            customStyle={{
+              whiteSpace: "pre-wrap",
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              overflowX: "auto",
+              maxWidth: "100%",
+            }}
+          >
+            {emailSent ? successfulCodeString : normalCodeString}
+          </SyntaxHighlighter>
+        </div>
+      </GridContainer>
+    </ContentLayout>
   );
 };
 

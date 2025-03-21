@@ -1,5 +1,14 @@
 import { FaReact } from "react-icons/fa";
 
+// Education
+import IpleiriaLogo from "../assets/education/IPLLogoSimple.png";
+
+// Certifications
+import Udemy from "../assets/Certifications/Udemy.png";
+import AssociateDeveloperO11 from "../assets/Certifications/AssociateDeveloperO11.png";
+import AssociateDeveloperODC from "../assets/Certifications/AssociateDeveloperODC.png";
+import SpecialistFrontEndDeveloper from "../assets/Certifications/SpecialistFrontEndDeveloper.png";
+
 // Book images
 import FortyEightRulesOfPower from "../assets/books/48RulesOfPower.png";
 import FourThousandWeeks from "../assets/books/4000Weeks.png";
@@ -30,6 +39,70 @@ import SimulatorCertification from "../assets/Hobbies/AviationFotos/SimulatorCer
 
 import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
+
+export const biography =
+  "Jonathan – Front-End Developer | Portugal 🇵🇹\n\n  I’m Jonathan, a self-taught front-end developer passionate about crafting modern, user-friendly web experiences. Based in Portugal, I have over three years of experience in the tech industry, where I started working with OutSystems (a low-code platform) and closely collaborating with UX/UI teams. Beyond low-code, I write JavaScript, style with CSS/SCSS, and continuously explore new technologies to refine my craft. \n\n  Currently, I’m building personal projects with ReactJS and TailwindCSS, always pushing myself to grow as a developer. My journey into tech began with a background in Web Development & Multimedia, followed by a bachelor’s degree in Games & Multimedia. This academic foundation gave me a strong grasp of design, programming, and digital media—skills that allow me to bridge the gap between aesthetics and functionality in web development. \n\n  Creativity is at the core of everything I do. Whether it’s coding, designing, or playing the drums—one of my biggest hobbies—I love expressing myself through different forms of creation. I’m always eager to be part of projects that make a difference, collaborating with like-minded people to build meaningful and impactful experiences. Beyond tech, I’m constantly seeking personal growth. I love reading great books that challenge my thinking, expand my knowledge, and help me become a better version of myself.\n\n  For me, learning never stops—whether it’s through code, music, or the wisdom found in a good book. Driven by curiosity and a problem-solving mindset, I thrive on learning, adapting, and pushing boundaries to create seamless digital experiences.";
+
+// Education
+export const education = [
+  {
+    id: 1,
+    image: IpleiriaLogo,
+    title: "Web development and multimedia (TeSP)",
+    school: "IPL - School of Technology and Management",
+    year: "2016 - 2018",
+    description:
+      "In this course, I learned the fundamentals of web development, starting with HTML and CSS basics and progressing to databases and JavaScript. I also completed an internship focused on web development and media.",
+  },
+  {
+    id: 2,
+    image: IpleiriaLogo,
+    title: "Bachelor in Games and Multimedia",
+    school: "IPL - School of Technology and Management",
+    year: "2018 - present",
+    description:
+      "I learned all about game and multimedia technologies as well as web development. I was introduced to object-oriented programming through languages like C++, C#, Java, and JavaScript. Throughout the course, I also had the opportunity to work in teams, collaborating on projects and developing solutions together.",
+  },
+];
+
+// Certifications
+export const certifications = [
+  {
+    id: 1,
+    title: "Associate Developer O11",
+    tech: "OutSystems",
+    image: AssociateDeveloperO11,
+    link: "https://www.outsystems.com/profile/gubrsdvt3w/learn",
+  },
+  {
+    id: 2,
+    title: "Associate Developer ODC",
+    tech: "OutSystems",
+    image: AssociateDeveloperODC,
+    link: "https://www.outsystems.com/profile/gubrsdvt3w/learn",
+  },
+  {
+    id: 3,
+    title: "Specialist FrontEnd Developer",
+    tech: "OutSystems",
+    image: SpecialistFrontEndDeveloper,
+    link: "https://www.outsystems.com/profile/gubrsdvt3w/learn",
+  },
+  {
+    id: 4,
+    title: "React - The Complete Guide 2025 (incl. Next.js, Redux)",
+    tech: "React",
+    image: Udemy,
+    link: "https://www.udemy.com/certificate/UC-af19b034-400e-4231-9553-c952e6e49faa/",
+  },
+  {
+    id: 5,
+    title: "React Native - The Practical Guide [2025]",
+    tech: "React Native",
+    image: Udemy,
+    link: "https://www.udemy.com/certificate/UC-9334df47-d795-457b-8937-8677dfe8185f/",
+  },
+];
 
 // ProjectFilters
 export const projectFilters = [

@@ -1,7 +1,6 @@
 .content-layout {
   padding: var(--space-xl) var(--space-3xl);
   overflow-y: auto;
-  max-height: 100%;
   flex: 1;
 
   &::-webkit-scrollbar {
@@ -25,8 +24,10 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: calc(100% - 104px);
     gap: var(--space-xl);
 
     > span:first-child {

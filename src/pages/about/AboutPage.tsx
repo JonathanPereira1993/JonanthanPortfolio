@@ -4,7 +4,13 @@ import SidebarItem from "../../components/sidebar/SidebarItem";
 import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 import { useLocation, useNavigate } from "react-router";
 
-import { books, hobbies } from "../../constants/Constants";
+import {
+  books,
+  hobbies,
+  education,
+  certifications,
+  biography,
+} from "../../constants/Constants";
 
 import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
@@ -12,6 +18,10 @@ import Accordion from "../../components/accordion/Accordion";
 import BookItem from "../../components/bookItem/BookItem";
 import GridContainer from "../../components/gridContainer/GridContainer";
 import HobbieItem from "../../components/hobbieItem/HobbieItem";
+import Button from "../../components/UI/button/Button";
+import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";
+import CertificationItem from "../../components/certificationItem/CertificationItem";
+import ProfilePic from "../../components/profilePic/ProfilePic";
 
 const sidebarItems = [
   {
@@ -24,16 +34,21 @@ const sidebarItems = [
     field: "education",
     selected: false,
   },
+  {
+    id: 3,
+    field: "certifications",
+    selected: false,
+  },
 ];
 
 const sidebarItemsInterests = [
   {
-    id: 3,
+    id: 4,
     field: "books",
     selected: true,
   },
   {
-    id: 4,
+    id: 5,
     field: "hobbies",
     selected: false,
   },
@@ -61,13 +76,21 @@ const AboutPage = () => {
 
     if (section === "bio") setItemSelected(1);
     if (section === "education") setItemSelected(2);
-    if (section === "books") setItemSelected(3);
-    if (section === "hobbies") setItemSelected(4);
-  }, [location]);
+    if (section === "certifications") setItemSelected(3);
+    if (section === "books") setItemSelected(4);
+    if (section === "hobbies") setItemSelected(5);
+  }, [location, navigate]);
 
   return (
     <section className="about-section">
-      <Sidebar open={true}>
+      <Sidebar
+        open={true}
+        bottomAction={
+          <Button type="ghost" size="small">
+            Download CV
+          </Button>
+        }
+      >
         {sidebarItems.map((item) => (
           <SidebarItem
             key={item.id}
@@ -97,43 +120,45 @@ const AboutPage = () => {
       </Sidebar>{" "}
       {itemSelected === 1 && (
         <ContentLayout title="_bio">
-          <CodeSnippet
-            formattedDescription="Jonathan – Front-End Developer | Portugal 🇵🇹
-
-I’m Jonathan, a self-taught front-end developer passionate about crafting modern, user-friendly web experiences. Based in Portugal, I have over three years of experience in the tech industry, where I started working with OutSystems (a low-code platform) and closely collaborating with UX/UI teams.
-
-Beyond low-code, I write JavaScript, style with CSS/SCSS, and continuously explore new technologies to refine my craft. Currently, I’m building personal projects with ReactJS and TailwindCSS, always pushing myself to grow as a developer.
-
-My journey into tech began with a background in Web Development & Multimedia, followed by a bachelor’s degree in Games & Multimedia. This academic foundation gave me a strong grasp of design, programming, and digital media—skills that allow me to bridge the gap between aesthetics and functionality in web development.
-
-Creativity is at the core of everything I do. Whether it’s coding, designing, or playing the drums—one of my biggest hobbies—I love expressing myself through different forms of creation. I’m always eager to be part of projects that make a difference, collaborating with like-minded people to build meaningful and impactful experiences.
-
-Beyond tech, I’m constantly seeking personal growth. I love reading great books that challenge my thinking, expand my knowledge, and help me become a better version of myself. For me, learning never stops—whether it’s through code, music, or the wisdom found in a good book.
-
-Driven by curiosity and a problem-solving mindset, I thrive on learning, adapting, and pushing boundaries to create seamless digital experiences."
-            showLineNumbers={true}
-          />
+          <div className="bio-structure">
+            <ProfilePic />
+            <CodeSnippet formattedDescription={biography} />
+          </div>
         </ContentLayout>
       )}
       {itemSelected === 2 && (
         <ContentLayout title="_education">
-          <CodeSnippet
-            title="School of Technology and Management (IPL)"
-            subtitle="Web development and multimedia (TeSP)"
-            date="2016 - 2018"
-            description="Here I learned the world of web development, starting with HTML and CSS basics to
-advanced databases and JavaScript concepts."
-          />
-          <CodeSnippet
-            title="School of Technology and Management (IPL)"
-            subtitle="Bachelor in Games and Multimedia"
-            date="2018 - present"
-            description="I learned all about game and multimedia technologies and web development. I was
-introduced to object-oriented programming working with C++, C#, Java and JavaScript."
-          />
+          <StaggeredListAnimation className="staggered-list">
+            {education.map((item) => (
+              <CodeSnippet
+                key={item.id}
+                image={item.image}
+                title={item.title}
+                subtitle={item.school}
+                date={item.year}
+                description={item.description}
+              />
+            ))}
+          </StaggeredListAnimation>
         </ContentLayout>
       )}
       {itemSelected === 3 && (
+        <ContentLayout title="_certifications">
+          <span>// Certifications</span>
+          <StaggeredListAnimation className="columns">
+            {certifications.map((item) => (
+              <CertificationItem
+                key={item.id}
+                image={item.image}
+                title={item.title}
+                tech={item.tech}
+                link={item.link}
+              />
+            ))}
+          </StaggeredListAnimation>
+        </ContentLayout>
+      )}
+      {itemSelected === 4 && (
         <ContentLayout title="_books">
           <span>
             // Let me share some of my favorite books with you! Each one has
@@ -151,7 +176,7 @@ introduced to object-oriented programming working with C++, C#, Java and JavaScr
           </GridContainer>
         </ContentLayout>
       )}
-      {itemSelected === 4 && (
+      {itemSelected === 5 && (
         <ContentLayout title="_hobbies">
           <span>
             // I’ve always been a curious mind, constantly exploring new

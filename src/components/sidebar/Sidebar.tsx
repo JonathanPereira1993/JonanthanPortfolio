@@ -8,6 +8,7 @@ import "./Sidebar.scss";
 type Props = {
   children?: React.ReactNode;
   open?: boolean;
+  bottomAction?: React.ReactNode;
 };
 
 const widthVariants = {
@@ -51,7 +52,7 @@ const backgroundVariants = {
   },
 };
 
-const Sidebar = ({ children, open = false }: Props) => {
+const Sidebar = ({ children, open = false, bottomAction }: Props) => {
   const [sidebarOpened, setSidebarOpened] = useState(open);
 
   const onOpenSidebarHandler = () => {
@@ -86,7 +87,10 @@ const Sidebar = ({ children, open = false }: Props) => {
             <LuPanelRightOpen title="Close sidebar" size={24} />
           )}
         </motion.div>
-        <div className="sidebar-content">{children}</div>
+        <div className="sidebar-content">
+          <div>{children}</div>
+          {bottomAction}
+        </div>
       </motion.div>
     </AnimatePresence>
   );

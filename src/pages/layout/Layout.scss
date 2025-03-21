@@ -9,6 +9,7 @@
   margin: 70px;
   z-index: 10;
   backdrop-filter: blur(60px);
+  overflow: hidden;
 
   &__content {
     display: flex;
