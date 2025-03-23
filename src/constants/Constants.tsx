@@ -117,11 +117,13 @@ export const projectFilters = [
 export const projects = [
   {
     id: "1",
+    difficulty: "",
     title: "This portfolio!",
     icon: <FaReact />,
     image: PersonalPortfolioCover,
     description: "Made this portfolio with love",
     tags: ["React", "TypeScript", "Web", "SCSS"],
+    gitHub: "",
     details: {
       subtitle: "A Portfolio That Feels Like Me",
       why: "I wanted to experiment with technologies I had never used before, and what better place to test and explore them than here, in my own portfolio, right?",
@@ -131,16 +133,19 @@ export const projects = [
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
         "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
       images: [],
-      mechanics: [],
+      codeSnippets: [],
+      features: "",
     },
   },
   {
     id: "2",
+    difficulty: "",
     title: "TODO mobile app",
     icon: <FaReact />,
     image: TodoAppCover,
     description: "My first React Native App",
     tags: ["React", "ReactNative", "Expo", "Mobile", "Firebase"],
+    gitHub: "",
     details: {
       subtitle:
         "Mobile Application to practice what I lerned in the React Native course",
@@ -151,14 +156,8 @@ export const projects = [
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
         "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
       images: [],
-      mechanics: [
-        {
-          id: 1,
-          title: "",
-          description: "",
-          image: "",
-        },
-      ],
+      codeSnippets: [],
+      features: "",
     },
   },
 ];
