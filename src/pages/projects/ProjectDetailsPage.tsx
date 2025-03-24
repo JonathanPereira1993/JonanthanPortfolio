@@ -54,10 +54,17 @@ const ProjectDetailsPage = () => {
           </p>
 
           <div className="project-details__content-tech">
-            <h2 className="project-details__content-tech__title">
-              Technology used
-            </h2>
+            <h2 className="project-details__content-tech__title">Technology</h2>
             <FloatingTags tags={project.tags} />
+          </div>
+          <div className="project-details__content-github">
+            <a
+              href={project.gitHub}
+              title="Open github repository"
+              target="_blank"
+            >
+              <FaGithub size={50} />
+            </a>
           </div>
           {/* <div className="project-details__details-grid__github">
             <a href={project.gitHub}>
