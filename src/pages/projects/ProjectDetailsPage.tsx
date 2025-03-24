@@ -40,43 +40,35 @@ const ProjectDetailsPage = () => {
           </Button>
         </div>
         <div className="project-details__content">
-          <h1 className="project-details__content-title">{project.title}</h1>
-          <p className="project-details__content-subtitle">
-            {project.details?.subtitle}
+          <div className="project-details__content-image">
+            <img src={project.image} alt={project.title} />
+          </div>
+          <div className="project-details__content-header">
+            <h1 className="project-details__content-title">{project.title}</h1>
+            <p className="project-details__content-subtitle">
+              {project.details?.subtitle}
+            </p>
+          </div>
+          <p className="project-details__content-why">
+            "{project.details?.why}"
           </p>
 
-          <div className="project-details__tech">
+          <div className="project-details__content-tech">
+            <h2 className="project-details__content-tech__title">
+              Technology used
+            </h2>
             <FloatingTags tags={project.tags} />
           </div>
-          <div className="project-details__details-grid">
-            <div className="project-details__details-grid__image">
-              <img src={project.image} alt={project.title} />
-            </div>
-            <div className="project-details__details-grid__github">
-              <a href={project.gitHub}>
-                <FaGithub size={50} />
-              </a>
-            </div>
-            <p className="project-details__details-grid__why">
-              "{project.details?.why}"
-            </p>
-
-            <LineBreak
-              className="project-details__details-grid__mainDescription"
-              text={project.details?.mainDescription}
-            />
-          </div>
-          {/*           
-          <p className="project-details__content-why">{project.details?.why}</p>
-          <div className="project-details__content__description">
-            <div className="project-details__content__image">
-              <img src={project.image} alt={project.title} />
-            </div>
-            <LineBreak
-              className="project-details__content-mainDescription"
-              text={project.details?.mainDescription}
-            />
+          {/* <div className="project-details__details-grid__github">
+            <a href={project.gitHub}>
+              <FaGithub size={50} />
+            </a>
           </div> */}
+
+          <LineBreak
+            className="project-details__content-mainDescription"
+            text={project.details?.mainDescription}
+          />
         </div>
       </motion.div>
     </AnimatePresence>

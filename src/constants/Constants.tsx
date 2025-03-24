@@ -118,10 +118,11 @@ export const projects = [
   {
     id: "1",
     difficulty: "",
-    title: "This portfolio!",
+    title: "My personal portfolio",
     icon: <FaReact />,
     image: PersonalPortfolioCover,
-    description: "Made this portfolio with love",
+    description:
+      "A personal portfolio site to showcase my work, built with React, TypeScript, and a sprinkle of space aesthetic.",
     tags: ["React", "TypeScript", "Web", "SCSS"],
     gitHub: "",
     details: {
