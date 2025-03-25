@@ -135,7 +135,10 @@ export const projects = [
         "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
       images: [],
       codeSnippets: [],
-      features: "",
+      features: [
+        "Animation done with Framer Motion",
+        "Added a 3D object using TREE.js",
+      ],
     },
   },
   {
@@ -149,7 +152,7 @@ export const projects = [
     gitHub: "",
     details: {
       subtitle:
-        "Mobile Application to practice what I lerned in the React Native course",
+        "Mobile Application to practice what I learned in the React Native course",
       why: "I wanted to experiment with technologies I had never used before, and what better place to test and explore them than here, in my own portfolio, right?",
       mainDescription:
         "This is my second portfolio, created with the goal of elevating my work and building something that truly resonates with me.\n\n" +
@@ -157,8 +160,15 @@ export const projects = [
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
         "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
       images: [],
-      codeSnippets: [],
-      features: "",
+      codeSnippets: [
+        {
+          id: 1,
+          title: "",
+          image: "",
+          description: "",
+        },
+      ],
+      features: ["Integrated with Firebase Authentication and Database"],
     },
   },
 ];

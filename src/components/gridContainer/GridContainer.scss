@@ -1,17 +1,5 @@
 .grid-container {
-  &:not(:has(.staggered-list)) {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-  }
-
-  &:has(.staggered-list) {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-  }
+  display: grid;
 }
 
 // Tablet

@@ -8,6 +8,10 @@
   flex: 1;
   max-width: var(--max-screen-size);
 
+  .left-column {
+    align-self: center;
+  }
+
   .comments {
     margin-top: 75px;
     font-size: var(--font-size-md);

@@ -10,7 +10,7 @@ type Props = {
 const FloatingTags = ({ tags, title }: Props) => {
   return (
     <>
-      <p className="floating-tags-title">{title}</p>
+      {title && <p className="floating-tags-title">{title}</p>}
       <div className="floating-tags">
         {tags.map((tag, index) => (
           <motion.div

@@ -39,22 +39,24 @@ const ProjectDetailsPage = () => {
             <FaArrowLeft size={20} />
           </Button>
         </div>
+        <div className="project-details__header">
+          <h1 className="project-details__header-title">{project.title}</h1>
+          <p className="project-details__header-subtitle">
+            {project.details?.subtitle}
+          </p>
+        </div>
+
+        {/* Content */}
         <div className="project-details__content">
           <div className="project-details__content-image">
             <img src={project.image} alt={project.title} />
           </div>
-          <div className="project-details__content-header">
-            <h1 className="project-details__content-title">{project.title}</h1>
-            <p className="project-details__content-subtitle">
-              {project.details?.subtitle}
-            </p>
-          </div>
+
           <p className="project-details__content-why">
             "{project.details?.why}"
           </p>
 
           <div className="project-details__content-tech">
-            <h2 className="project-details__content-tech__title">Technology</h2>
             <FloatingTags tags={project.tags} />
           </div>
           <div className="project-details__content-github">
@@ -66,16 +68,18 @@ const ProjectDetailsPage = () => {
               <FaGithub size={50} />
             </a>
           </div>
-          {/* <div className="project-details__details-grid__github">
-            <a href={project.gitHub}>
-              <FaGithub size={50} />
-            </a>
-          </div> */}
 
           <LineBreak
             className="project-details__content-mainDescription"
             text={project.details?.mainDescription}
           />
+          <div className="project-details__content-features">
+            <ul>
+              {project.details?.features.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>

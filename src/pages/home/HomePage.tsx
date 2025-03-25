@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <section className="home-section">
       <GridContainer columns="2" gap="var(--space-3xl)">
-        <div>
+        <div className="left-column">
           <HeroIntro
             introText="Hi there, I am"
             title="Jonathan Pereira"
@@ -33,7 +33,7 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-        <div>
+        <div className="right-column">
           <HeroDisplay>
             <Hero3D />
           </HeroDisplay>

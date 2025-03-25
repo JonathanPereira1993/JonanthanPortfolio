@@ -44,7 +44,6 @@ export const useTypingEffect = ({
     return () => clearTimeout(timeout);
   }, [index, loop, text, speed, cursorStopDelay]);
 
-  // Blinking cursor effect
   useEffect(() => {
     if (!cursorBlink || !cursorActive) return;
     const cursorInterval = setInterval(() => {
