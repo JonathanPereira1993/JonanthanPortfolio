@@ -3,6 +3,8 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
 import CodeSnippet from "../../components/codeSnippet/CodeSnippet";
 import { useLocation, useNavigate } from "react-router";
+import { LineBreak } from "../../utils/LineBreaks";
+import { GiSwitzerland, GiPortugal } from "react-icons/gi";
 
 import {
   books,
@@ -22,6 +24,7 @@ import Button from "../../components/UI/button/Button";
 import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";
 import CertificationItem from "../../components/certificationItem/CertificationItem";
 import ProfilePic from "../../components/profilePic/ProfilePic";
+import FloatingTags from "../../components/FloatingTags/FloatingTags";
 
 const sidebarItems = [
   {
@@ -121,8 +124,33 @@ const AboutPage = () => {
       {itemSelected === 1 && (
         <ContentLayout title="_bio">
           <div className="bio-structure">
+            <h2 className="bio-structure__title">{biography.title}</h2>
             <ProfilePic />
-            <CodeSnippet formattedDescription={biography} />
+            <div className="bio-structure__story">
+              <h3>A little bit about me</h3>
+              <LineBreak text={biography.story} />
+            </div>
+            <div className="bio-structure__naturality">
+              <h3>Born</h3>
+              <GiSwitzerland
+                title="Switzerland country"
+                className="country-svg"
+              />
+              <p>{biography.naturality}</p>
+            </div>
+            <div className="bio-structure__from">
+              <h3>From</h3>
+              <GiPortugal title="Portugal country" className="country-svg" />
+              <p>{biography.from}</p>
+            </div>
+            <div className="bio-structure__skills">
+              <h3>Skills</h3>
+              <FloatingTags tags={biography.skills} />
+            </div>
+            <div className="bio-structure__objectives">
+              <h3>Objectives</h3>
+              <p>{biography.objectives}</p>
+            </div>
           </div>
         </ContentLayout>
       )}

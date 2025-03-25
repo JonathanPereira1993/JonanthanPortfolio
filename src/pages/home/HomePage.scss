@@ -1,15 +1,24 @@
 .home-section {
   padding: var(--space-2xl);
   display: flex;
-  margin: auto;
-  justify-content: center;
+  gap: var(--space-3xl);
+  margin: 0 auto;
   align-items: center;
   height: 100%;
   flex: 1;
   max-width: var(--max-screen-size);
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 
-  .left-column {
+  .left-column,
+  .right-column {
     align-self: center;
+    max-width: 800px;
+    min-width: 400px;
+    margin: 0 auto;
   }
 
   .comments {
@@ -37,7 +46,15 @@
 @media (max-width: 1024px) {
   .home-section {
     padding: var(--space-base);
-    width: 100%;
+    margin: 0 auto;
+
+    .left-column,
+    .right-column {
+      width: auto;
+      flex: auto;
+      max-width: 600px;
+      min-width: 400px;
+    }
 
     .github-link {
       margin-top: var(--space-base);
@@ -56,6 +73,11 @@
   .home-section {
     padding: var(--space-base);
     width: 100%;
+
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
 
     .github-link {
       margin-top: var(--space-base);

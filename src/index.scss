@@ -205,8 +205,10 @@
   // Theme colors
   --theme-backdrop: var(--color-slate-950);
   --theme-backdrop-glossy: rgba(15, 23, 43, 0.7);
+  --theme-backdrop-glossy-soft: rgba(15, 23, 43, 0.4);
   --theme-background: var(--color-slate-900);
   --theme-stroke: var(--color-slate-700);
+  --theme-stroke-soft: #314158ab;
   --heading-foreground: var(--color-slate-50);
   --foreground: var(--color-slate-400);
   --link-foreground: var(--color-rose-300);
@@ -292,8 +294,9 @@
   --border-radius-4: 8px;
   --border-radius-5: 16px;
 
-  --max-screen-size: 1800px;
+  --max-screen-size: 1600px;
   --header-height: 60px;
+  --margin-layout: 70px;
 }
 
 * {

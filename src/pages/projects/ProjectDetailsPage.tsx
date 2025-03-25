@@ -39,15 +39,17 @@ const ProjectDetailsPage = () => {
             <FaArrowLeft size={20} />
           </Button>
         </div>
-        <div className="project-details__header">
-          <h1 className="project-details__header-title">{project.title}</h1>
-          <p className="project-details__header-subtitle">
-            {project.details?.subtitle}
-          </p>
-        </div>
 
         {/* Content */}
         <div className="project-details__content">
+          <div className="project-details__content-header">
+            <h1 className="project-details__content-header-title">
+              {project.title}
+            </h1>
+            <p className="project-details__content-header-subtitle">
+              {project.details?.subtitle}
+            </p>
+          </div>
           <div className="project-details__content-image">
             <img src={project.image} alt={project.title} />
           </div>

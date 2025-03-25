@@ -1,13 +1,23 @@
-.glowing-effect {
+.glowing-effect-outer {
   position: fixed;
+  inset: 0;
+  z-index: 0;
+  margin: var(--margin-layout);
+}
+
+.glowing-effect {
+  position: relative;
+  height: 100%;
+  width: auto;
+  overflow: hidden;
   inset: 0;
   z-index: 0;
 }
 
 .shape-1 {
   position: absolute;
-  top: 20%;
-  left: 30%;
+  top: 15%;
+  left: 10%;
   border-radius: 70% 70% 30% / 30% 30% 70% 70%;
   background-color: var(--color-indigo-500);
   width: 500px;
@@ -16,8 +26,8 @@
 
 .shape-2 {
   position: absolute;
-  top: 34%;
-  left: 58%;
+  top: 25%;
+  right: 8%;
   border-radius: 86% 14% 72% 28% / 56% 22% 78% 44%;
   background-color: var(--color-teal-500);
   width: 450px;
@@ -26,12 +36,22 @@
 
 .shape-3 {
   position: absolute;
-  top: 35%;
-  left: 18%;
+  bottom: 5%;
+  left: 20%;
   border-radius: 86% 14% 72% 28% / 56% 22% 78% 44%;
   background-color: var(--color-rose-400);
   width: 470px;
   height: 480px;
+}
+
+.shape-4 {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  border-radius: 86% 14% 72% 28% / 56% 22% 78% 44%;
+  background-color: var(--color-purple-800);
+  width: 500px;
+  height: 350px;
 }
 
 // Tablet

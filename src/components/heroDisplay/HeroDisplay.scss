@@ -9,6 +9,7 @@
   border: 1px solid var(--theme-stroke);
   border-radius: var(--border-radius-4);
   backdrop-filter: blur(64px);
+  max-width: 800px;
 
   &__inner {
     background-color: var(--color-slate-900);

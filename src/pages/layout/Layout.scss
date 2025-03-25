@@ -6,7 +6,7 @@
   position: relative;
   flex-direction: column;
   height: calc(100vh - 140px);
-  margin: 70px;
+  margin: var(--margin-layout);
   z-index: 10;
   backdrop-filter: blur(60px);
   overflow: hidden;
@@ -165,8 +165,8 @@
 
 // Tablet
 @media (max-width: 1024px) {
-  .layout-main {
-    margin: 40px;
+  :root {
+    --margin-layout: 40px;
   }
 
   .mobile-menu {
@@ -176,8 +176,11 @@
 
 // Phone
 @media (max-width: 768px) {
+  :root {
+    --margin-layout: 12px;
+  }
+
   .layout-main {
-    margin: 12px;
     height: calc(100% - 24px);
   }
   .header {
