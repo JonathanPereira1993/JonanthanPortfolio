@@ -125,12 +125,28 @@ const AboutPage = () => {
         <ContentLayout title="_bio">
           <div className="bio-structure">
             <h2 className="bio-structure__title">{biography.title}</h2>
+            <div
+              className="bio-structure__experience"
+              title="My years of experience since 2021"
+            >
+              <h3>Experience</h3>
+              <span>{biography.yearsExperience} years</span>
+            </div>
             <ProfilePic />
             <div className="bio-structure__story">
               <h3>A little bit about me</h3>
               <LineBreak text={biography.story} />
             </div>
-            <div className="bio-structure__naturality">
+            <div
+              className="bio-structure__naturality"
+              title="Click if you want to see on the maps"
+              onClick={() =>
+                window.open(
+                  "https://maps.app.goo.gl/1enry4mqvNTH6My26",
+                  "_blank"
+                )
+              }
+            >
               <h3>Born</h3>
               <GiSwitzerland
                 title="Switzerland country"
@@ -138,7 +154,16 @@ const AboutPage = () => {
               />
               <p>{biography.naturality}</p>
             </div>
-            <div className="bio-structure__from">
+            <div
+              className="bio-structure__from"
+              title="Click if you want to see on the maps"
+              onClick={() =>
+                window.open(
+                  "https://maps.app.goo.gl/dnZLqikGqEpyAeKE9",
+                  "_blank"
+                )
+              }
+            >
               <h3>From</h3>
               <GiPortugal title="Portugal country" className="country-svg" />
               <p>{biography.from}</p>
@@ -172,7 +197,7 @@ const AboutPage = () => {
       )}
       {itemSelected === 3 && (
         <ContentLayout title="_certifications">
-          <span>// Certifications</span>
+          <span>// Always striving to learn more and level up my skills.</span>
           <StaggeredListAnimation className="columns">
             {certifications.map((item) => (
               <CertificationItem
