@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {
   title: string;
+  subtitle?: string;
+  verticalCenter?: boolean;
   children: React.ReactNode;
 };
 
@@ -13,7 +15,12 @@ const fadeVariants = {
   exit: { opacity: 0, transition: { duration: 0.5 } },
 };
 
-const ContentLayout = ({ title, children }: Props) => {
+const ContentLayout = ({
+  title,
+  subtitle,
+  verticalCenter = false,
+  children,
+}: Props) => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -25,7 +32,12 @@ const ContentLayout = ({ title, children }: Props) => {
         className="content-layout"
       >
         <h1 className="content-layout__title">{title}</h1>
-        <div className="content-layout__content">{children}</div>
+        <p className="content-layout__subtitle">{subtitle}</p>
+        <div
+          className={`content-layout__content ${verticalCenter ? "content-layout__content--centered" : ""}`}
+        >
+          {children}
+        </div>
       </motion.div>
     </AnimatePresence>
   );

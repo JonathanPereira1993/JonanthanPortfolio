@@ -1,13 +1,16 @@
 .contacts-section {
-  padding: var(--space-2xl);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(350px, 50%, 535px), 1fr)
+  );
   align-items: center;
-  margin: auto;
   justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 1400px;
+  gap: var(--space-3xl);
+  overflow: hidden;
   height: 100%;
-  flex: 1;
-  max-width: 1500px;
 
   .syntax-break {
     display: block;

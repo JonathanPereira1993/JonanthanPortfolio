@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import "./ContactsPage.scss";
-import GridContainer from "../../components/gridContainer/GridContainer";
 import ContactForm from "../../components/contactForm/ContactForm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -103,8 +102,8 @@ const ContactsPage = () => {
     };`;
 
   return (
-    <ContentLayout title="_contacts">
-      <GridContainer columns="2" gap="var(--space-3xl)" className="flex-1">
+    <ContentLayout title="" verticalCenter>
+      <div className="contacts-section">
         <div>
           <ContactForm
             formData={formData}
@@ -131,7 +130,7 @@ const ContactsPage = () => {
             {emailSent ? successfulCodeString : normalCodeString}
           </SyntaxHighlighter>
         </div>
-      </GridContainer>
+      </div>
     </ContentLayout>
   );
 };

@@ -18,7 +18,6 @@ import "./AboutPage.scss";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
 import Accordion from "../../components/accordion/Accordion";
 import BookItem from "../../components/bookItem/BookItem";
-import GridContainer from "../../components/gridContainer/GridContainer";
 import HobbieItem from "../../components/hobbieItem/HobbieItem";
 import Button from "../../components/UI/button/Button";
 import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";
@@ -196,8 +195,11 @@ const AboutPage = () => {
         </ContentLayout>
       )}
       {itemSelected === 3 && (
-        <ContentLayout title="_certifications">
-          <span>// Always striving to learn more and level up my skills.</span>
+        <ContentLayout
+          title="_certifications"
+          subtitle="// Always striving to learn more and level up my skills."
+        >
+          <span></span>
           <StaggeredListAnimation className="columns">
             {certifications.map((item) => (
               <CertificationItem
@@ -212,12 +214,12 @@ const AboutPage = () => {
         </ContentLayout>
       )}
       {itemSelected === 4 && (
-        <ContentLayout title="_books">
-          <span>
-            // Let me share some of my favorite books with you! Each one has
-            shaped my perspective, inspired me, and reflects a part of who I am.
-          </span>
-          <GridContainer columns="4" gap="40px" className="max-width-books">
+        <ContentLayout
+          title="_books"
+          subtitle="// Let me share some of my favorite books with you! Each one has
+            shaped my perspective, inspired me, and reflects a part of who I am."
+        >
+          <StaggeredListAnimation className="columns">
             {books.map((book) => (
               <BookItem
                 key={book.id}
@@ -226,19 +228,19 @@ const AboutPage = () => {
                 author={book.author}
               />
             ))}
-          </GridContainer>
+          </StaggeredListAnimation>
         </ContentLayout>
       )}
       {itemSelected === 5 && (
-        <ContentLayout title="_hobbies">
-          <span>
-            // I’ve always been a curious mind, constantly exploring new
+        <ContentLayout
+          title="_hobbies"
+          subtitle="// I’ve always been a curious mind, constantly exploring new
             interests and diving into different passions. Whether it’s music,
             aviation, technology, or anything that sparks my curiosity, I love
             the thrill of learning and discovering something new. Here are some
-            of the things that keep me inspired!
-          </span>
-          <GridContainer columns="3" gap="40px" className="grid-row-height">
+            of the things that keep me inspired!"
+        >
+          <StaggeredListAnimation className="columns columns-projects">
             {hobbies.map((hobbie) => (
               <HobbieItem
                 key={hobbie.id}
@@ -250,7 +252,7 @@ const AboutPage = () => {
                 buttonText={hobbie.buttonText}
               />
             ))}
-          </GridContainer>
+          </StaggeredListAnimation>
         </ContentLayout>
       )}
     </section>

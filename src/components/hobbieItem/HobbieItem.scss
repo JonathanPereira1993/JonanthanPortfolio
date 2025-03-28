@@ -4,15 +4,9 @@
   border: 1px solid var(--theme-stroke);
   border-radius: var(--border-radius-5);
   overflow: hidden;
-
-  &:hover {
-    .hobbie-item__image {
-      filter: grayscale(0%);
-    }
-  }
+  height: 100%;
 
   &__image {
-    filter: grayscale(100%);
     transition: all 300ms ease;
     object-fit: cover;
     width: 100%;

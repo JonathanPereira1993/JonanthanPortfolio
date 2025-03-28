@@ -20,19 +20,24 @@
 
   &__title {
     font-size: var(--font-size-h2);
-    margin-bottom: var(--space-l);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__subtitle {
+    color: var(--color-slate-400);
+    font-size: var(--font-size-md);
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    min-height: calc(100% - 104px);
+    height: calc(100% - 104px);
     gap: var(--space-xl);
+    margin-top: var(--space-xl);
 
-    > span:first-child {
-      color: var(--color-slate-400);
-      font-size: var(--font-size-md);
+    &--centered {
+      align-items: center;
     }
   }
 }
