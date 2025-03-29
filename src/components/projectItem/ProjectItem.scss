@@ -14,12 +14,12 @@
   background-color: var(--color-slate-950);
   border-radius: var(--border-radius-5);
   overflow: hidden;
-  max-height: 300px;
+  max-height: 600px;
   border: 1px solid var(--theme-stroke);
 
   &-title {
     color: var(--foreground);
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-);
     font-weight: 300;
     margin-bottom: var(--space-s);
 
@@ -60,13 +60,14 @@
     bottom: 0;
     left: 0;
     right: 0;
+    max-height: 150px;
     background-color: var(--color-slate-950);
     border-top: 1px solid var(--theme-stroke);
-    padding: var(--space-l) var(--space-m);
+    padding: var(--space-base) var(--space-base);
 
     &-smallDescription {
-      font-size: var(--font-size-md);
-      font-weight: 400;
+      font-size: var(--font-size-sm);
+      font-weight: 300;
       color: var(--foreground);
     }
 
