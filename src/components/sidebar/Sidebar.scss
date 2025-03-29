@@ -57,3 +57,17 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
