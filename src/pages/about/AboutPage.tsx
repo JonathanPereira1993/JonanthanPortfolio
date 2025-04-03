@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SidebarItem from "../../components/sidebar/SidebarItem";
 import { useLocation, useNavigate } from "react-router";
+import useScreenSize from "../../hooks/useScreenSize";
 
 import "./AboutPage.scss";
 import Accordion from "../../components/accordion/Accordion";
@@ -17,6 +18,10 @@ import { sidebarItems, sidebarItemsInterests } from "../../constants/Constants";
 const AboutPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const isSmallScreen = useScreenSize(1400);
+  const sidebarOpen = isSmallScreen;
+
   const [itemSelected, setItemSelected] = useState<number>(1);
 
   const onItemClickHandler = (id: number, sectionName: string) => {
@@ -44,7 +49,7 @@ const AboutPage = () => {
   return (
     <section className="about-section">
       <Sidebar
-        open={true}
+        open={sidebarOpen}
         bottomAction={
           <Button type="ghost" size="small">
             Download CV

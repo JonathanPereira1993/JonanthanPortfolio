@@ -1,11 +1,11 @@
 .home-section {
   padding: var(--space-2xl);
   display: flex;
-  gap: var(--space-3xl);
+  gap: var(--space-xl);
   margin: 0 auto;
   align-items: center;
   height: 100%;
-  flex: 1;
+  flex: 1 1 400px;
   max-width: var(--max-screen-size);
   width: auto;
   flex-wrap: wrap;
@@ -16,8 +16,9 @@
   .left-column,
   .right-column {
     align-self: center;
-    max-width: 800px;
-    min-width: 400px;
+    flex: 1 1 500px;
+    min-width: 0;
+    max-width: 100%;
     margin: 0 auto;
   }
 

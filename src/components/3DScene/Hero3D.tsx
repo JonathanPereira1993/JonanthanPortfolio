@@ -29,7 +29,6 @@ export default function Hero3D() {
     <div
       style={{
         width: "100%",
-        height: "clamp(340px, 40vw, 400px)",
         aspectRatio: "16 / 9",
         position: "relative",
       }}

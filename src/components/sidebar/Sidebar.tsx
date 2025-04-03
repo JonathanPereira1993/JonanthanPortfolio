@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 
 import "./Sidebar.scss";
+import useScreenSize from "../../hooks/useScreenSize";
 
 type Props = {
   children?: React.ReactNode;
@@ -54,10 +55,18 @@ const backgroundVariants = {
 
 const Sidebar = ({ children, open = false, bottomAction }: Props) => {
   const [sidebarOpened, setSidebarOpened] = useState(open);
+  const isScreenSmall = useScreenSize(1400);
 
   const onOpenSidebarHandler = () => {
     setSidebarOpened((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (!isScreenSmall && sidebarOpened) {
+      setSidebarOpened(false);
+    }
+  }, [isScreenSmall, sidebarOpened]);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
