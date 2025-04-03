@@ -55,11 +55,13 @@ const CodeSnippet = ({
         </div>
       </div>
 
-      <div className="code-snippet__description">
-        <div ref={containerRef} className="code-snippet__text">
-          {content}
+      {content !== "" && (
+        <div className="code-snippet__description">
+          <div ref={containerRef} className="code-snippet__text">
+            {content}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

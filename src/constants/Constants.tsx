@@ -41,6 +41,37 @@ import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 import { YearsCalculator } from "../utils/Utils";
 
+export const sidebarItems = [
+  {
+    id: 1,
+    field: "bio",
+    selected: true,
+  },
+  {
+    id: 2,
+    field: "education",
+    selected: false,
+  },
+  {
+    id: 3,
+    field: "certifications",
+    selected: false,
+  },
+];
+
+export const sidebarItemsInterests = [
+  {
+    id: 4,
+    field: "books",
+    selected: true,
+  },
+  {
+    id: 5,
+    field: "hobbies",
+    selected: false,
+  },
+];
+
 export const biography = {
   title: "Hello, my name is Jonathan Pereira",
   story:
@@ -69,6 +100,16 @@ export const education = [
     title: "Web development and multimedia (TeSP)",
     school: "IPL - School of Technology and Management",
     year: "2016 - 2018",
+    tech: [
+      "Visual Code",
+      "Adobe Premiere",
+      "Adobe Illustrator",
+      "JavaScript",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Java",
+    ],
     description:
       "In this course, I learned the fundamentals of web development, starting with HTML and CSS basics and progressing to databases and JavaScript. I also completed an internship focused on web development and media.",
   },
@@ -78,6 +119,17 @@ export const education = [
     title: "Bachelor in Games and Multimedia",
     school: "IPL - School of Technology and Management",
     year: "2018 - present",
+    tech: [
+      "Visual Code",
+      "C++",
+      "C#",
+      "Unity",
+      "Unreal Engine",
+      "Autodesk Maya",
+      "Blender",
+      "2D Animation",
+      "3D Animation",
+    ],
     description:
       "I learned all about game and multimedia technologies as well as web development. I was introduced to object-oriented programming through languages like C++, C#, Java, and JavaScript. Throughout the course, I also had the opportunity to work in teams, collaborating on projects and developing solutions together.",
   },

@@ -9,48 +9,53 @@ type Props = {
 };
 
 const MobileMenu = ({ navLinks, sidebarLinks, isOpen = false }: Props) => {
-  const [expanded, setExpanded] = useState<boolean>(isOpen);
-  const [showSidebarLinks, setShowSidebarLinks] = useState<boolean>(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const [dropdownHeight, setDropdownHeight] = useState<number>(0);
+  const [expanded, setExpanded] = useState(isOpen);
+  const [showSidebarLinks, setShowSidebarLinks] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState("0px");
 
   const expandMenuHandler = () => {
     setExpanded((prev) => !prev);
     setShowSidebarLinks(false);
+    setHeight("0px");
   };
 
   const closeMenuHandler = () => {
     setExpanded(false);
     setShowSidebarLinks(false);
+    setHeight("0px");
   };
 
   useEffect(() => {
-    if (showSidebarLinks && dropdownRef.current) {
-      const scrollHeight = dropdownRef.current.scrollHeight;
-      setDropdownHeight(scrollHeight);
+    if (!wrapperRef.current) return;
+
+    if (showSidebarLinks) {
+      // Let the DOM fully render and styles apply
+      setTimeout(() => {
+        const scrollHeight = wrapperRef.current?.scrollHeight || 0;
+        setHeight(`${scrollHeight}px`);
+      }, 0); // Run after next paint
     } else {
-      setDropdownHeight(0);
+      setHeight("0px");
     }
-  }, [showSidebarLinks]);
+  }, [showSidebarLinks, sidebarLinks]);
 
   return (
     <div
       className={`mobile-menu ${expanded ? "mobile-menu--expanded" : ""}`}
       data-expanded={expanded}
     >
-      {/* Hamburger Button */}
       <div className="mobile-menu__action" onClick={expandMenuHandler}>
         {expanded ? <IoClose size={24} /> : <RxHamburgerMenu size={24} />}
       </div>
 
-      {/* Menu Items */}
       {expanded && (
         <div className="mobile-menu__menu">
           <div onClick={closeMenuHandler}>{navLinks[0]}</div>
 
-          {/* _about-me as dropdown trigger */}
+          {/* About dropdown trigger */}
           <div
-            className={`mobile-menu__dropdown-trigger ${showSidebarLinks ? "mobile-menu__dropdown-trigger--open" : "mobile-menu__dropdown-trigger--close"}`}
+            className={`mobile-menu__dropdown-trigger ${showSidebarLinks ? "open" : ""}`}
             onClick={() => setShowSidebarLinks((prev) => !prev)}
           >
             _about-me
@@ -58,15 +63,21 @@ const MobileMenu = ({ navLinks, sidebarLinks, isOpen = false }: Props) => {
 
           {/* Animated Dropdown */}
           <div
-            className={`mobile-menu__sidebar ${showSidebarLinks ? "mobile-menu__sidebar--open" : "mobile-menu__sidebar--close"}`}
+            className="mobile-menu__sidebar"
             style={{
-              height: dropdownHeight,
+              height,
               overflow: "hidden",
               transition: "height 0.3s ease",
             }}
-            ref={dropdownRef}
           >
-            <div>
+            <div
+              ref={wrapperRef}
+              className="mobile-menu__sidebar__navlinks"
+              style={{
+                paddingTop: "var(--space-base)",
+                paddingBottom: "var(--space-base)",
+              }}
+            >
               {sidebarLinks.map((link, index) => (
                 <div key={index} onClick={closeMenuHandler}>
                   {link}

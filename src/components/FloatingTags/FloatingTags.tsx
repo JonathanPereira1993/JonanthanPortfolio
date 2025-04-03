@@ -2,16 +2,19 @@ import "./FloatingTags.scss";
 import { motion } from "framer-motion";
 import Tag from "../UI/tag/Tag";
 
+type tagSize = "sm" | "md" | "lg";
+
 type Props = {
   title?: string;
   tags: string[];
+  size?: tagSize;
 };
 
-const FloatingTags = ({ tags, title }: Props) => {
+const FloatingTags = ({ tags, size = "md", title }: Props) => {
   return (
     <>
       {title && <p className="floating-tags-title">{title}</p>}
-      <div className="floating-tags">
+      <div className={`floating-tags floating-tags-${size}`}>
         {tags.map((tag, index) => (
           <motion.div
             key={index}

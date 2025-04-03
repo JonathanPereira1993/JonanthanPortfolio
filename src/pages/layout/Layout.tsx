@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
 import { IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
 import MobileMenu from "./MobileMenu";
 
@@ -15,10 +15,6 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
-  const location = useLocation();
-
-  const isAboutPage = location.pathname === "/about";
-
   return (
     <>
       <BackdropGlowingEffect />
@@ -54,15 +50,23 @@ export default function Layout({ children }: Props) {
             _contacts
           </NavLink>
           <MobileMenu
-            sidebarLinks={
-              isAboutPage
-                ? [
-                    <NavLink className="nav-link" to={"/"}>
-                      _bio
-                    </NavLink>,
-                  ]
-                : []
-            }
+            sidebarLinks={[
+              <NavLink className="nav-link" to={"/"}>
+                _bio
+              </NavLink>,
+              <NavLink className="nav-link" to={"/"}>
+                _education
+              </NavLink>,
+              <NavLink className="nav-link" to={"/"}>
+                _certifications
+              </NavLink>,
+              <NavLink className="nav-link" to={"/"}>
+                _books
+              </NavLink>,
+              <NavLink className="nav-link" to={"/"}>
+                _hobbies
+              </NavLink>,
+            ]}
             isOpen={false}
             navLinks={[
               <NavLink className="nav-link" to={"/"}>

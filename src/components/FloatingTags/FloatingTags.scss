@@ -10,6 +10,36 @@
     color: var(--foreground);
     margin-bottom: var(--space-xs);
   }
+
+  &-sm {
+    .floating-tag {
+      font-size: var(--font-size-sm);
+    }
+
+    .tag {
+      padding: 2px var(--space-xs);
+    }
+  }
+
+  &-md {
+    .floating-tag {
+      font-size: var(--font-size-md);
+    }
+
+    .tag {
+      padding: var(--space-xxs) var(--space-s);
+    }
+  }
+
+  &-lg {
+    .floating-tag {
+      font-size: var(--font-size-lg);
+    }
+
+    .tag {
+      padding: var(--space-xs) var(--space-base);
+    }
+  }
 }
 
 .floating-tag {
