@@ -24,6 +24,11 @@
 // Tablet
 @media (max-width: 1024px) {
   .contacts-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     .syntax-break {
       display: none;
     }
@@ -33,6 +38,11 @@
 // Phone
 @media (max-width: 768px) {
   .contacts-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     .syntax-break {
       display: none;
     }

@@ -53,8 +53,18 @@
     .right-column {
       width: auto;
       flex: auto;
-      max-width: 600px;
-      min-width: 400px;
+    }
+
+    .left-column {
+      > div {
+        width: auto;
+      }
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .github-link {

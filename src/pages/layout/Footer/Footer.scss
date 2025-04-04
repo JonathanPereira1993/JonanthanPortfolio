@@ -1,0 +1,32 @@
+.layout-main__footer {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--theme-stroke);
+
+  > * {
+    padding: var(--space-base) var(--space-xl);
+    border-right: 1px solid var(--theme-stroke);
+  }
+
+  .footer-link {
+    padding-left: var(--space-base);
+    padding-right: var(--space-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    max-width: var(--sidebar-width);
+    color: var(--color-slate-300);
+
+    &:hover {
+      color: var(--color-slate-50);
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .layout-main__footer {
+    height: var(--header-height);
+  }
+}

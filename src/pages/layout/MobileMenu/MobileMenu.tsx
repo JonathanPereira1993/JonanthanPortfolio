@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import { IoMdArrowDropup } from "react-icons/io";
+
+import "./MobileMenu.scss";
 
 type Props = {
   navLinks: React.ReactNode[];
@@ -30,11 +33,10 @@ const MobileMenu = ({ navLinks, sidebarLinks, isOpen = false }: Props) => {
     if (!wrapperRef.current) return;
 
     if (showSidebarLinks) {
-      // Let the DOM fully render and styles apply
       setTimeout(() => {
         const scrollHeight = wrapperRef.current?.scrollHeight || 0;
         setHeight(`${scrollHeight}px`);
-      }, 0); // Run after next paint
+      }, 0);
     } else {
       setHeight("0px");
     }
@@ -59,6 +61,7 @@ const MobileMenu = ({ navLinks, sidebarLinks, isOpen = false }: Props) => {
             onClick={() => setShowSidebarLinks((prev) => !prev)}
           >
             _about-me
+            <IoMdArrowDropup />
           </div>
 
           {/* Animated Dropdown */}

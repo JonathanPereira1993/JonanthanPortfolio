@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 
 import { IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 
 import "./Layout.scss";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import BackdropGlowingEffect from "../../components/backdropGlowingEffect/BackdropGlowingEffect";
 
 type Props = {

@@ -41,3 +41,25 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: 1024px) {
+  .content-layout {
+    padding: var(--space-base);
+
+    .contacts-section > div {
+      width: 60%;
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .content-layout {
+    padding: var(--space-m);
+
+    .contacts-section > div {
+      width: 100%;
+    }
+  }
+}
