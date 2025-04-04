@@ -48,5 +48,11 @@
 
   .layout-main {
     height: calc(100% - 24px);
+
+    &__content {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 }

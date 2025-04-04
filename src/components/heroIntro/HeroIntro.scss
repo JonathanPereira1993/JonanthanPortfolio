@@ -7,7 +7,7 @@
   &__intro {
     height: 100%;
     font-size: var(--font-size-lg);
-    font-weight: regular;
+    font-weight: 400;
     color: var(--color-slate-400);
   }
 
@@ -18,5 +18,16 @@
   &__subtitle {
     color: var(--color-indigo-500);
     font-size: var(--font-size-h4);
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .hero-intro-container {
+    height: auto;
+
+    &__intro {
+      height: auto;
+    }
   }
 }

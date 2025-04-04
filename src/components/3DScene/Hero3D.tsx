@@ -29,8 +29,10 @@ export default function Hero3D() {
     <div
       style={{
         width: "100%",
-        aspectRatio: "16 / 9",
         position: "relative",
+        height: "clamp(250px, 50vh, 400px)",
+        maxWidth: "100vw",
+        display: "block",
       }}
     >
       <Canvas
