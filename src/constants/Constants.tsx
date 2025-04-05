@@ -41,36 +41,91 @@ import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 import { YearsCalculator } from "../utils/Utils";
 
-export const sidebarItems = [
+export const portfolioNavLinks = [
   {
-    id: 1,
-    field: "bio",
-    selected: true,
+    id: "home-page",
+    label: "_hello",
+    path: "/",
+    hasSubmenu: false,
+    sidebar: [],
   },
   {
-    id: 2,
-    field: "education",
-    selected: false,
+    id: "about-page",
+    label: "_about-me",
+    path: "/about",
+    hasSubmenu: true,
+    sidebar: [
+      {
+        id: "bio-section",
+        label: "bio",
+        path: "bio",
+        isInterests: false,
+      },
+      {
+        id: "education-section",
+        label: "education",
+        path: "education",
+        isInterests: false,
+      },
+      {
+        id: "certifications-section",
+        label: "certifications",
+        path: "certifications",
+        isInterests: false,
+      },
+      {
+        id: "books-section",
+        label: "books",
+        path: "books",
+        isInterests: true,
+      },
+      {
+        id: "hobbies-section",
+        label: "hobbies",
+        path: "hobbies",
+        isInterests: true,
+      },
+    ],
   },
   {
-    id: 3,
-    field: "certifications",
-    selected: false,
+    id: "projects-page",
+    label: "_projects",
+    path: "/projects",
+    hasSubmenu: false,
+    sidebar: [],
   },
 ];
 
-export const sidebarItemsInterests = [
-  {
-    id: 4,
-    field: "books",
-    selected: true,
-  },
-  {
-    id: 5,
-    field: "hobbies",
-    selected: false,
-  },
-];
+// export const sidebarItems = [
+//   {
+//     id: 1,
+//     field: "bio",
+//     selected: true,
+//   },
+//   {
+//     id: 2,
+//     field: "education",
+//     selected: false,
+//   },
+//   {
+//     id: 3,
+//     field: "certifications",
+//     selected: false,
+//   },
+// ];
+
+// export const sidebarItemsInterests = [
+//   {
+//     id: 4,
+//     field: "books",
+//     selected: true,
+//   },
+//   {
+//     id: 5,
+//     field: "hobbies",
+//     selected: false,
+//   },
+// ];
 
 export const biography = {
   title: "Hello, my name is Jonathan Pereira",

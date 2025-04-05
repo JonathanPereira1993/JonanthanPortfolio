@@ -10,6 +10,8 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import BackdropGlowingEffect from "../../components/backdropGlowingEffect/BackdropGlowingEffect";
 
+import { portfolioNavLinks } from "../../constants/Constants";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -34,55 +36,20 @@ export default function Layout({ children }: Props) {
               })}
             </div>
             <div className="nav-links-desktop">
-              <NavLink className="nav-link" to={"/"}>
-                _hello
-              </NavLink>
-              <NavLink className="nav-link" to={"/about"}>
-                _about-me
-              </NavLink>
-              <NavLink className="nav-link" to={"/projects"}>
-                _projects
-              </NavLink>
+              {portfolioNavLinks.map((item) => (
+                <NavLink key={item.path} className="nav-link" to={item.path}>
+                  {item.label}
+                </NavLink>
+              ))}
             </div>
           </div>
 
           <NavLink className="nav-link nav-link-right" to="/contacts">
             _contacts
           </NavLink>
-          <MobileMenu
-            sidebarLinks={[
-              <NavLink className="nav-link" to={"/"}>
-                _bio
-              </NavLink>,
-              <NavLink className="nav-link" to={"/"}>
-                _education
-              </NavLink>,
-              <NavLink className="nav-link" to={"/"}>
-                _certifications
-              </NavLink>,
-              <NavLink className="nav-link" to={"/"}>
-                _books
-              </NavLink>,
-              <NavLink className="nav-link" to={"/"}>
-                _hobbies
-              </NavLink>,
-            ]}
-            isOpen={false}
-            navLinks={[
-              <NavLink className="nav-link" to={"/"}>
-                _hello
-              </NavLink>,
-              <NavLink className="nav-link" to={"/about"}>
-                _about-me
-              </NavLink>,
-              <NavLink className="nav-link" to={"/projects"}>
-                _projects
-              </NavLink>,
-              <NavLink className="nav-link" to="/contacts">
-                _contacts
-              </NavLink>,
-            ]}
-          />
+
+          {/* Mobile menu */}
+          <MobileMenu navLinks={portfolioNavLinks} isOpen={false} />
         </Header>
         <main className="layout-main__content">{children}</main>
         <Footer>

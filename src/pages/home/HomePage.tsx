@@ -27,7 +27,7 @@ const HomePage = () => {
               target="_blank"
               title="Visit my github page"
             >
-              <span style={{ color: "var(--link-foreground)" }}>
+              <span className="link">
                 "https://github.com/JonathanPereira1993"
               </span>
             </a>

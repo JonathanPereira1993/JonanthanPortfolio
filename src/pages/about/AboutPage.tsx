@@ -13,7 +13,7 @@ import CertificationsSection from "./sections/certificationsSection/Certificatio
 import BooksSection from "./sections/booksSection/BooksSection";
 import HobbiesSection from "./sections/hobbiesSection/HobbiesSection";
 
-import { sidebarItems, sidebarItemsInterests } from "../../constants/Constants";
+import { portfolioNavLinks } from "../../constants/Constants";
 
 const AboutPage = () => {
   const location = useLocation();
@@ -22,29 +22,36 @@ const AboutPage = () => {
   const isSmallScreen = useScreenSize(1400);
   const sidebarOpen = isSmallScreen;
 
-  const [itemSelected, setItemSelected] = useState<number>(1);
+  const [itemSelected, setItemSelected] = useState<string>("bio");
 
-  const onItemClickHandler = (id: number, sectionName: string) => {
+  const onItemClickHandler = (id: string, sectionName: string) => {
     setItemSelected(id);
     navigate(`/about?section=${sectionName}`);
   };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const section = params.get("section");
+    const section = params.get("section") ?? "bio";
 
-    if (!section) {
-      navigate("/about?section=bio", { replace: true });
-      setItemSelected(1);
-      return;
-    }
+    setItemSelected(section);
+  }, [location]);
 
-    if (section === "bio") setItemSelected(1);
-    if (section === "education") setItemSelected(2);
-    if (section === "certifications") setItemSelected(3);
-    if (section === "books") setItemSelected(4);
-    if (section === "hobbies") setItemSelected(5);
-  }, [location, navigate]);
+  const renderSidebarItem = (isInterest: boolean) =>
+    portfolioNavLinks.flatMap((item) =>
+      item.sidebar
+        .filter((filteredItem) => filteredItem.isInterests === isInterest)
+        .map((item) => (
+          <SidebarItem
+            key={item.id}
+            id={item.id}
+            sectionName={item.label}
+            onClick={() => onItemClickHandler(item.path, item.label)}
+            selected={itemSelected === item.path}
+          >
+            {item.label}
+          </SidebarItem>
+        ))
+    );
 
   return (
     <section className="about-section">
@@ -56,38 +63,17 @@ const AboutPage = () => {
           </Button>
         }
       >
-        {sidebarItems.map((item) => (
-          <SidebarItem
-            key={item.id}
-            id={item.id}
-            sectionName={item.field}
-            onClick={() => onItemClickHandler(item.id, item.field)}
-            selected={itemSelected === item.id ? true : false}
-          >
-            {item.field}
-          </SidebarItem>
-        ))}
+        {renderSidebarItem(false)}
+
         <Accordion isExpanded headerText="Interests">
-          {sidebarItemsInterests.map((interestItem) => (
-            <SidebarItem
-              key={interestItem.id}
-              id={interestItem.id}
-              sectionName={interestItem.field}
-              onClick={() =>
-                onItemClickHandler(interestItem.id, interestItem.field)
-              }
-              selected={itemSelected === interestItem.id ? true : false}
-            >
-              {interestItem.field}
-            </SidebarItem>
-          ))}
+          {renderSidebarItem(true)}
         </Accordion>
-      </Sidebar>{" "}
-      {itemSelected === 1 && <BioSection />}
-      {itemSelected === 2 && <EducationSection />}
-      {itemSelected === 3 && <CertificationsSection />}
-      {itemSelected === 4 && <BooksSection />}
-      {itemSelected === 5 && <HobbiesSection />}
+      </Sidebar>
+      {itemSelected === "bio" && <BioSection />}
+      {itemSelected === "education" && <EducationSection />}
+      {itemSelected === "certifications" && <CertificationsSection />}
+      {itemSelected === "books" && <BooksSection />}
+      {itemSelected === "hobbies" && <HobbiesSection />}
     </section>
   );
 };

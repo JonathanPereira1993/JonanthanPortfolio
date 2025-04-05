@@ -6,8 +6,8 @@ type Props = {
   children: React.ReactNode;
   selected: boolean;
   isChild?: boolean;
-  onClick: (id: number, sectionName: string) => void;
-  id: number;
+  onClick: (id: string, sectionName: string) => void;
+  id: string;
   sectionName: string;
 };
 
