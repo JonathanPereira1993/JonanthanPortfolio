@@ -119,6 +119,14 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
             </NavLink>
           );
         })}
+        <NavLink
+          className="nav-link"
+          key="contact-page"
+          to="/contacts"
+          onClick={toggleMenu}
+        >
+          _contact
+        </NavLink>
       </div>
     </div>
   );
