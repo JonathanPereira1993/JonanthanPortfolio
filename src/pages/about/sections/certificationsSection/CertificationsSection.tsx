@@ -12,7 +12,7 @@ const CertificationsSection = () => {
       title="_certifications"
       subtitle="// Always striving to learn more and level up my skills."
     >
-      <StaggeredListAnimation className="columns">
+      <StaggeredListAnimation className="columns columns-certifications">
         {certifications.map((item) => (
           <CertificationItem
             key={item.id}

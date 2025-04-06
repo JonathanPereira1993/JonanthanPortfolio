@@ -5,16 +5,17 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  height: calc(100vh - 140px);
+  height: calc(100vh - calc(var(--margin-layout) * 2));
   margin: var(--margin-layout);
   z-index: 10;
-  backdrop-filter: blur(60px);
+  backdrop-filter: blur(40px);
   overflow: hidden;
 
   &__content {
     display: flex;
     flex: 1;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       width: 8px;
@@ -35,20 +36,11 @@
 
 // Tablet
 @media (max-width: 1024px) {
-  :root {
-    --margin-layout: 40px;
-  }
 }
 
 // Phone
 @media (max-width: 768px) {
-  :root {
-    --margin-layout: 12px;
-  }
-
   .layout-main {
-    height: calc(100% - 24px);
-
     &__content {
       &::-webkit-scrollbar {
         display: none;

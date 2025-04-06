@@ -5,6 +5,9 @@
   border-radius: var(--border-radius-5);
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__image {
     transition: all 300ms ease;

@@ -12,15 +12,12 @@ const BioSection = () => {
   return (
     <ContentLayout title="_bio">
       <div className="bio-structure">
-        <h2 className="bio-structure__title">{biography.title}</h2>
-        <div
-          className="bio-structure__experience"
-          title="My years of experience since 2021"
-        >
-          <h3>Experience</h3>
-          <span>{biography.yearsExperience} years</span>
+        <div className="bio-structure__title">
+          <h2>{biography.title}</h2>
         </div>
-        <ProfilePic />
+        <div className="bio-structure__photo">
+          <ProfilePic />
+        </div>
         <div className="bio-structure__story">
           <h3>A little bit about me</h3>
           <LineBreak text={biography.story} />
@@ -33,8 +30,13 @@ const BioSection = () => {
           }
         >
           <h3>Born</h3>
-          <GiSwitzerland title="Switzerland country" className="country-svg" />
-          <p>{biography.naturality}</p>
+          <div>
+            <GiSwitzerland
+              title="Switzerland country"
+              className="country-svg"
+            />
+            <p>{biography.naturality}</p>
+          </div>
         </div>
         <div
           className="bio-structure__from"
@@ -44,9 +46,21 @@ const BioSection = () => {
           }
         >
           <h3>From</h3>
-          <GiPortugal title="Portugal country" className="country-svg" />
-          <p>{biography.from}</p>
+          <div>
+            <GiPortugal title="Portugal country" className="country-svg" />
+            <p>{biography.from}</p>
+          </div>
         </div>
+        <div
+          className="bio-structure__experience"
+          title="My years of experience since 2021"
+        >
+          <h3>Experience</h3>
+          <div>
+            <p>{biography.yearsExperience} years</p>
+          </div>
+        </div>
+
         <div className="bio-structure__skills">
           <h3>Skills</h3>
           <FloatingTags tags={biography.skills} />

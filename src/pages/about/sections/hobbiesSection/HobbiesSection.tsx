@@ -16,7 +16,7 @@ const HobbiesSection = () => {
             the thrill of learning and discovering something new. Here are some
             of the things that keep me inspired!"
     >
-      <StaggeredListAnimation className="columns columns-projects">
+      <StaggeredListAnimation className="columns columns-hobbies">
         {hobbies.map((hobbie) => (
           <HobbieItem
             key={hobbie.id}

@@ -212,6 +212,7 @@
   --theme-backdrop: var(--color-slate-950);
   --theme-backdrop-glossy: rgba(15, 23, 43, 0.7);
   --theme-backdrop-glossy-soft: rgba(15, 23, 43, 0.4);
+  --theme-backdrop-glossy-sidebar: rgba(15, 23, 43, 0.9);
   --theme-background: var(--color-slate-900);
   --theme-stroke: var(--color-slate-700);
   --theme-stroke-soft: #314158ab;
@@ -300,7 +301,7 @@
   --border-radius-4: 8px;
   --border-radius-5: 16px;
 
-  --max-screen-size: 1600px;
+  --max-screen-size: 1800px;
   --header-height: 60px;
   --margin-layout: 70px;
 }
@@ -345,6 +346,9 @@ h1 {
 
 // Tablet
 @media (max-width: 1024px) {
+  :root {
+    --margin-layout: 40px;
+  }
 }
 
 // Phone
@@ -360,6 +364,8 @@ h1 {
     --font-size-sm: 13px;
     --font-size-md: 15px;
     --font-size-lg: 16px;
+
+    --margin-layout: 12px;
   }
 }
 

@@ -1,5 +1,6 @@
 .content-layout {
-  padding: var(--space-xl) var(--space-3xl);
+  padding: var(--space-xl) var(--space-3xl) var(--space-xl)
+    calc(var(--space-3xl) + var(--sidebar-width));
   overflow-y: auto;
   flex: 1;
 
@@ -19,11 +20,15 @@
   }
 
   &__title {
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
     font-size: var(--font-size-h2);
     margin-bottom: var(--space-xs);
   }
 
   &__subtitle {
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
     color: var(--color-slate-400);
     font-size: var(--font-size-md);
   }
@@ -34,7 +39,9 @@
     flex-grow: 1;
     height: calc(100% - 104px);
     gap: var(--space-xl);
-    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
 
     &--centered {
       align-items: center;
@@ -46,6 +53,14 @@
 @media (max-width: 1024px) {
   .content-layout {
     padding: var(--space-base);
+
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
 
     .contacts-section > div {
       width: 60%;

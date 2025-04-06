@@ -62,45 +62,47 @@ const Sidebar = ({ children, open = false, bottomAction }: Props) => {
   };
 
   useEffect(() => {
-    if (!isScreenSmall && sidebarOpened) {
+    if (!isScreenSmall) {
       setSidebarOpened(false);
     }
-  }, [isScreenSmall, sidebarOpened]);
+  }, [isScreenSmall]);
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        variants={widthVariants}
-        initial="closed"
-        animate={sidebarOpened ? "open" : "closed"}
-        className={`sidebar ${
-          sidebarOpened ? "sidebar-opened" : "sidebar-closed"
-        }`}
-      >
+      <div className="sidebar-wrapper">
         <motion.div
-          className="sidebar-toggle"
-          onClick={onOpenSidebarHandler}
-          variants={toggleVariants}
+          variants={widthVariants}
+          initial="closed"
           animate={sidebarOpened ? "open" : "closed"}
-          whileTap={{ scale: 0.9 }}
+          className={`sidebar ${
+            sidebarOpened ? "sidebar-opened" : "sidebar-closed"
+          }`}
         >
           <motion.div
-            className="sidebar-toggle-bg"
-            variants={backgroundVariants}
+            className="sidebar-toggle"
+            onClick={onOpenSidebarHandler}
+            variants={toggleVariants}
             animate={sidebarOpened ? "open" : "closed"}
-          />
+            whileTap={{ scale: 0.9 }}
+          >
+            <motion.div
+              className="sidebar-toggle-bg"
+              variants={backgroundVariants}
+              animate={sidebarOpened ? "open" : "closed"}
+            />
 
-          {!sidebarOpened ? (
-            <LuPanelLeftOpen title="Open sidebar" size={24} />
-          ) : (
-            <LuPanelRightOpen title="Close sidebar" size={24} />
-          )}
+            {!sidebarOpened ? (
+              <LuPanelLeftOpen title="Open sidebar" size={24} />
+            ) : (
+              <LuPanelRightOpen title="Close sidebar" size={24} />
+            )}
+          </motion.div>
+          <div className="sidebar-content">
+            <div>{children}</div>
+            {bottomAction}
+          </div>
         </motion.div>
-        <div className="sidebar-content">
-          <div>{children}</div>
-          {bottomAction}
-        </div>
-      </motion.div>
+      </div>
     </AnimatePresence>
   );
 };

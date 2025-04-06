@@ -13,7 +13,7 @@ const BooksSection = () => {
       subtitle="// Let me share some of my favorite books with you! Each one has
             shaped my perspective, inspired me, and reflects a part of who I am."
     >
-      <StaggeredListAnimation className="columns">
+      <StaggeredListAnimation className="columns columns-books">
         {books.map((book) => (
           <BookItem
             key={book.id}

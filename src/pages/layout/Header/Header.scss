@@ -2,61 +2,95 @@
   display: flex;
   width: 100%;
   border-bottom: 1px solid var(--theme-stroke);
+  height: var(--header-height);
+  z-index: 50;
 
   .nav-links {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: var(--font-size-md);
-  }
 
-  .nav-links-desktop {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-links > div:not(.mobile-menu) {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-link {
-    position: relative;
-    padding: var(--space-base) var(--space-xl);
-    color: var(--color-slate-300);
-    text-decoration: none;
-    border-right: 1px solid var(--theme-stroke);
-
-    &.nav-link-right {
-      border-right: 0;
-      border-left: 1px solid var(--theme-stroke);
+    &-desktop {
+      display: flex;
+      align-items: center;
+      height: 100%;
     }
 
-    &:not(.nav-logo):before {
-      content: "";
-      position: absolute;
-      transition: height 300ms ease;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 0px;
-      background-color: var(--primary-background);
-      width: 100%;
+    > div:not(.mobile-menu) {
+      display: flex;
+      align-items: center;
+      height: 100%;
     }
 
-    &:hover,
-    &.active {
-      color: var(--color-slate-50);
+    .mobile-menu .nav-link {
+      height: unset;
+    }
 
-      &:before {
-        height: 3px;
+    .nav-link {
+      position: relative;
+      padding: var(--space-base) var(--space-xl);
+      color: var(--color-slate-300);
+      text-decoration: none;
+      border-right: 1px solid var(--theme-stroke);
+      height: 100%;
+
+      &.nav-link-right {
+        border-right: 0;
+        border-left: 1px solid var(--theme-stroke);
+      }
+
+      &:not(.nav-logo):before {
+        content: "";
+        position: absolute;
+        transition: height 300ms ease;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0px;
+        background-color: var(--primary-background);
+        width: 100%;
+      }
+
+      &:hover,
+      &.active {
+        color: var(--color-slate-50);
+
+        &:before {
+          height: 3px;
+        }
       }
     }
   }
 
   .nav-logo {
     min-width: var(--sidebar-width);
+  }
+}
+
+// Tablet
+@media (max-width: 1100px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-height);
+
+    .nav-links-desktop {
+      display: none;
+    }
+
+    .nav-link-right {
+      display: none;
+    }
+
+    .nav-logo {
+      min-width: unset;
+      padding-left: var(--space-base);
+      padding-right: var(--space-base);
+      border-right: 0;
+    }
   }
 }
 

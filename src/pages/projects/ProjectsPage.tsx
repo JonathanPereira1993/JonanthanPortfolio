@@ -1,14 +1,13 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import ContentLayout from "../../components/contentLayout/ContentLayout";
 import "./ProjectsPage.scss";
-import GridContainer from "../../components/gridContainer/GridContainer";
 import ProjectItem from "../../components/projectItem/ProjectItem";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 import CheckboxFilterItem from "../../components/checkboxFilterItem/CheckboxFilterItem";
 
 import { projects, projectFilters } from "../../constants/Constants";
+import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";
 
 const ProjectsPage = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -41,40 +40,25 @@ const ProjectsPage = () => {
         ))}
       </Sidebar>
       <ContentLayout title="_projects">
-        <GridContainer columns="3" gap="20px">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map((project) => (
-                <motion.div
+        <StaggeredListAnimation className="columns columns-projects">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
+              <div key={project.id}>
+                <ProjectItem
                   key={project.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                  <ProjectItem
-                    key={project.id}
-                    projNum={String(project.id)}
-                    title={project.title}
-                    icon={project.icon}
-                    image={project.image}
-                    smallDescription={project.description}
-                    onClick={() => console.log(`Clicked on ${project.title}`)}
-                  />
-                </motion.div>
-              ))
-            ) : (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >
-                No projects match the selected filters.
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </GridContainer>
+                  projNum={String(project.id)}
+                  title={project.title}
+                  icon={project.icon}
+                  image={project.image}
+                  smallDescription={project.description}
+                  onClick={() => console.log(`Clicked on ${project.title}`)}
+                />
+              </div>
+            ))
+          ) : (
+            <p>No projects match the selected filters.</p>
+          )}
+        </StaggeredListAnimation>
       </ContentLayout>
     </section>
   );
