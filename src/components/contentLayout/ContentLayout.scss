@@ -1,8 +1,8 @@
 .content-layout {
-  padding: var(--space-xl) var(--space-3xl) var(--space-xl)
-    calc(var(--space-3xl) + var(--sidebar-width));
+  padding: var(--space-xl) var(--space-3xl) var(--space-xl) var(--space-3xl);
   overflow-y: auto;
   flex: 1;
+  transition: all 1000ms ease;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -45,6 +45,15 @@
 
     &--centered {
       align-items: center;
+    }
+  }
+}
+
+@media (width >= 1400px) {
+  .content-layout {
+    margin-left: calc(var(--sidebar-width));
+    &.sidebar--close {
+      --sidebar-width: 0;
     }
   }
 }

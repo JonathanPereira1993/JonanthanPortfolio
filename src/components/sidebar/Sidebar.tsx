@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useRef } from "react";
+
 import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
+
+import { useSidebar } from "../../Context/UseSidebar";
 
 import "./Sidebar.scss";
 import useScreenSize from "../../hooks/useScreenSize";
@@ -53,19 +55,25 @@ const backgroundVariants = {
   },
 };
 
-const Sidebar = ({ children, open = false, bottomAction }: Props) => {
-  const [sidebarOpened, setSidebarOpened] = useState(open);
-  const isScreenSmall = useScreenSize(1400);
+const Sidebar = ({ children, bottomAction }: Props) => {
+  const { isOpen, toggleSidebar, closeSidebar } = useSidebar();
+
+  const isScreenBig = useScreenSize(1400);
+
+  console.log(isScreenBig);
 
   const onOpenSidebarHandler = () => {
-    setSidebarOpened((prev) => !prev);
+    toggleSidebar();
   };
 
+  const prevScreenBig = useRef<boolean>(true);
+
   useEffect(() => {
-    if (!isScreenSmall) {
-      setSidebarOpened(false);
+    if (prevScreenBig.current && !isScreenBig && isOpen) {
+      closeSidebar();
     }
-  }, [isScreenSmall]);
+    prevScreenBig.current = isScreenBig;
+  }, [isScreenBig, closeSidebar, isOpen]);
 
   return (
     <AnimatePresence mode="wait">
@@ -73,25 +81,23 @@ const Sidebar = ({ children, open = false, bottomAction }: Props) => {
         <motion.div
           variants={widthVariants}
           initial="closed"
-          animate={sidebarOpened ? "open" : "closed"}
-          className={`sidebar ${
-            sidebarOpened ? "sidebar-opened" : "sidebar-closed"
-          }`}
+          animate={isOpen ? "open" : "closed"}
+          className={`sidebar ${isOpen ? "sidebar-opened" : "sidebar-closed"}`}
         >
           <motion.div
             className="sidebar-toggle"
             onClick={onOpenSidebarHandler}
             variants={toggleVariants}
-            animate={sidebarOpened ? "open" : "closed"}
+            animate={isOpen ? "open" : "closed"}
             whileTap={{ scale: 0.9 }}
           >
             <motion.div
               className="sidebar-toggle-bg"
               variants={backgroundVariants}
-              animate={sidebarOpened ? "open" : "closed"}
+              animate={isOpen ? "open" : "closed"}
             />
 
-            {!sidebarOpened ? (
+            {!isOpen ? (
               <LuPanelLeftOpen title="Open sidebar" size={24} />
             ) : (
               <LuPanelRightOpen title="Close sidebar" size={24} />

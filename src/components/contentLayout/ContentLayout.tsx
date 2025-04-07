@@ -2,6 +2,8 @@ import React from "react";
 import "./ContentLayout.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useSidebar } from "../../Context/UseSidebar";
+
 type Props = {
   title: string;
   subtitle?: string;
@@ -21,6 +23,7 @@ const ContentLayout = ({
   verticalCenter = false,
   children,
 }: Props) => {
+  const { isOpen } = useSidebar();
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -29,7 +32,7 @@ const ContentLayout = ({
         initial="initial"
         animate="animate"
         exit="exit"
-        className="content-layout"
+        className={`content-layout ${isOpen ? "sidebar--open" : "sidebar--close"}`}
       >
         <h1 className="content-layout__title">{title}</h1>
         <p className="content-layout__subtitle">{subtitle}</p>
