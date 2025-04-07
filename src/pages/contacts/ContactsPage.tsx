@@ -102,7 +102,7 @@ const ContactsPage = () => {
     };`;
 
   return (
-    <ContentLayout title="" verticalCenter>
+    <ContentLayout title="" verticalCenter hasSidebar={false}>
       <div className="contacts-section">
         <div>
           <ContactForm

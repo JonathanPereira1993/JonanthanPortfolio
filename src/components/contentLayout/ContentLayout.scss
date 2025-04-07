@@ -4,6 +4,10 @@
   flex: 1;
   transition: all 1000ms ease;
 
+  &.without-sidebar {
+    --sidebar-width: 0;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
   }

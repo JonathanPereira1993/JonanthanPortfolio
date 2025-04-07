@@ -96,37 +96,6 @@ export const portfolioNavLinks = [
   },
 ];
 
-// export const sidebarItems = [
-//   {
-//     id: 1,
-//     field: "bio",
-//     selected: true,
-//   },
-//   {
-//     id: 2,
-//     field: "education",
-//     selected: false,
-//   },
-//   {
-//     id: 3,
-//     field: "certifications",
-//     selected: false,
-//   },
-// ];
-
-// export const sidebarItemsInterests = [
-//   {
-//     id: 4,
-//     field: "books",
-//     selected: true,
-//   },
-//   {
-//     id: 5,
-//     field: "hobbies",
-//     selected: false,
-//   },
-// ];
-
 export const biography = {
   title: "Hello, my name is Jonathan Pereira",
   story:
@@ -242,14 +211,17 @@ export const projectFilters = [
 export const projects = [
   {
     id: "1",
-    difficulty: "",
+    difficulty: {
+      value: 5,
+      label: "Fun",
+    },
     title: "My personal portfolio",
     icon: <FaReact />,
     image: PersonalPortfolioCover,
     description:
       "A personal portfolio site to showcase my work, built with React, TypeScript, and a sprinkle of space aesthetic.",
-    tags: ["React", "TypeScript", "Web", "SCSS"],
-    gitHub: "",
+    tags: ["React", "TypeScript", "Web", "SCSS", "useContext"],
+    gitHub: "https://github.com/JonathanPereira1993/JonanthanPortfolio",
     details: {
       subtitle: "A Portfolio That Feels Like Me",
       why: "I wanted to experiment with technologies I had never used before, and what better place to test and explore them than here, in my own portfolio, right?",
@@ -258,17 +230,19 @@ export const projects = [
         "While the original design wasn’t mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
         "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
-      images: [],
-      codeSnippets: [],
       features: [
         "Animation done with Framer Motion",
         "Added a 3D object using TREE.js",
+        "First time using TypeScript",
       ],
     },
   },
   {
     id: "2",
-    difficulty: "",
+    difficulty: {
+      value: 8,
+      label: "challenging",
+    },
     title: "TODO mobile app",
     icon: <FaReact />,
     image: TodoAppCover,

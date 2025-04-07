@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../../constants/Constants";
 import { LineBreak } from "../../utils/LineBreaks";
 import FloatingTags from "../../components/FloatingTags/FloatingTags";
+import DificultyIndicator from "../../components/difficultyIndicator/DifficultyIndicator";
 
 const ProjectDetailsPage = () => {
   const navigate = useNavigate();
@@ -49,6 +50,13 @@ const ProjectDetailsPage = () => {
             <p className="project-details__content-header-subtitle">
               {project.details?.subtitle}
             </p>
+          </div>
+          <div
+            className="project-details__content-difficulty"
+            title="Difficulty of the project"
+          >
+            <DificultyIndicator difficulty={project.difficulty.value} />
+            <p>{project.difficulty.label}</p>
           </div>
           <div className="project-details__content-image">
             <img src={project.image} alt={project.title} />

@@ -8,6 +8,7 @@ type Props = {
   title: string;
   subtitle?: string;
   verticalCenter?: boolean;
+  hasSidebar?: boolean;
   children: React.ReactNode;
 };
 
@@ -21,6 +22,7 @@ const ContentLayout = ({
   title,
   subtitle,
   verticalCenter = false,
+  hasSidebar = true,
   children,
 }: Props) => {
   const { isOpen } = useSidebar();
@@ -32,7 +34,7 @@ const ContentLayout = ({
         initial="initial"
         animate="animate"
         exit="exit"
-        className={`content-layout ${isOpen ? "sidebar--open" : "sidebar--close"}`}
+        className={`content-layout ${hasSidebar ? (isOpen ? "sidebar--open" : "sidebar--close") : "without-sidebar"}`}
       >
         <h1 className="content-layout__title">{title}</h1>
         <p className="content-layout__subtitle">{subtitle}</p>
