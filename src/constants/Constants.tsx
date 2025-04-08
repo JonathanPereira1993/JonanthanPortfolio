@@ -224,7 +224,7 @@ export const projects = [
     gitHub: "https://github.com/JonathanPereira1993/JonanthanPortfolio",
     details: {
       subtitle: "A Portfolio That Feels Like Me",
-      why: "I wanted to experiment with technologies I had never used before, and what better place to test and explore them than here, in my own portfolio, right?",
+      why: "I used this project as a playground to explore new technologies and experiment outside my comfort zone—my portfolio felt like the perfect place for that.",
       mainDescription:
         "This is my second portfolio, created with the goal of elevating my work and building something that truly resonates with me.\n\n" +
         "While the original design wasn’t mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
@@ -246,28 +246,24 @@ export const projects = [
     title: "TODO mobile app",
     icon: <FaReact />,
     image: TodoAppCover,
-    description: "My first React Native App",
+    description:
+      "TODO list made with React Native, Expo and implemented Firebase",
     tags: ["React", "ReactNative", "Expo", "Mobile", "Firebase"],
-    gitHub: "",
+    gitHub: "https://github.com/JonathanPereira1993/ToDevList",
     details: {
       subtitle:
-        "Mobile Application to practice what I learned in the React Native course",
-      why: "I wanted to experiment with technologies I had never used before, and what better place to test and explore them than here, in my own portfolio, right?",
+        "A Beginner’s First Leap into Mobile App Development with React Native",
+      why: "Getting into mobile development felt daunting, so I started with the classic TODO app—because sometimes the best way to learn is by building the thing everyone else already has.",
       mainDescription:
-        "This is my second portfolio, created with the goal of elevating my work and building something that truly resonates with me.\n\n" +
-        "While the original design wasn’t mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
-        "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
-        "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
-      images: [],
-      codeSnippets: [
-        {
-          id: 1,
-          title: "",
-          image: "",
-          description: "",
-        },
+        "This mobile TODO app was built as a practical introduction to mobile development using React Native. The goal was to create a functional and clean application while exploring essential concepts like authentication, database integration, and user interaction—all within a familiar project structure.\n\n" +
+        "The app allows users to register and log in via Firebase Authentication, and securely manage their task list using Firebase’s Firestore database. Users can add, update, and delete tasks, all within a minimalist UI designed to prioritize clarity and ease of use.\n\n" +
+        "Though simple in concept, the app offered a hands-on environment to explore state management, backend integration, and the joys of mobile development—including the not-so-glamorous process of simulator setup and cross-platform testing between iOS and Android.\n\n" +
+        "This project not only reinforced core development skills, but also gave me a clearer understanding of building responsive, cross-platform interfaces and handling backend services in a mobile environment.",
+      features: [
+        "Integrated with Firebase Authentication and Database",
+        "Authentication by user",
+        "Create, Update and Delete tasks",
       ],
-      features: ["Integrated with Firebase Authentication and Database"],
     },
   },
 ];
