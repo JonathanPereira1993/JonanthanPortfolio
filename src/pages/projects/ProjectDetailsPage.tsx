@@ -58,17 +58,6 @@ const ProjectDetailsPage = () => {
             <DificultyIndicator difficulty={project.difficulty.value} />
             <p>{project.difficulty.label}</p>
           </div>
-          <div className="project-details__content-image">
-            <img src={project.image} alt={project.title} />
-          </div>
-
-          <p className="project-details__content-why">
-            "{project.details?.why}"
-          </p>
-
-          <div className="project-details__content-tech">
-            <FloatingTags tags={project.tags} />
-          </div>
           <div className="project-details__content-github">
             <a
               href={project.gitHub}
@@ -79,6 +68,16 @@ const ProjectDetailsPage = () => {
             </a>
           </div>
 
+          <div className="project-details__content-image">
+            <img src={project.image} alt={project.title} />
+          </div>
+
+          <div className="project-details__content-tech">
+            <FloatingTags tags={project.tags} />
+          </div>
+          <p className="project-details__content-why">
+            "{project.details?.why}"
+          </p>
           <LineBreak
             className="project-details__content-mainDescription"
             text={project.details?.mainDescription}
@@ -89,6 +88,13 @@ const ProjectDetailsPage = () => {
                 <li key={index}>{item}</li>
               ))}
             </ul>
+          </div>
+          <div className="project-details__content-footer">
+            <p className="footer-wrapper">
+              <span className="footer-year">{project.details.footer.year}</span>
+              <span className="footer-separator"> - </span>
+              {project.details.footer.phrase}
+            </p>
           </div>
         </div>
       </motion.div>

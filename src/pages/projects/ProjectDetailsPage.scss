@@ -29,20 +29,28 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "header       header       header       header       header       header       header       header       header       header       header       header"
+      "image        image        image        image        image        image        description  description  description  description  description  description  "
+      "tech         tech         tech         tech         tech         tech         description  description  description  description  description  description"
+      "github       difficulty   features     features     features     features     why     why          why          why          why          why          "
+      "footer       footer       footer       footer       footer       footer       footer       footer       footer       footer       footer       footer       ";
     gap: var(--space-base);
     margin-top: var(--space-m);
 
-    &-header {
-      grid-column: 2 / 12;
-      grid-row: 1 / 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    > * {
       padding: var(--space-base);
       border: 1px solid var(--theme-stroke-soft);
       border-radius: var(--border-radius-5);
       background-color: var(--theme-backdrop-glossy-soft);
+    }
+
+    &-header {
+      grid-area: header;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       &-title {
         font-size: var(--font-size-h2);
@@ -55,16 +63,25 @@
       }
     }
 
+    &-stats {
+      grid-area: stats;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .project-details__content-github,
+      .project-details__content-difficulty {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+
     &-difficulty {
-      grid-column: 12 / 13;
-      grid-row: 1 / 2;
-      padding: var(--space-base);
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
-      background-color: var(--theme-backdrop-glossy-soft);
+      grid-area: difficulty;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      aspect-ratio: 1 / 1;
 
       p {
         text-align: center;
@@ -72,11 +89,9 @@
     }
 
     &-image {
-      border-radius: var(--border-radius-5);
-      border: 1px solid var(--theme-stroke-soft);
+      grid-area: image;
+      padding: 0;
       overflow: hidden;
-      grid-column: 1 / 6;
-      grid-row: 2 / 4;
 
       img {
         width: 100%;
@@ -87,15 +102,11 @@
     }
 
     &-github {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
+      grid-area: github;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--space-base);
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
-      background-color: var(--theme-backdrop-glossy-soft);
+      aspect-ratio: 1 / 1;
 
       a {
         text-decoration: none;
@@ -110,24 +121,16 @@
     }
 
     &-tech {
+      grid-area: tech;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: var(--space-xs);
-      padding: var(--space-base);
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
-      background-color: var(--theme-backdrop-glossy-soft);
-      grid-column: 1 / 13;
     }
 
     &-why {
-      grid-column: 6 / 13;
-      grid-row: 2 / 3;
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
-      background-color: var(--theme-backdrop-glossy-soft);
+      grid-area: why;
       font-size: var(--font-size-lg);
       font-weight: 600;
       color: var(--color-indigo-400);
@@ -135,29 +138,65 @@
     }
 
     &-mainDescription {
-      grid-column: 6 / 13;
-      grid-row: 3 / 5;
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
+      grid-area: description;
       padding: var(--space-l);
-      background-color: var(--theme-backdrop-glossy-soft);
     }
 
     &-features {
+      grid-area: features;
       display: flex;
       align-items: center;
       justify-content: center;
-      grid-column: 1 / 6;
-      grid-row: 4 / 5;
-      border: 1px solid var(--theme-stroke-soft);
-      border-radius: var(--border-radius-5);
       padding: var(--space-l);
-      background-color: var(--theme-backdrop-glossy-soft);
       color: var(--color-slate-200);
 
       li + li {
         margin-top: 10px;
       }
     }
+
+    &-footer {
+      grid-area: footer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .footer-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: var(--space-s);
+        align-items: center;
+        font-weight: 300;
+        font-style: italic;
+
+        .footer-year {
+          color: var(--color-teal-600);
+        }
+
+        .footer-separator {
+          color: var(--color-grey-600);
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 1024px) {
+  .project-details__content {
+    grid-template-areas:
+      "header"
+      "difficulty"
+      "github"
+      "image"
+      "why"
+      "main"
+      "features"
+      "tech";
+    grid-template-columns: 1fr;
+  }
+
+  .project-details__content > * {
+    grid-column: 1 / -1 !important;
   }
 }

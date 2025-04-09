@@ -235,6 +235,10 @@ export const projects = [
         "Added a 3D object using TREE.js",
         "First time using TypeScript",
       ],
+      footer: {
+        year: "2025",
+        phrase: "Built with love, early mornings, and caffeine",
+      },
     },
   },
   {
@@ -264,6 +268,10 @@ export const projects = [
         "Authentication by user",
         "Create, Update and Delete tasks",
       ],
+      footer: {
+        year: "2024",
+        phrase: "Built with love, early mornings, and caffeine",
+      },
     },
   },
 ];
