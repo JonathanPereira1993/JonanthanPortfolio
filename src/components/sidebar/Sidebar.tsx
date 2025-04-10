@@ -58,9 +58,7 @@ const backgroundVariants = {
 const Sidebar = ({ children, bottomAction }: Props) => {
   const { isOpen, toggleSidebar, closeSidebar } = useSidebar();
 
-  const isScreenBig = useScreenSize(1400);
-
-  console.log(isScreenBig);
+  const isScreenBig = useScreenSize(1620);
 
   const onOpenSidebarHandler = () => {
     toggleSidebar();

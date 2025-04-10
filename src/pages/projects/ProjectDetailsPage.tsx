@@ -55,8 +55,10 @@ const ProjectDetailsPage = () => {
             className="project-details__content-difficulty"
             title="Difficulty of the project"
           >
-            <DificultyIndicator difficulty={project.difficulty.value} />
-            <p>{project.difficulty.label}</p>
+            <div>
+              <DificultyIndicator difficulty={project.difficulty.value} />
+              <p>{project.difficulty.label}</p>
+            </div>
           </div>
           <div className="project-details__content-github">
             <a
@@ -64,7 +66,7 @@ const ProjectDetailsPage = () => {
               title="Open github repository"
               target="_blank"
             >
-              <FaGithub size={50} />
+              <FaGithub size={80} />
             </a>
           </div>
 
