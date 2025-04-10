@@ -1,13 +1,10 @@
 .contacts-section {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(350px, 50%, 535px), 1fr)
-  );
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1500px;
   gap: var(--space-3xl);
   overflow: hidden;
   height: 100%;
@@ -22,7 +19,7 @@
 }
 
 // Tablet
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .contacts-section {
     display: flex;
     align-items: center;

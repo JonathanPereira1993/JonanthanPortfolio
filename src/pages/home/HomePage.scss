@@ -89,7 +89,7 @@
 @media (max-width: 768px) {
   .home-section {
     width: 100%;
-    align-items: flex-start;
+    gap: var(--space-3xl);
     align-content: flex-start;
 
     .left-column,
