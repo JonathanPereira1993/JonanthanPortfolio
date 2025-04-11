@@ -1,6 +1,5 @@
-import "./ProjectDetailsPage.scss";
 import { useNavigate, useParams } from "react-router";
-import Button from "../../components/UI/button/Button";
+import Button from "../../components/UI/Button/Button";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
@@ -9,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../../constants/Constants";
 import { LineBreak } from "../../utils/LineBreaks";
 import FloatingTags from "../../components/FloatingTags/FloatingTags";
-import DificultyIndicator from "../../components/difficultyIndicator/DifficultyIndicator";
+import DificultyIndicator from "../../components/DifficultyIndicator/DifficultyIndicator";
 
 const ProjectDetailsPage = () => {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
-import Sidebar from "../../components/sidebar/Sidebar";
-import ContentLayout from "../../components/contentLayout/ContentLayout";
-import "./ProjectsPage.scss";
-import ProjectItem from "../../components/projectItem/ProjectItem";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import ContentLayout from "../../components/ContentLayout/ContentLayout";
+
+import ProjectItem from "../../components/ProjectItem/ProjectItem";
 import { useState } from "react";
 
-import CheckboxFilterItem from "../../components/checkboxFilterItem/CheckboxFilterItem";
+import CheckboxFilterItem from "../../components/CheckboxFilterItem/CheckboxFilterItem";
 
 import { projects, projectFilters } from "../../constants/Constants";
 import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";

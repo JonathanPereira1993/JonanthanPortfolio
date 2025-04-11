@@ -1,7 +1,5 @@
 import Photo from "../../assets/me/BWPhoto.jpg";
 
-import "./ProfilePic.scss";
-
 const ProfilePic = () => {
   return (
     <div className="profile-picture">

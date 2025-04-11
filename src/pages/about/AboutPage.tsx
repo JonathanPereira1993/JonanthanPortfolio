@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
-import SidebarItem from "../../components/sidebar/SidebarItem";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarItem from "../../components/Sidebar/SidebarItem";
 import { useLocation, useNavigate } from "react-router";
 import useScreenSize from "../../hooks/useScreenSize";
 
-import "./AboutPage.scss";
-import Accordion from "../../components/accordion/Accordion";
-import Button from "../../components/UI/button/Button";
+import Accordion from "../../components/Accordion/Accordion";
+import Button from "../../components/UI/Button/Button";
 import BioSection from "./sections/bioSection/BioSection";
 import EducationSection from "./sections/educationSection/EducationSection";
 import CertificationsSection from "./sections/certificationsSection/CertificationsSection";

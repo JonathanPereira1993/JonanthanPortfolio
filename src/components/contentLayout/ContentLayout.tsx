@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContentLayout.scss";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useSidebar } from "../../Context/UseSidebar";

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import "./BackdropGlowingEffect.scss";
 
 const BackdropGlowingEffect = () => {
   return (

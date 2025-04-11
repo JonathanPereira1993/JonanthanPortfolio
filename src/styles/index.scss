@@ -1,8 +1,57 @@
+// Abstracts
 @use "./abstracts/variables" as *;
 @use "./abstracts/mixins" as *;
+
+// Base
 @use "./base/reset";
 @use "./base/typography";
 @use "./base/helpers";
+
+// Layout
+@use "./layout/Header";
+@use "./layout/Layout";
+@use "./layout/MobileMenu";
+@use "./layout/Footer";
+
+// Components
+@use "./components/Accordion";
+@use "./components/BackdropGlowingEffect";
+@use "./components/BookItem";
+@use "./components/CertificationItem";
+@use "./components/CheckboxFilterItem";
+@use "./components/CodeSnippet";
+@use "./components/ContactForm";
+@use "./components/ContentLayout";
+@use "./components/DifficultyIndicator";
+@use "./components/FloatingTags";
+@use "./components/GridContainer";
+@use "./components/HeroDisplay";
+@use "./components/HeroIntro";
+@use "./components/HobbieItem";
+@use "./components/ImageGallery";
+@use "./components/ProfilePic";
+@use "./components/ProjectItem";
+@use "./components/Sidebar";
+@use "./components/SidebarItem";
+// Components - UI
+@use "./components/UI/Button";
+@use "./components/UI/FormattedText";
+@use "./components/UI/Input";
+@use "./components/UI/Tag";
+
+// Pages
+@use "./Pages/HomePage";
+@use "./Pages/HobbieDetailsPage";
+@use "./Pages/ContactsPage";
+@use "./Pages/ProjectPageStyles/ProjectsPage";
+@use "./Pages/ProjectPageStyles/ProjectDetailsPage";
+@use "./Pages/AboutPageStyles/AboutPage";
+// About Sections
+@use "./Pages/AboutPageStyles/sections/BioSection";
+@use "./Pages/AboutPageStyles/sections/BooksSection";
+@use "./Pages/AboutPageStyles/sections/CertificationsSection";
+@use "./Pages/AboutPageStyles/sections/EducationSection";
+@use "./Pages/AboutPageStyles/sections/HobbiesSection";
 
 // Tablet
 @media (max-width: 1024px) {

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import "./CodeSnippet.scss";
 
 type Props = {
   image?: string;

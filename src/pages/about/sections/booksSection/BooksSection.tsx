@@ -1,10 +1,8 @@
-import BookItem from "../../../../components/bookItem/BookItem";
-import ContentLayout from "../../../../components/contentLayout/ContentLayout";
+import BookItem from "../../../../components/BookItem/BookItem";
+import ContentLayout from "../../../../components/ContentLayout/ContentLayout";
 import StaggeredListAnimation from "../../../../components/StaggeredListAnimation/StaggeredListAnimation";
 
 import { books } from "../../../../constants/Constants";
-
-import "./BooksSection.scss";
 
 const BooksSection = () => {
   return (

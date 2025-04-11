@@ -1,6 +1,5 @@
-import "./FloatingTags.scss";
 import { motion } from "framer-motion";
-import Tag from "../UI/tag/Tag";
+import Tag from "../UI/Tag/Tag";
 
 type tagSize = "sm" | "md" | "lg";
 

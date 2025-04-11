@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { useSidebar } from "../../Context/UseSidebar";
 
-import "./Sidebar.scss";
 import useScreenSize from "../../hooks/useScreenSize";
 
 type Props = {

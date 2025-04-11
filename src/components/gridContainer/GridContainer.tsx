@@ -1,5 +1,4 @@
 import React from "react";
-import "./GridContainer.scss";
 
 type Props = {
   children: React.ReactNode;

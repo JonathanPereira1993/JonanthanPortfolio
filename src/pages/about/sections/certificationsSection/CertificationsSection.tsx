@@ -1,10 +1,8 @@
-import CertificationItem from "../../../../components/certificationItem/CertificationItem";
-import ContentLayout from "../../../../components/contentLayout/ContentLayout";
+import CertificationItem from "../../../../components/CertificationItem/CertificationItem";
+import ContentLayout from "../../../../components/ContentLayout/ContentLayout";
 import StaggeredListAnimation from "../../../../components/StaggeredListAnimation/StaggeredListAnimation";
 
 import { certifications } from "../../../../constants/Constants";
-
-import "./CertificationsSection.scss";
 
 const CertificationsSection = () => {
   return (

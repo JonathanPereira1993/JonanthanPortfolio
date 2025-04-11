@@ -1,5 +1,3 @@
-import "./ImageGallery.scss";
-
 type Props = {
   images: string[];
 };

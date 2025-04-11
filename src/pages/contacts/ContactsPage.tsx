@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-import "./ContactsPage.scss";
-import ContactForm from "../../components/contactForm/ContactForm";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import ContentLayout from "../../components/contentLayout/ContentLayout";
+import ContentLayout from "../../components/ContentLayout/ContentLayout";
 
 type FormData = {
   name: string;

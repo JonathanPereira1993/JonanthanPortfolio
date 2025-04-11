@@ -1,11 +1,9 @@
-import CodeSnippet from "../../../../components/codeSnippet/CodeSnippet";
-import ContentLayout from "../../../../components/contentLayout/ContentLayout";
+import CodeSnippet from "../../../../components/CodeSnippet/CodeSnippet";
+import ContentLayout from "../../../../components/ContentLayout/ContentLayout";
 import FloatingTags from "../../../../components/FloatingTags/FloatingTags";
 import StaggeredListAnimation from "../../../../components/StaggeredListAnimation/StaggeredListAnimation";
 
 import { education } from "../../../../constants/Constants";
-
-import "./EducationSection.scss";
 
 const EducationSection = () => {
   return (

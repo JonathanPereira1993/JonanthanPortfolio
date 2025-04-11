@@ -1,7 +1,5 @@
 import { AiFillFolder, AiFillFolderOpen } from "react-icons/ai";
 
-import "./SidebarItem.scss";
-
 type Props = {
   children: React.ReactNode;
   selected: boolean;

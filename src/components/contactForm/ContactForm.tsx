@@ -1,8 +1,7 @@
 import { ChangeEvent } from "react";
 
-import "./ContactForm.scss";
-import Input from "../UI/input/Input";
-import Button from "../UI/button/Button";
+import Input from "../UI/Input/Input";
+import Button from "../UI/Button/Button";
 
 type FormData = {
   name: string;

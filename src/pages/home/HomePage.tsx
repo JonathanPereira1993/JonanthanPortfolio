@@ -1,8 +1,7 @@
 import Hero3D from "../../components/3DScene/Hero3D";
 
-import HeroDisplay from "../../components/heroDisplay/HeroDisplay";
-import HeroIntro from "../../components/heroIntro/HeroIntro";
-import "./HomePage.scss";
+import HeroDisplay from "../../components/HeroDisplay/HeroDisplay";
+import HeroIntro from "../../components/HeroIntro/HeroIntro";
 
 const HomePage = () => {
   return (

@@ -1,10 +1,8 @@
-import ContentLayout from "../../../../components/contentLayout/ContentLayout";
-import HobbieItem from "../../../../components/hobbieItem/HobbieItem";
+import ContentLayout from "../../../../components/ContentLayout/ContentLayout";
+import HobbieItem from "../../../../components/HobbieItem/HobbieItem";
 import StaggeredListAnimation from "../../../../components/StaggeredListAnimation/StaggeredListAnimation";
 
 import { hobbies } from "../../../../constants/Constants";
-
-import "./HobbiesSection.scss";
 
 const HobbiesSection = () => {
   return (

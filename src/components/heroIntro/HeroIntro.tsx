@@ -1,4 +1,3 @@
-import "./HeroIntro.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {

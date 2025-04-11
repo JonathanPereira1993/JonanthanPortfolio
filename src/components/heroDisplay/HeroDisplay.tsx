@@ -1,4 +1,3 @@
-import "./HeroDisplay.scss";
 import React from "react";
 
 type Props = {

@@ -1,11 +1,10 @@
 import { GiPortugal, GiSwitzerland } from "react-icons/gi";
-import ContentLayout from "../../../../components/contentLayout/ContentLayout";
+import ContentLayout from "../../../../components/ContentLayout/ContentLayout";
 import FloatingTags from "../../../../components/FloatingTags/FloatingTags";
 
 import { biography } from "../../../../constants/Constants";
 
-import "./BioSection.scss";
-import ProfilePic from "../../../../components/profilePic/ProfilePic";
+import ProfilePic from "../../../../components/ProfilePic/ProfilePic";
 import { LineBreak } from "../../../../utils/LineBreaks";
 
 const BioSection = () => {

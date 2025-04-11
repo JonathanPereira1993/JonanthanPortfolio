@@ -4,7 +4,6 @@ import { IoClose } from "react-icons/io5";
 import { IoMdArrowDropup } from "react-icons/io";
 import { useLocation, NavLink, Link } from "react-router-dom";
 
-import "./MobileMenu.scss";
 import { NavItem } from "../../../Types/types";
 
 type Props = {

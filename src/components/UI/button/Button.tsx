@@ -1,5 +1,5 @@
 import React from "react";
-import "./Button.scss";
+
 import { motion } from "framer-motion";
 
 type ButtonSize = "small" | "medium" | "big";

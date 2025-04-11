@@ -1,13 +1,12 @@
-import "./HobbieDetailsPage.scss";
 import { useNavigate, useParams } from "react-router";
-import Button from "../../components/UI/button/Button";
+import Button from "../../components/UI/Button/Button";
 import { FaArrowLeft } from "react-icons/fa6";
 
 import { motion, AnimatePresence } from "framer-motion";
 
 import { hobbies } from "../../constants/Constants";
 import { LineBreak } from "../../utils/LineBreaks";
-import ImageGallery from "../../components/imageGallery/ImageGallery";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
 const HobbieDetailsPage = () => {
   const navigate = useNavigate();

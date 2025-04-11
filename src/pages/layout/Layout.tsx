@@ -5,10 +5,9 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 
-import "./Layout.scss";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import BackdropGlowingEffect from "../../components/backdropGlowingEffect/BackdropGlowingEffect";
+import BackdropGlowingEffect from "../../components/BackdropGlowingEffect/BackdropGlowingEffect";
 
 import { portfolioNavLinks } from "../../constants/Constants";
 
