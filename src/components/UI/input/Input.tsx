@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Input.scss";
+
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   as?: "input";
 };

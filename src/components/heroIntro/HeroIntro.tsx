@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
+import "./HeroIntro.scss";
+
 type Props = {
   introText?: string;
   title: string;

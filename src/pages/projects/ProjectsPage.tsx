@@ -9,6 +9,8 @@ import CheckboxFilterItem from "../../components/CheckboxFilterItem/CheckboxFilt
 import { projects, projectFilters } from "../../constants/Constants";
 import StaggeredListAnimation from "../../components/StaggeredListAnimation/StaggeredListAnimation";
 
+import "./ProjectsPage.scss";
+
 const ProjectsPage = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 

@@ -10,6 +10,8 @@ import { LineBreak } from "../../utils/LineBreaks";
 import FloatingTags from "../../components/FloatingTags/FloatingTags";
 import DificultyIndicator from "../../components/DifficultyIndicator/DifficultyIndicator";
 
+import "./ProjectDetailsPage.scss";
+
 const ProjectDetailsPage = () => {
   const navigate = useNavigate();
   const { pid } = useParams();

@@ -4,6 +4,8 @@ import StaggeredListAnimation from "../../../../components/StaggeredListAnimatio
 
 import { certifications } from "../../../../constants/Constants";
 
+import "./CertificationsSection.scss";
+
 const CertificationsSection = () => {
   return (
     <ContentLayout

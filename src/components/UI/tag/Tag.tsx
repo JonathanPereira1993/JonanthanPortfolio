@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Tag.scss";
+
 type Props = {
   icon?: React.ReactNode;
   text: string;

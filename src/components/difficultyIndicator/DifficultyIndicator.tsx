@@ -1,3 +1,5 @@
+import "./DifficultyIndicator.scss";
+
 type Props = {
   difficulty: number;
 };

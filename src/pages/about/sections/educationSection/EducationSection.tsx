@@ -5,6 +5,8 @@ import StaggeredListAnimation from "../../../../components/StaggeredListAnimatio
 
 import { education } from "../../../../constants/Constants";
 
+import "./EducationSection.scss";
+
 const EducationSection = () => {
   return (
     <ContentLayout title="_education">

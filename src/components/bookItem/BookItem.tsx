@@ -1,3 +1,5 @@
+import "./BookItem.scss";
+
 type Props = {
   image?: string;
   title: string;

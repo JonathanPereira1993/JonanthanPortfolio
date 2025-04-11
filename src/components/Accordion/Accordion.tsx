@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
+import "./Accordion.scss";
+
 type Props = {
   isExpanded?: boolean;
   headerText: string;

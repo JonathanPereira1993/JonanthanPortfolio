@@ -1,5 +1,7 @@
 import Button from "../UI/Button/Button";
 
+import "./HobbieItem.scss";
+
 import { useNavigate } from "react-router";
 
 type Props = {

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import "./Sidebar.scss";
+
 import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 

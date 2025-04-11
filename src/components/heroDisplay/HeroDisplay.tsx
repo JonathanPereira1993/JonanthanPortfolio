@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./HeroDisplay.scss";
+
 type Props = {
   children: React.ReactNode;
 };

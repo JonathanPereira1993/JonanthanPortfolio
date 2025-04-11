@@ -7,6 +7,8 @@ import { biography } from "../../../../constants/Constants";
 import ProfilePic from "../../../../components/ProfilePic/ProfilePic";
 import { LineBreak } from "../../../../utils/LineBreaks";
 
+import "./BioSection.scss";
+
 const BioSection = () => {
   return (
     <ContentLayout title="_bio">

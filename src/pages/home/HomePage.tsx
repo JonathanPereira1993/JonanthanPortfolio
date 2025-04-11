@@ -3,6 +3,8 @@ import Hero3D from "../../components/3DScene/Hero3D";
 import HeroDisplay from "../../components/HeroDisplay/HeroDisplay";
 import HeroIntro from "../../components/HeroIntro/HeroIntro";
 
+import "./HomePage.scss";
+
 const HomePage = () => {
   return (
     <section className="home-section">

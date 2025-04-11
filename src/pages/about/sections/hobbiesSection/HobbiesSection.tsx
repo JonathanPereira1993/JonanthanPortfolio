@@ -4,6 +4,8 @@ import StaggeredListAnimation from "../../../../components/StaggeredListAnimatio
 
 import { hobbies } from "../../../../constants/Constants";
 
+import "./HobbiesSection.scss";
+
 const HobbiesSection = () => {
   return (
     <ContentLayout

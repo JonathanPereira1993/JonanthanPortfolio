@@ -7,6 +7,8 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import ContentLayout from "../../components/ContentLayout/ContentLayout";
 
+import "./ContactsPage.scss";
+
 type FormData = {
   name: string;
   email: string;

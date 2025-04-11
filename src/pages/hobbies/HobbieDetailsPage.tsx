@@ -8,6 +8,8 @@ import { hobbies } from "../../constants/Constants";
 import { LineBreak } from "../../utils/LineBreaks";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
+import "./HobbieDetailsPage.scss";
+
 const HobbieDetailsPage = () => {
   const navigate = useNavigate();
   const { hid } = useParams();

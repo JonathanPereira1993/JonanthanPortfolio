@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Tag from "../UI/Tag/Tag";
 
+import "./FloatingTags.scss";
+
 type tagSize = "sm" | "md" | "lg";
 
 type Props = {

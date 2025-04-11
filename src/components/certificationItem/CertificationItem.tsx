@@ -1,3 +1,5 @@
+import "./CertificationItem.scss";
+
 type Props = {
   image: string;
   title: string;

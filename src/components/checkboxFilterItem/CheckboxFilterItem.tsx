@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./CheckboxFilterItem.scss";
+
 type Props = {
   id: number;
   isChecked: boolean;

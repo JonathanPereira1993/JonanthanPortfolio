@@ -12,6 +12,8 @@ import CertificationsSection from "./sections/certificationsSection/Certificatio
 import BooksSection from "./sections/booksSection/BooksSection";
 import HobbiesSection from "./sections/hobbiesSection/HobbiesSection";
 
+import "./AboutPage.scss";
+
 import { portfolioNavLinks } from "../../constants/Constants";
 
 const AboutPage = () => {

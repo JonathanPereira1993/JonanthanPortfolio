@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./ProjectItem.scss";
+
 import Button from "../UI/Button/Button";
 
 import { useNavigate } from "react-router";
