@@ -1,27 +1,12 @@
+@use "../../styles/abstracts/mixins" as mixin;
+
 .content-layout {
   padding: var(--space-xl) var(--space-3xl) var(--space-xl) var(--space-3xl);
   overflow-y: auto;
   flex: 1;
   transition: all 1000ms ease;
 
-  &.without-sidebar {
-    --sidebar-width: 0;
-  }
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    background-color: var(--theme-background);
-    border-left: 1px solid var(--theme-stroke);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-teal-600);
-  }
+  @include mixin.scrollbar;
 
   &__title {
     max-width: var(--max-screen-size);

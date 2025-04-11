@@ -1,0 +1,26 @@
+.error-text {
+  position: absolute;
+  top: calc(100% + var(--space-xxs));
+  color: var(--color-red-500);
+  font-size: var(--font-size-sm);
+}
+
+.relative {
+  position: relative;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

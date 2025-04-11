@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/mixins" as mixin;
+
 .layout-main {
   background-color: var(--theme-backdrop-glossy);
   border-radius: var(--border-radius-4);
@@ -17,20 +19,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      background-color: var(--theme-background);
-      border-left: 1px solid var(--theme-stroke);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-teal-600);
-    }
+    @include mixin.scrollbar;
   }
 }
 

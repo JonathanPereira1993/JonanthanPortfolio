@@ -1,0 +1,45 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+@use "./base/reset";
+@use "./base/typography";
+@use "./base/helpers";
+
+// Tablet
+@media (max-width: 1024px) {
+  :root {
+    --margin-layout: 40px;
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-h3: 30px;
+    --font-size-h4: 24px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+
+    --font-size-sm: 13px;
+    --font-size-md: 15px;
+    --font-size-lg: 16px;
+
+    --margin-layout: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-h1: 36px;
+    --font-size-h2: 30px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-h5: 18px;
+    --font-size-h6: 16px;
+
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 15px;
+  }
+}
