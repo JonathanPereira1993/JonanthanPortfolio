@@ -36,6 +36,10 @@
       align-items: center;
     }
   }
+
+  &.without-sidebar {
+    margin-left: 0;
+  }
 }
 
 @media (width >= 1620px) {
@@ -48,7 +52,7 @@
 }
 
 // Tablet
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .content-layout {
     padding: var(--space-base);
 
@@ -67,7 +71,7 @@
 }
 
 // Phone
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .content-layout {
     padding: var(--space-m);
 

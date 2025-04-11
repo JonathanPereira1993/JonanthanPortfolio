@@ -22,37 +22,37 @@ const widthVariants = {
   },
   closed: {
     width: 0,
-    transition: { duration: 0.3, ease: "easeInOut" },
+    transition: { duration: 0.4, ease: "easeInOut" },
   },
 };
 
 const toggleVariants = {
   open: {
-    top: "20px",
     right: "10px",
-    transform: "translateX(0px)",
+    transform: "translateX(-10px)",
     transition: { duration: 0.3, ease: "easeInOut", delay: 0.4 },
   },
   closed: {
-    top: "20px",
     right: "0px",
     transform: "translateX(25px)",
-    transition: { duration: 0.3, ease: "easeInOut" },
+    transition: { duration: 0.4, ease: "easeInOut", delay: 0.2 },
   },
 };
 
 const backgroundVariants = {
   open: {
     opacity: 0,
-    width: 0,
+    width: "0px",
+    backgroundColor: "var(--primary-background)",
+    transformOrigin: "left",
     transition: { duration: 0.3, ease: "easeInOut", delay: 0.2 },
   },
   closed: {
     opacity: 1,
-    width: "36px",
+    width: "37px",
     backgroundColor: "var(--primary-background)",
     transformOrigin: "left",
-    transition: { duration: 0.3, ease: "easeInOut", delay: 0.4 },
+    transition: { duration: 0.4, ease: "easeInOut", delay: 0.4 },
   },
 };
 

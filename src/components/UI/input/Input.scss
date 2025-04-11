@@ -24,6 +24,13 @@
   }
 }
 
+.error-text {
+  position: absolute;
+  top: calc(100% + var(--space-xxs));
+  color: var(--color-red-500);
+  font-size: var(--font-size-sm);
+}
+
 // Tablet
 @media (max-width: 1024px) {
   .input-container {

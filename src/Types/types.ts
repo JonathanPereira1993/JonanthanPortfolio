@@ -1,4 +1,3 @@
-// Define proper types for nav data
 export interface SubItem {
   id: string;
   label: string;

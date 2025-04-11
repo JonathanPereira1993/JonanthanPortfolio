@@ -29,10 +29,6 @@
     }
   }
 
-  &.sidebar-closed {
-    --sidebar-width: 0px;
-  }
-
   &-toggle {
     cursor: pointer;
     position: absolute;
@@ -47,7 +43,6 @@
     &-bg {
       position: absolute;
       transform-origin: left;
-      width: 32px;
       height: 40px;
       background-color: var(--primary-background);
       border-top-right-radius: var(--border-radius-4);
