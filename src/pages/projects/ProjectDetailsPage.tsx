@@ -11,11 +11,16 @@ import FloatingTags from "../../components/FloatingTags/FloatingTags";
 import DificultyIndicator from "../../components/DifficultyIndicator/DifficultyIndicator";
 
 import "./ProjectDetailsPage.scss";
+import { useState } from "react";
+import Modal from "../../components/Modal/Modal";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
 const ProjectDetailsPage = () => {
   const navigate = useNavigate();
   const { pid } = useParams();
   const project = projects.find((p) => p.id === pid);
+
+  const [selectedIndex, setSelectedIndex] = useState<string | null>(null);
 
   if (!project) {
     return <p>Project not found</p>;
@@ -25,6 +30,14 @@ const ProjectDetailsPage = () => {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.8 } },
     exit: { opacity: 0, transition: { duration: 0.8 } },
+  };
+
+  const modalOpenHandler = (index: string) => {
+    setSelectedIndex(index);
+  };
+
+  const modalCloseHandler = () => {
+    setSelectedIndex(null);
   };
 
   return (
@@ -44,62 +57,84 @@ const ProjectDetailsPage = () => {
 
         {/* Content */}
         <div className="project-details__content">
-          <div className="project-details__content-header">
-            <h1 className="project-details__content-header-title">
-              {project.title}
-            </h1>
-            <p className="project-details__content-header-subtitle">
-              {project.details?.subtitle}
+          <div className="project-details__content__inner">
+            <div className="project-details__content__inner-header">
+              <h1 className="project-details__content-header-title">
+                {project.title}
+              </h1>
+              <p className="project-details__content-header-subtitle">
+                {project.details?.subtitle}
+              </p>
+            </div>
+            <div
+              className="project-details__content__inner-difficulty"
+              title="Difficulty of the project"
+            >
+              <div>
+                <DificultyIndicator difficulty={project.difficulty.value} />
+                <p>{project.difficulty.label}</p>
+              </div>
+            </div>
+            <div className="project-details__content__inner-github">
+              <a
+                href={project.gitHub}
+                title="Open github repository"
+                target="_blank"
+              >
+                <FaGithub size={80} />
+              </a>
+            </div>
+
+            <div
+              className="project-details__content__inner-image"
+              onClick={() => modalOpenHandler(project.id)}
+              title="Click to open modal with more images"
+            >
+              <img src={project.image} alt={project.title} />
+            </div>
+
+            <div className="project-details__content__inner-tech">
+              <FloatingTags tags={project.tags} />
+            </div>
+            <p className="project-details__content__inner-why">
+              "{project.details?.why}"
             </p>
-          </div>
-          <div
-            className="project-details__content-difficulty"
-            title="Difficulty of the project"
-          >
-            <div>
-              <DificultyIndicator difficulty={project.difficulty.value} />
-              <p>{project.difficulty.label}</p>
+            <LineBreak
+              className="project-details__content__inner-mainDescription"
+              text={project.details?.mainDescription}
+            />
+            <div className="project-details__content__inner-features">
+              <ul>
+                {project.details?.features.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="project-details__content__inner-footer">
+              <p className="footer-wrapper">
+                <span className="footer-year">
+                  {project.details.footer.year}
+                </span>
+                <span className="footer-separator"> - </span>
+                {project.details.footer.phrase}
+              </p>
             </div>
           </div>
-          <div className="project-details__content-github">
-            <a
-              href={project.gitHub}
-              title="Open github repository"
-              target="_blank"
-            >
-              <FaGithub size={80} />
-            </a>
-          </div>
-
-          <div className="project-details__content-image">
-            <img src={project.image} alt={project.title} />
-          </div>
-
-          <div className="project-details__content-tech">
-            <FloatingTags tags={project.tags} />
-          </div>
-          <p className="project-details__content-why">
-            "{project.details?.why}"
-          </p>
-          <LineBreak
-            className="project-details__content-mainDescription"
-            text={project.details?.mainDescription}
-          />
-          <div className="project-details__content-features">
-            <ul>
-              {project.details?.features.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="project-details__content-footer">
-            <p className="footer-wrapper">
-              <span className="footer-year">{project.details.footer.year}</span>
-              <span className="footer-separator"> - </span>
-              {project.details.footer.phrase}
-            </p>
-          </div>
         </div>
+
+        {/* Modal */}
+        <AnimatePresence>
+          {selectedIndex !== null && (
+            <Modal
+              modalTitle={`${project.title} images`}
+              showTitle
+              alt="Image"
+              onClose={modalCloseHandler}
+            >
+              <ImageGallery images={project.details?.images || []} altText="" />
+            </Modal>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );

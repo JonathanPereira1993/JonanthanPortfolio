@@ -18,11 +18,23 @@ type Props = {
 const widthVariants = {
   open: {
     width: "var(--sidebar-width)",
-    transition: { duration: 0.5, ease: "easeInOut" },
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+      type: "tween",
+      damping: 30,
+      stiffness: 300,
+    },
   },
   closed: {
     width: 0,
-    transition: { duration: 0.4, ease: "easeInOut" },
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
+      type: "spring",
+      damping: 30,
+      stiffness: 300,
+    },
   },
 };
 
@@ -30,12 +42,20 @@ const toggleVariants = {
   open: {
     right: "10px",
     transform: "translateX(-10px)",
-    transition: { duration: 0.3, ease: "easeInOut", delay: 0.4 },
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+      delay: 0.4,
+    },
   },
   closed: {
     right: "0px",
-    transform: "translateX(25px)",
-    transition: { duration: 0.4, ease: "easeInOut", delay: 0.2 },
+    transform: "translateX(23px)",
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
+      delay: 0.2,
+    },
   },
 };
 
@@ -58,6 +78,7 @@ const backgroundVariants = {
 
 const Sidebar = ({ children, bottomAction }: Props) => {
   const { isOpen, toggleSidebar, closeSidebar } = useSidebar();
+  const hasMounted = useRef(false);
 
   const isScreenBig = useScreenSize(1620);
 
@@ -79,7 +100,7 @@ const Sidebar = ({ children, bottomAction }: Props) => {
       <div className="sidebar-wrapper">
         <motion.div
           variants={widthVariants}
-          initial="closed"
+          initial={hasMounted.current ? "closed" : false}
           animate={isOpen ? "open" : "closed"}
           className={`sidebar ${isOpen ? "sidebar-opened" : "sidebar-closed"}`}
         >
@@ -87,12 +108,14 @@ const Sidebar = ({ children, bottomAction }: Props) => {
             className="sidebar-toggle"
             onClick={onOpenSidebarHandler}
             variants={toggleVariants}
+            initial={hasMounted.current ? "closed" : false}
             animate={isOpen ? "open" : "closed"}
             whileTap={{ scale: 0.9 }}
           >
             <motion.div
               className="sidebar-toggle-bg"
               variants={backgroundVariants}
+              initial={hasMounted.current ? "closed" : false}
               animate={isOpen ? "open" : "closed"}
             />
 

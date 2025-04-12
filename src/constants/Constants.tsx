@@ -41,6 +41,14 @@ import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 import { YearsCalculator } from "../utils/Utils";
 
+const imageModules = import.meta.glob(
+  "../assets/Projects/DetailImages/*.{png,jpg,jpeg,webp}",
+  { eager: true, import: "default" }
+);
+
+const projectImagesDetails = Object.values(imageModules) as string[];
+
+// NavLinks in the project
 export const portfolioNavLinks = [
   {
     id: "home-page",
@@ -96,6 +104,7 @@ export const portfolioNavLinks = [
   },
 ];
 
+// Biography
 export const biography = {
   title: "Hello, my name is Jonathan Pereira",
   story:
@@ -239,6 +248,7 @@ export const projects = [
         year: "2025",
         phrase: "Built with love, early mornings, and caffeine",
       },
+      images: projectImagesDetails,
     },
   },
   {

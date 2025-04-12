@@ -4,6 +4,7 @@
   border-bottom: 1px solid var(--theme-stroke);
   height: var(--header-height);
   z-index: 50;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 
   .nav-links {
     width: 100%;
