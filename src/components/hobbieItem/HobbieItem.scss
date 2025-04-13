@@ -1,36 +1,70 @@
 .hobbie-item {
-  background-color: var(--theme-backdrop-glossy);
+  position: relative;
   backdrop-filter: blur(20px);
   border: 1px solid var(--theme-stroke);
   border-radius: var(--border-radius-5);
   overflow: hidden;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 400px;
+
+  > div {
+    padding: var(--space-xs);
+    transition: all 400ms ease;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  &:hover > div {
+    padding: 0;
+  }
+
+  &:hover > div .hobbie-item__content > div {
+    padding: var(--space-base) var(--space-base) var(--space-base)
+      var(--space-base);
+    border-radius: 0;
+  }
 
   &__image {
     transition: all 300ms ease;
     object-fit: cover;
     width: 100%;
+    height: 100%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    filter: brightness(80%);
   }
 
   &__content {
-    padding: var(--space-base);
-    min-height: 180px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: var(--border-radius-4);
+      padding: var(--space-s) var(--space-s);
+      transition: all 400ms ease;
+      flex: 1;
+    }
 
     &-subtitle {
-      color: var(--foreground);
-      margin-bottom: var(--space-s);
+      color: var(--slate-200);
     }
 
     .btn {
-      max-width: 120px;
+      align-self: center;
+      width: 60%;
+      margin-top: var(--space-s);
     }
   }
 }

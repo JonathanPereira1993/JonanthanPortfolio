@@ -41,12 +41,17 @@ import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 import { YearsCalculator } from "../utils/Utils";
 
-const imageModules = import.meta.glob(
+const imageProjectModules = import.meta.glob(
   "../assets/Projects/DetailImages/*.{png,jpg,jpeg,webp}",
   { eager: true, import: "default" }
 );
+const projecProjectDetails = Object.values(imageProjectModules) as string[];
 
-const projectImagesDetails = Object.values(imageModules) as string[];
+const imageDrumsModules = import.meta.glob(
+  "../assets/Hobbies/DrumsPhotos/*.{png,jpg,jpeg,webp}",
+  { eager: true, import: "default" }
+);
+const projectImagesDetails = Object.values(imageDrumsModules) as string[];
 
 // NavLinks in the project
 export const portfolioNavLinks = [
@@ -248,7 +253,7 @@ export const projects = [
         year: "2025",
         phrase: "Built with love, early mornings, and caffeine",
       },
-      images: projectImagesDetails,
+      images: projecProjectDetails,
     },
   },
   {
@@ -286,6 +291,7 @@ export const projects = [
   },
 ];
 
+// Books
 export const books = [
   {
     id: 1,
@@ -377,6 +383,7 @@ export const books = [
   },
 ];
 
+// Hobbies
 export const hobbies = [
   {
     id: "drums",
@@ -385,7 +392,7 @@ export const hobbies = [
     subtitle: " My Journey with Drums",
     phrase: "Life’s better with a beat!",
     description: "",
-    photos: [Drums],
+    photos: projectImagesDetails,
     buttonText: "Hit the Groove",
     mainDescription:
       "Ever since I was 7 years old, I’ve been drawn to the power of rhythm. The first time I picked up a pair of drumsticks, I knew I had found something special—something that spoke to me in a way words never could. Drumming wasn’t just about keeping time; it was about feeling the music, shaping the groove, and driving the energy forward.\n\n Over the years, I’ve played in different bands, exploring various styles and learning how drums can transform a song. Whether it was jamming with friends, performing live, or simply getting lost in a beat, drumming has always been my way of expressing creativity.\n\n I even took my passion to YouTube, recording drum covers of songs that inspired me. It was an amazing way to share my love for rhythm with others and challenge myself with new techniques.\n\n For me, the drums are more than just an instrument—they’re the heartbeat of the music. They bring everything together, give it movement, and create that undeniable pulse that makes people feel. And that’s why I love them. No matter where life takes me, I know the rhythm will always be with me.",

@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 import Button from "../../components/UI/Button/Button";
 import { FaArrowLeft } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -32,7 +33,7 @@ const HobbieDetailsPage = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="hobbie-details"
+        className="hobbie-details "
       >
         <div className="hobbie-details-back-action">
           <Button
@@ -44,33 +45,46 @@ const HobbieDetailsPage = () => {
           </Button>
         </div>
         <div className="hobbie-details__content">
-          <h1 className="hobbie-details__content-title">{hobbie.title}</h1>
-          <p className="hobbie-details__content-subtitle">{hobbie?.subtitle}</p>
+          <div className="hobbie-details__content__inner">
+            <h1 className="hobbie-details__content__inner-title">
+              {hobbie.title}
+            </h1>
+            <p className="hobbie-details__content__inner-subtitle">
+              {hobbie?.subtitle}
+            </p>
 
-          <div className="hobbie-details__content-column">
-            <LineBreak
-              className="hobbie-details__content-mainDescription"
-              text={hobbie?.mainDescription}
-            />
-            <div className="hobbie-details__content-phrase">
+            <div className="hobbie-details__content__inner-column">
+              <img
+                className="hobbie-details__content__inner-cover"
+                src={hobbie.cover}
+                alt={`${hobbie.title} cover image`}
+              />
+              <LineBreak
+                className="hobbie-details__content__inner-mainDescription"
+                text={hobbie?.mainDescription}
+              />
+            </div>
+            <div className="hobbie-details__content__inner-phrase">
               {hobbie.phrase}
             </div>
-          </div>
-          <div className="hobbie-details__content-gallery">
-            <ImageGallery images={hobbie.photos} />
-          </div>
+            <div className="hobbie-details__content__inner-gallery">
+              <ImageGallery altText="" images={hobbie.photos} />
+            </div>
 
-          <div className="hobbie-details__content-link-container">
-            <p className="hobbie-details__content-link-container__title">
-              {hobbie.linkTitle}
-            </p>
-            <a
-              className="hobbie-details__content-link-container__link"
-              href={hobbie.link}
-              target="_blank"
-            >
-              Check it out
-            </a>
+            <div className="hobbie-details__content__inner-link-container">
+              <p className="hobbie-details__content__inner-link-container__title">
+                {hobbie.linkTitle}
+              </p>
+              <a
+                className="hobbie-details__content__inner-link-container__link"
+                href={hobbie.link}
+                tabIndex={0}
+                title="Check my youtube channel"
+                target="_blank"
+              >
+                <FaYoutube size={80} />
+              </a>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -10,7 +10,7 @@
   height: calc(100vh - calc(var(--margin-layout) * 2));
   margin: var(--margin-layout);
   z-index: 10;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(100px);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 

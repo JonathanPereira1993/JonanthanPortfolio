@@ -20,4 +20,12 @@
 
 // Tablet
 @media (max-width: 1024px) {
+  .projects-section {
+    width: 100%;
+    .columns-projects {
+      justify-items: center;
+      justify-content: unset;
+      width: 100%;
+    }
+  }
 }

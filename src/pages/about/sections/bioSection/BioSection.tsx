@@ -16,15 +16,15 @@ const BioSection = () => {
         <div className="bio-structure__title">
           <h2>{biography.title}</h2>
         </div>
-        <div className="bio-structure__photo">
+        <div className="bio-structure__photo theme-shadow">
           <ProfilePic />
         </div>
-        <div className="bio-structure__story">
+        <div className="bio-structure__story theme-shadow">
           <h3>A little bit about me</h3>
           <LineBreak text={biography.story} />
         </div>
         <div
-          className="bio-structure__naturality"
+          className="bio-structure__naturality theme-shadow"
           title="Click if you want to see on the maps"
           onClick={() =>
             window.open("https://maps.app.goo.gl/1enry4mqvNTH6My26", "_blank")
@@ -40,7 +40,7 @@ const BioSection = () => {
           </div>
         </div>
         <div
-          className="bio-structure__from"
+          className="bio-structure__from theme-shadow"
           title="Click if you want to see on the maps"
           onClick={() =>
             window.open("https://maps.app.goo.gl/dnZLqikGqEpyAeKE9", "_blank")
@@ -53,7 +53,7 @@ const BioSection = () => {
           </div>
         </div>
         <div
-          className="bio-structure__experience"
+          className="bio-structure__experience theme-shadow"
           title="My years of experience since 2021"
         >
           <h3>Experience</h3>
@@ -62,11 +62,11 @@ const BioSection = () => {
           </div>
         </div>
 
-        <div className="bio-structure__skills">
+        <div className="bio-structure__skills theme-shadow">
           <h3>Skills</h3>
           <FloatingTags tags={biography.skills} />
         </div>
-        <div className="bio-structure__objectives">
+        <div className="bio-structure__objectives theme-shadow">
           <h3>Objectives</h3>
           <p>{biography.objectives}</p>
         </div>

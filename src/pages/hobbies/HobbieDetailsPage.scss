@@ -6,11 +6,13 @@
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
+  width: 100%;
 
   &-back-action {
     position: sticky;
     left: 0;
     top: 0;
+    z-index: 45;
   }
 
   @include mixin.scrollbar;
@@ -18,64 +20,126 @@
   &__content {
     width: 100%;
 
-    &-phrase {
-      font-size: var(--font-size-h4);
-      text-align: center;
-      color: var(--color-indigo-500);
-      margin-left: calc(-1 * var(--space-xl));
-      margin-right: calc(-1 * var(--space-xl));
-      display: flex;
-      justify-content: center;
-      padding: var(--space-xl);
-      border-top: 1px solid var(--theme-stroke);
-      border-bottom: 1px solid var(--theme-stroke);
-      background-color: #02061846;
-      width: 100vw;
-      margin: 0 calc(-50vw + 50%);
-    }
+    &__inner {
+      max-width: var(--max-screen-size);
+      margin: 0 auto;
 
-    &-mainDescription {
-      border: 1px solid var(--theme-stroke);
-      background-color: var(--color-slate-950);
-      padding: var(--space-base);
-      border-radius: var(--border-radius-5);
-      margin-bottom: var(--space-l);
-    }
-
-    &-title {
-      font-size: var(--font-size-h2);
-      margin-bottom: var(--space-s);
-      text-align: center;
-    }
-
-    &-subtitle {
-      text-align: center;
-      color: var(--foreground);
-      margin-bottom: var(--space-m);
-    }
-
-    &-gallery {
-      margin: var(--space-l) auto 0;
-      max-width: 80%;
-    }
-
-    &-link-container {
-      padding: var(--space-xl);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      &__title {
-        font-size: var(--font-size-h5);
+      &-column {
+        display: flex;
+        align-items: center;
+        gap: var(--space-l);
+        align-items: stretch;
       }
 
-      &__link {
-        margin-top: var(--space-base);
-        background-color: var(--color-indigo-500);
-        color: var(--color-teal-100);
-        text-decoration: none;
-        border-radius: var(--border-radius-4);
-        padding: var(--space-s) var(--space-m);
+      &-phrase {
+        font-size: var(--font-size-h4);
+        text-align: center;
+        color: var(--color-indigo-500);
+        margin-left: calc(-1 * var(--space-xl));
+        margin-right: calc(-1 * var(--space-xl));
+        display: flex;
+        justify-content: center;
+        padding: var(--space-xl);
+        border-top: 1px solid var(--theme-stroke);
+        border-bottom: 1px solid var(--theme-stroke);
+        background-color: #090e22;
+        width: 100vw;
+        margin: var(--space-xl) calc(-50vw + 50%);
+      }
+
+      &-cover {
+        border-radius: var(--border-radius-5);
+        max-width: 600px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &-mainDescription {
+        background-color: var(--theme-backdrop-glossy);
+        border-radius: var(--border-radius-5);
+        border: 1px solid var(--theme-stroke-soft);
+        backdrop-filter: blur(20px);
+        padding: var(--space-base);
+        border-radius: var(--border-radius-5);
+        flex: 1;
+      }
+
+      &-title {
+        font-size: var(--font-size-h2);
+        margin-bottom: var(--space-s);
+        text-align: center;
+      }
+
+      &-subtitle {
+        text-align: center;
+        color: var(--foreground);
+        margin-bottom: var(--space-m);
+      }
+
+      &-gallery {
+        flex: 1;
+      }
+
+      &-link-container {
+        padding: var(--space-xl);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+          font-size: var(--font-size-h5);
+        }
+
+        &__link {
+          margin-top: var(--space-base);
+          color: var(--color-teal-100);
+          text-decoration: none;
+          border-radius: var(--border-radius-4);
+          transition: all 400ms ease;
+
+          &:hover {
+            transform: scale(1.08);
+            color: #ff0034;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (width <= 1024px) {
+  .hobbie-details {
+    padding: var(--space-m);
+    &__content__inner {
+      &-column {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-link-container__title {
+        font-size: var(--font-size-h5);
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Phone
+@media (width <= 800px) {
+  .hobbie-details {
+    padding: var(--space-base);
+    &__content__inner {
+      &-column {
+        flex-direction: column;
+      }
+
+      &-phrase {
+        font-size: var(--font-size-md);
+      }
+
+      &-link-container__title {
+        font-size: var(--font-size-md);
       }
     }
   }

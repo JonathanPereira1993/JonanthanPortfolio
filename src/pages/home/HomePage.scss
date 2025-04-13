@@ -91,6 +91,8 @@
     width: 100%;
     gap: var(--space-3xl);
     align-content: flex-start;
+    margin: auto 0;
+    height: auto;
 
     .left-column,
     .right-column {

@@ -33,7 +33,7 @@ const ProjectItem = ({
   };
 
   return (
-    <div className="project-item-wrapper">
+    <div className="project-item-wrapper theme-shadow">
       <h3 className="project-item-title">
         <span className="project-number">Project {projNum} </span>
         // {title}

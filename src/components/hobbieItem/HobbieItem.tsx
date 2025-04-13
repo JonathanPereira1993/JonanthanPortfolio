@@ -28,19 +28,23 @@ const HobbieItem = ({
     navigate(`/about/hobbies/${hobbieNum}`);
   };
   return (
-    <div className="hobbie-item">
+    <div className="hobbie-item theme-shadow">
       <img className="hobbie-item__image" src={cover} alt={title} />
-      <div className="hobbie-item__content">
-        <h3 className="hobbie-item__content-title">{title}</h3>
-        <p className="hobbie-item__content-subtitle">{subtitle}</p>
-        <Button
-          title={buttonText}
-          size="big"
-          type="default"
-          onClick={openDetailsHandler}
-        >
-          {buttonText}
-        </Button>
+      <div className="hobbie-item__inner">
+        <div className="hobbie-item__content">
+          <div>
+            <h3 className="hobbie-item__content-title">{title}</h3>
+            <p className="hobbie-item__content-subtitle">{subtitle}</p>
+            <Button
+              title={buttonText}
+              size="big"
+              type="default"
+              onClick={openDetailsHandler}
+            >
+              {buttonText}
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );

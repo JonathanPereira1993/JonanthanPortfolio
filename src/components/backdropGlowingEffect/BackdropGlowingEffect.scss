@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 0;
-  margin: var(--margin-layout);
+  margin: calc(var(--margin-layout) + 2px);
 }
 
 .glowing-effect {
