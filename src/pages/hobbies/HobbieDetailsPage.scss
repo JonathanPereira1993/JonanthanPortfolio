@@ -107,19 +107,34 @@
   }
 }
 
-// Tablet
-@media (width <= 1024px) {
+// Desktop Small
+@media (width <= 1300px) {
   .hobbie-details {
-    padding: var(--space-m);
     &__content__inner {
       &-column {
         flex-direction: column;
         align-items: center;
       }
 
+      &-cover {
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+// Tablet
+@media (width <= 1024px) {
+  .hobbie-details {
+    padding: var(--space-m);
+    &__content__inner {
       &-link-container__title {
         font-size: var(--font-size-h5);
         text-align: center;
+      }
+
+      &-cover {
+        max-width: 100%;
       }
     }
   }
@@ -129,11 +144,8 @@
 @media (width <= 800px) {
   .hobbie-details {
     padding: var(--space-base);
-    &__content__inner {
-      &-column {
-        flex-direction: column;
-      }
 
+    &__content__inner {
       &-phrase {
         font-size: var(--font-size-md);
       }

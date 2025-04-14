@@ -3,6 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { IoMdArrowDropup } from "react-icons/io";
 import { useLocation, NavLink, Link } from "react-router-dom";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 import { NavItem } from "../../../Types/types";
 
@@ -14,26 +15,17 @@ type Props = {
 const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
   const [expanded, setExpanded] = useState(isOpen);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [dropdownHeights, setDropdownHeights] = useState<
+    Record<string, string>
+  >({});
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  const [height, setHeight] = useState("0px");
   const location = useLocation();
+  const screenSize = useScreenSize(1024);
 
   const activeSection = new URLSearchParams(location.search).get("section");
 
   const toggleMenu = () => {
-    setExpanded((prev) => {
-      const willExpand = !prev;
-
-      if (willExpand) {
-        setActiveDropdown("about-page");
-      } else {
-        setActiveDropdown(null);
-      }
-
-      return willExpand;
-    });
-
-    setHeight("0px");
+    setExpanded((prev) => !prev);
   };
 
   const toggleDropdown = (id: string) => {
@@ -46,13 +38,43 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
   };
 
   useEffect(() => {
-    const el = activeDropdown ? dropdownRefs.current[activeDropdown] : null;
-    if (el) {
-      setHeight(`${el.scrollHeight}px`);
-    } else {
-      setHeight("0px");
+    const newHeights: Record<string, string> = {};
+
+    navLinks.forEach((item) => {
+      if (item.hasSubmenu) {
+        const el = dropdownRefs.current[item.id];
+        if (el) {
+          newHeights[item.id] = `${el.scrollHeight}px`;
+        }
+      }
+    });
+
+    setDropdownHeights(newHeights);
+  }, [navLinks]);
+
+  useEffect(() => {
+    if (screenSize) {
+      setExpanded(false);
     }
-  }, [activeDropdown]);
+  }, [screenSize]);
+
+  useEffect(() => {
+    if (!activeSection) return;
+
+    const matchedDropdown = navLinks.find(
+      (link) =>
+        link.hasSubmenu &&
+        link.sidebar.some(
+          (item) => item.path.toLowerCase() === activeSection.toLowerCase()
+        )
+    );
+
+    if (matchedDropdown) {
+      setActiveDropdown(matchedDropdown.id);
+    } else {
+      setActiveDropdown(null);
+    }
+  }, [activeSection, navLinks]);
 
   return (
     <div className={`mobile-menu ${expanded ? "mobile-menu--expanded" : ""}`}>
@@ -65,10 +87,6 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
           const isOpen = activeDropdown === item.id;
 
           if (item.hasSubmenu) {
-            console.log({
-              activeSection,
-              subPaths: item.sidebar.map((s) => s.path),
-            });
             return (
               <div key={item.id}>
                 <div
@@ -85,7 +103,7 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
                     dropdownRefs.current[item.id] = el;
                   }}
                   style={{
-                    height: isOpen ? height : "0px",
+                    height: isOpen ? dropdownHeights[item.id] || "auto" : "0px",
                     overflow: "hidden",
                     transition: "height 0.3s ease",
                   }}
