@@ -6,8 +6,10 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import ContentLayout from "../../components/ContentLayout/ContentLayout";
+import EmailSentAnim from "./EmailSentAnim";
 
 import "./ContactsPage.scss";
+import Button from "../../components/UI/Button/Button";
 
 type FormData = {
   name: string;
@@ -103,36 +105,46 @@ const ContactsPage = () => {
     };`;
 
   return (
-    <ContentLayout title="" verticalCenter hasSidebar={false}>
-      <div className="contacts-section">
-        <div>
-          <ContactForm
-            formData={formData}
-            setFormData={setFormData}
-            errors={errors}
-            onSubmit={handleSubmit}
-            submitting={isSubmitting}
-          />
+    <>
+      <ContentLayout title="" verticalCenter hasSidebar={false}>
+        <div className="contacts-section">
+          <div>
+            <ContactForm
+              formData={formData}
+              setFormData={setFormData}
+              errors={errors}
+              onSubmit={handleSubmit}
+              submitting={isSubmitting}
+            />
+          </div>
+          <div className="syntax-break">
+            <SyntaxHighlighter
+              language="javascript"
+              style={oneDark}
+              showLineNumbers
+              wrapLongLines={true}
+              customStyle={{
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+                overflowX: "hidden",
+                maxWidth: "600px",
+              }}
+            >
+              {emailSent ? successfulCodeString : normalCodeString}
+            </SyntaxHighlighter>
+          </div>
         </div>
-        <div className="syntax-break">
-          <SyntaxHighlighter
-            language="javascript"
-            style={oneDark}
-            showLineNumbers
-            wrapLongLines={true}
-            customStyle={{
-              whiteSpace: "pre-wrap",
-              wordBreak: "break-word",
-              overflowWrap: "break-word",
-              overflowX: "auto",
-              maxWidth: "100%",
-            }}
-          >
-            {emailSent ? successfulCodeString : normalCodeString}
-          </SyntaxHighlighter>
-        </div>
-      </div>
-    </ContentLayout>
+        <Button
+          onClick={() => {
+            setEmailSent(true);
+          }}
+        >
+          Fire animation
+        </Button>
+      </ContentLayout>
+      <EmailSentAnim show={emailSent} />
+    </>
   );
 };
 

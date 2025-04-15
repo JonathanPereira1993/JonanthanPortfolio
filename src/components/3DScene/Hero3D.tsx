@@ -3,12 +3,10 @@ import { OrbitControls, useGLTF, Environment, Stars } from "@react-three/drei";
 import { Suspense, useRef, useEffect } from "react";
 import * as THREE from "three";
 
-// Floating 3D Model Animation
 const FloatingModel = () => {
   const { scene } = useGLTF("/scene.gltf");
   const modelRef = useRef<THREE.Group>(null);
 
-  // Clean up GPU resources when component unmounts
   useEffect(() => {
     return () => {
       if (modelRef.current) {
@@ -92,7 +90,7 @@ export default function Hero3D() {
 
         <Stars radius={100} depth={50} count={2000} factor={3} fade />
 
-        <Suspense fallback={null}>
+        <Suspense fallback={"Loading"}>
           <FloatingModel />
         </Suspense>
 

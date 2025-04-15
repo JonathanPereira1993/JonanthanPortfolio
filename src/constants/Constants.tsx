@@ -26,8 +26,8 @@ import TheMonkWhoSoldHisFerrari from "../assets/books/TheMonkWhoSoldHisFerrari.p
 import ThinkAndGrowRich from "../assets/books/ThinkAndGetRich.png";
 
 // Hobbies cover
-import Drums from "../assets/Hobbies/Drums.jpg";
-import Planes from "../assets/Hobbies/Planes.jpg";
+import Drums from "../assets/Hobbies/Drums.png";
+import Planes from "../assets/Hobbies/Planes.png";
 
 // Aviation Photos
 import FlightSimulator from "../assets/Hobbies/AviationFotos/FlightSimulator.jpg";
