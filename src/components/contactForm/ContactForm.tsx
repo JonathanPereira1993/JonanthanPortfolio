@@ -17,6 +17,7 @@ type ContactFormProps = {
   errors: { [key: string]: string };
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   submitting: boolean;
+  submitted: boolean;
 };
 
 const ContactForm: React.FC<ContactFormProps> = ({
@@ -25,6 +26,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   errors,
   onSubmit,
   submitting,
+  submitted = false,
 }) => {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -73,7 +75,15 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </div>
 
       <Button type="primary" size="big">
-        {submitting ? <span className="loader"></span> : "submit-message"}
+        {!submitted ? (
+          submitting ? (
+            <span className="loader"></span>
+          ) : (
+            "submit-message"
+          )
+        ) : (
+          "message-sent"
+        )}
       </Button>
     </form>
   );

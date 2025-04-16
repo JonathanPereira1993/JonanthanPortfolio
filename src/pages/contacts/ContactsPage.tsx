@@ -97,13 +97,6 @@ const ContactsPage = () => {
     form.send(message);
   })`;
 
-  const successfulCodeString = `
-    const response = {
-      status: "success",
-      message: "Email sent successfully!",
-      date: "${new Date().toLocaleString()}"
-    };`;
-
   return (
     <>
       <ContentLayout title="" verticalCenter hasSidebar={false}>
@@ -115,6 +108,7 @@ const ContactsPage = () => {
               errors={errors}
               onSubmit={handleSubmit}
               submitting={isSubmitting}
+              submitted={emailSent}
             />
           </div>
           <div className="syntax-break">
@@ -131,16 +125,16 @@ const ContactsPage = () => {
                 maxWidth: "600px",
               }}
             >
-              {emailSent ? successfulCodeString : normalCodeString}
+              {normalCodeString}
             </SyntaxHighlighter>
           </div>
         </div>
         <Button
           onClick={() => {
-            setEmailSent(true);
+            setEmailSent((prev) => !prev);
           }}
         >
-          Fire animation
+          {emailSent ? "Remove email sent state" : "Fire animation for Debug"}
         </Button>
       </ContentLayout>
       <EmailSentAnim show={emailSent} />
