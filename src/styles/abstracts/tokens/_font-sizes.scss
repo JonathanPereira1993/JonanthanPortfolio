@@ -1,0 +1,29 @@
+:root {
+  // --------------------------------------------------------
+  // --                 Fonts variables                    --
+  // --------------------------------------------------------
+
+  // Heading
+  --font-size-h1: 60px;
+  --font-size-h2: 48px;
+  --font-size-h3: 36px;
+  --font-size-h4: 30px;
+  --font-size-h5: 24px;
+  --font-size-h6: 20px;
+  // Heading Line Height
+  --font-line-height-h1: 1.1;
+  --font-line-height-h2: 1.2;
+  --font-line-height-h3: 1.3;
+  --font-line-height-h4: 1.4;
+  --font-line-height-h5: 1.4;
+  --font-line-height-h6: 1.5;
+
+  // Body
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  // Body Line Height
+  --font-line-height-sm: 1.4;
+  --font-line-height-md: 1.5;
+  --font-line-height-lg: 1.5;
+}

@@ -1,0 +1,93 @@
+@use "../../styles/abstracts/mixins" as mixin;
+
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--theme-stroke);
+    background-color: var(--theme-backdrop);
+    border-radius: var(--border-radius-5);
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding: var(--space-xl) 0 var(--space-xl);
+    max-width: 1500px;
+    width: 80%;
+    max-height: 85vh;
+
+    &-inner {
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+      padding: var(--space-s) var(--space-3xl);
+
+      @include mixin.scrollbar;
+    }
+
+    .modal__close {
+      all: unset;
+
+      position: absolute;
+      cursor: pointer;
+      top: var(--space-base);
+      right: var(--space-base);
+      opacity: 0.75;
+      transition:
+        transform 300ms ease,
+        opacity 300ms ease;
+
+      &:hover {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+
+    &-title {
+      text-align: center;
+      font-size: var(--font-size-h3);
+      margin-bottom: var(--space-xl);
+    }
+  }
+}
+
+@media (width <= 1300px) {
+  .modal {
+    &__content {
+      max-width: 95%;
+      max-height: 95%;
+    }
+  }
+}
+
+@media (width <= 700px) {
+  .modal {
+    &__content {
+      padding: var(--space-3xl) 0 var(--space-xl);
+      width: 95%;
+      height: 95%;
+    }
+  }
+}

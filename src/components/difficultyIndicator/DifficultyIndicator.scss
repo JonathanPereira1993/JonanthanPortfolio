@@ -1,0 +1,14 @@
+.difficulty-indicator {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xxs);
+
+  .bar {
+    width: 8px;
+    border: 1px solid var(--theme-stroke);
+
+    &.filled {
+      background-color: var(--color-teal-600);
+    }
+  }
+}

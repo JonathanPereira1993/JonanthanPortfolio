@@ -1,0 +1,277 @@
+.bio-structure {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "photo photo photo title title title title title title title title exper"
+    "photo photo photo story story story story story story story story story"
+    "photo photo photo story story story story story story story story story"
+    "fromm fromm natur natur skill skill skill skill objec objec objec objec";
+
+  gap: var(--space-base);
+  padding-bottom: var(--space-xl);
+
+  > div:not(.bio-structure__title) {
+    background-color: var(--theme-backdrop-glossy-soft);
+    border-radius: var(--border-radius-5);
+    border: 1px solid var(--theme-stroke-soft);
+  }
+
+  .country-svg {
+    width: 100%;
+    height: 100%;
+    max-height: 50px;
+  }
+
+  &__photo {
+    grid-area: photo;
+
+    .profile-picture {
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-h3);
+    padding: var(--space-base);
+    grid-area: title;
+  }
+
+  &__experience {
+    display: flex;
+    gap: var(--space-s);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: var(--space-base);
+    height: 100%;
+    grid-area: exper;
+
+    > div {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-bottom: var(--space-m);
+
+      p {
+        font-weight: 400;
+        font-size: var(--font-size-h6);
+        align-self: center;
+      }
+    }
+  }
+
+  &__from {
+    cursor: pointer;
+    display: flex;
+    gap: var(--space-s);
+    justify-content: space-between;
+    padding: var(--space-base);
+    flex-direction: column;
+    grid-area: fromm;
+
+    h3 {
+      text-align: center;
+    }
+
+    > div {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__naturality {
+    cursor: pointer;
+    display: flex;
+    gap: var(--space-s);
+    justify-content: space-between;
+    padding: var(--space-base);
+    flex-direction: column;
+    grid-area: natur;
+
+    h3 {
+      text-align: center;
+    }
+
+    > div {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__story {
+    display: flex;
+    gap: var(--space-s);
+    padding: var(--space-base);
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: story;
+  }
+
+  &__skills {
+    display: flex;
+    gap: var(--space-s);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--space-base);
+    grid-area: skill;
+
+    > div {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__objectives {
+    display: flex;
+    gap: var(--space-s);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-base);
+    grid-area: objec;
+
+    > p {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Wide Desktop
+@media (width <= 2020px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title exper"
+      "photo photo photo photo story story story story story story story story"
+      "photo photo photo photo story story story story story story story story"
+      "photo photo photo photo story story story story story story story story"
+      "fromm fromm natur natur skill skill skill skill objec objec objec objec";
+  }
+}
+
+// Large Desktop
+@media (width <= 1700px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title title"
+      "photo photo photo photo story story story story story story story story"
+      "photo photo photo photo story story story story story story story story"
+      "fromm fromm natur natur story story story story story story story story"
+      "objec objec objec objec skill skill skill skill skill skill skill exper";
+
+    &__title {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Medium Desktop
+@media (width <= 1400px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title title"
+      "photo photo photo story story story story story story story story story"
+      "photo photo photo story story story story story story story story story"
+      "fromm fromm natur natur skill skill skill skill skill skill skill exper"
+      "objec objec objec objec objec objec objec objec objec objec objec objec";
+
+    &__title {
+      font-size: var(--font-size-h4);
+    }
+  }
+}
+
+// Small Desktop
+@media (width <= 1300px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title title"
+      "photo photo photo story story story story story story story story story"
+      "fromm fromm fromm story story story story story story story story story"
+      "natur natur natur story story story story story story story story story"
+      "exper exper exper skill skill skill skill skill objec objec objec objec";
+
+    &__title {
+      font-size: var(--font-size-h5);
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1100px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title title"
+      "photo photo photo photo photo photo objec objec objec exper exper exper"
+      "photo photo photo photo photo photo fromm fromm fromm natur natur natur"
+      "photo photo photo photo photo photo skill skill skill skill skill skill"
+      "story story story story story story story story story story story story"
+      "story story story story story story story story story story story story"
+      "story story story story story story story story story story story story"
+      "story story story story story story story story story story story story";
+
+    &__title {
+      font-size: var(--font-size-h6);
+    }
+  }
+}
+
+// Tablet small
+@media (width <= 1024px) {
+  .bio-structure {
+    grid-template-areas:
+      "title title title title title title title title title title title title"
+      "photo photo photo story story story story story story story story story"
+      "photo photo photo story story story story story story story story story"
+      "photo photo photo story story story story story story story story story"
+      "exper exper exper story story story story story story story story story"
+      "skill skill skill skill skill skill fromm fromm fromm natur natur natur"
+      "skill skill skill skill skill skill fromm fromm fromm natur natur natur"
+      "objec objec objec objec objec objec objec objec objec objec objec objec";
+
+    &__title {
+      font-size: var(--font-size-h6);
+    }
+  }
+}
+
+// Phone
+@media (width <= 800px) {
+  .bio-structure {
+    display: flex;
+    flex-direction: column;
+  }
+}

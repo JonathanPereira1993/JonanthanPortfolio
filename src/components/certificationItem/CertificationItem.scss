@@ -1,0 +1,27 @@
+.certification-item {
+  max-width: 200px;
+  cursor: pointer;
+
+  &:hover {
+    .certification-item__image {
+      transform: scale(1.02);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    transition: all 300ms ease;
+  }
+
+  &__content-title {
+    font-size: var(--font-size-lg);
+    text-align: center;
+  }
+
+  &__content-tech {
+    font-size: var(--font-size-sm);
+    color: var(--color-slate-400);
+    display: flex;
+    justify-content: center;
+  }
+}

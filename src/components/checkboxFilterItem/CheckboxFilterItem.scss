@@ -1,0 +1,51 @@
+.checkbox-filter-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-s) var(--space-l);
+
+  .checkbox {
+    min-width: 24px;
+    min-height: 24px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--theme-stroke);
+    border-radius: var(--border-radius-3);
+    margin-right: var(--space-m);
+    cursor: pointer;
+    position: relative;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+
+    &.checked {
+      background-color: var(--color-slate-500);
+      border-color: var(--color-slate-500);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 5px;
+        border: 2px solid white;
+        border-top: none;
+        border-right: none;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: 0;
+        animation: checkmarkFadeIn 0.2s ease forwards;
+      }
+    }
+  }
+}
+
+@keyframes checkmarkFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}

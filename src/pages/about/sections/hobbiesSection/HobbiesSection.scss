@@ -1,0 +1,25 @@
+.columns-hobbies {
+  display: grid;
+  gap: var(--space-2xl);
+  justify-content: flex-start;
+  padding-bottom: var(--space-xl);
+
+  justify-content: flex-start;
+  grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+}
+
+// Tablet
+@media (max-width: 1100px) {
+  .columns-hobbies {
+    gap: var(--space-xl);
+    justify-content: center;
+    padding-bottom: var(--space-l);
+  }
+}
+
+// Tablet small
+@media (max-width: 800px) {
+  .columns-hobbies {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,41 @@
+@use "../../styles/abstracts/mixins" as mixin;
+
+.layout-main {
+  background-color: var(--theme-backdrop-glossy);
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--theme-stroke);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: calc(100vh - calc(var(--margin-layout) * 2));
+  margin: var(--margin-layout);
+  z-index: 10;
+  backdrop-filter: blur(100px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include mixin.scrollbar;
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+}
+
+// Phone
+@media (max-width: 768px) {
+  .layout-main {
+    &__content {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

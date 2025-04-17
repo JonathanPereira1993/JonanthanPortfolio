@@ -1,0 +1,59 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+
+  button {
+    width: 200px;
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
+  }
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Tablet
+@media (width <= 1100px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    button {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+}
+
+// Phone
+@media (width <= 768px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    button {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+}

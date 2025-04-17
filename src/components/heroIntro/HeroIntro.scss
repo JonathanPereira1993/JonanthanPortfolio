@@ -1,0 +1,33 @@
+.hero-intro-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__intro {
+    height: 100%;
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    color: var(--color-slate-400);
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__subtitle {
+    color: var(--color-indigo-500);
+    font-size: var(--font-size-h4);
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .hero-intro-container {
+    height: auto;
+
+    &__intro {
+      height: auto;
+    }
+  }
+}

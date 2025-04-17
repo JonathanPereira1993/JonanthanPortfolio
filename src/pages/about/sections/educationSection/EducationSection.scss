@@ -1,0 +1,17 @@
+.about-education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  > div {
+    background-color: var(--theme-backdrop-glossy-soft);
+    border-radius: var(--border-radius-5);
+    padding: var(--space-base);
+    border: 1px solid var(--theme-stroke-soft);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+
+    .code-snippet {
+      margin-bottom: var(--space-base);
+    }
+  }
+}

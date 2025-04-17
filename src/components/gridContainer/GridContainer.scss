@@ -1,0 +1,45 @@
+.grid-container {
+  display: grid;
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr !important;
+    justify-content: center;
+    height: 100%;
+
+    > div {
+      width: 95%;
+      margin: 0 auto;
+
+      &:first-child {
+        min-height: 75dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr !important;
+    justify-content: center;
+    height: 100%;
+
+    > div {
+      width: 95%;
+      margin: 0 auto;
+
+      &:first-child {
+        min-height: 75dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

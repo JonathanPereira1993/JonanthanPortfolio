@@ -1,0 +1,17 @@
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  padding: var(--space-s) var(--space-base);
+  color: var(--color-slate-400);
+  cursor: pointer;
+
+  &.active {
+    color: var(--heading-foreground);
+  }
+
+  &--child {
+    margin-left: var(--space-m);
+    padding: var(--space-xxs) var(--space-base);
+  }
+}

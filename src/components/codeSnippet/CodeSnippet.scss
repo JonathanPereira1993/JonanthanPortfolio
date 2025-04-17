@@ -1,0 +1,64 @@
+.code-snippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__top-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+
+    &-image {
+      max-width: 68px;
+    }
+  }
+
+  &__subtitle {
+    color: var(--color-slate-300);
+    font-weight: 500;
+    font-size: var(--font-size-md);
+  }
+
+  &__title-username {
+    color: var(--color-indigo-400);
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    text-decoration: underline;
+  }
+
+  &__date {
+    color: var(--color-slate-400);
+    font-size: var(--font-size-sm);
+  }
+
+  &__description {
+    display: flex;
+    white-space: pre-wrap;
+    background-color: var(--theme-backdrop);
+    border: 1px solid var(--theme-stroke);
+    border-radius: var(--border-radius-4);
+    padding: var(--space-base);
+    margin-top: var(--space-s);
+    font-family: "Fira Code", monospace;
+  }
+
+  &__line-numbers {
+    padding-right: var(--space-base);
+    text-align: right;
+    user-select: none;
+    color: var(--color-grey-400);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    min-width: 30px;
+  }
+
+  &__line-number {
+    padding-right: var(--space-xs);
+    color: var(--color-slate-400);
+  }
+
+  &__text {
+    font-size: var(--font-size-md);
+    color: var(--color-slate-200);
+  }
+}

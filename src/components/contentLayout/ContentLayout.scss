@@ -1,0 +1,82 @@
+@use "../../styles/abstracts/mixins" as mixin;
+
+.content-layout {
+  padding: var(--space-xl) var(--space-3xl) var(--space-xl) var(--space-3xl);
+  overflow-y: auto;
+  flex: 1;
+  transition: all 1000ms ease;
+
+  @include mixin.scrollbar;
+
+  &__title {
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-xs);
+  }
+
+  &__subtitle {
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
+    color: var(--color-slate-400);
+    font-size: var(--font-size-md);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: calc(100% - 104px);
+    gap: var(--space-xl);
+    padding-top: var(--space-xl);
+    max-width: var(--max-screen-size);
+    margin: 0 auto;
+
+    &--centered {
+      align-items: center;
+    }
+  }
+
+  &.without-sidebar {
+    margin-left: 0;
+  }
+}
+
+@media (width >= 1620px) {
+  .content-layout {
+    margin-left: calc(var(--sidebar-width));
+    &.sidebar--close {
+      --sidebar-width: 0;
+    }
+  }
+}
+
+// Tablet
+@media (width <= 1024px) {
+  .content-layout {
+    padding: var(--space-base);
+
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    .contacts-section > div {
+      width: 60%;
+    }
+  }
+}
+
+// Phone
+@media (width <= 768px) {
+  .content-layout {
+    padding: var(--space-m);
+
+    .contacts-section > div {
+      width: 100%;
+    }
+  }
+}

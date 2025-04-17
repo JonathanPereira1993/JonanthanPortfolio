@@ -1,0 +1,117 @@
+.home-section {
+  padding: var(--space-2xl);
+  display: flex;
+  gap: var(--space-xl);
+  margin: 0 auto;
+  height: 100%;
+  flex: 1 1 580px;
+  max-width: var(--max-screen-size);
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .left-column,
+  .right-column {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 575px;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .comments {
+    margin-top: 75px;
+    font-size: var(--font-size-md);
+  }
+
+  .github-link {
+    margin-top: var(--space-base);
+    font-size: var(--font-size-md);
+
+    a {
+      text-decoration: none;
+
+      .link {
+        color: var(--link-foreground);
+        word-break: normal;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--link-foreground);
+        text-decoration-thickness: 1px;
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .home-section {
+    padding: var(--space-base);
+    margin: 0 auto;
+
+    .left-column,
+    .right-column {
+      width: auto;
+      flex: auto;
+    }
+
+    .left-column {
+      > div {
+        width: auto;
+      }
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .github-link {
+      margin-top: var(--space-base);
+      font-size: var(--font-size-md);
+
+      a {
+        text-decoration: none;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+// Phone
+@media (max-width: 768px) {
+  .home-section {
+    width: 100%;
+    gap: var(--space-3xl);
+    align-content: flex-start;
+    margin: auto 0;
+    height: auto;
+
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+
+    .comments {
+      margin-top: 40px;
+      font-size: var(--font-size-md);
+    }
+
+    .github-link {
+      margin-top: var(--space-base);
+      font-size: var(--font-size-md);
+
+      a {
+        text-decoration: none;
+        word-break: break-word;
+      }
+    }
+  }
+}

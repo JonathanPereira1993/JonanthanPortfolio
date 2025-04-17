@@ -1,0 +1,31 @@
+.projects-section {
+  display: flex;
+  width: 100%;
+
+  .columns-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    gap: var(--space-2xl);
+    justify-content: center;
+    padding-bottom: var(--space-xl);
+
+    justify-content: flex-start;
+
+    > div,
+    > div > div {
+      height: 100%;
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .projects-section {
+    width: 100%;
+    .columns-projects {
+      justify-items: center;
+      justify-content: unset;
+      width: 100%;
+    }
+  }
+}
