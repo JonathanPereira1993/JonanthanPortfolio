@@ -35,6 +35,7 @@
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 999999;
+  transition: all 300ms ease;
 
   > div {
     color: var(--color-slate-200);
@@ -43,12 +44,69 @@
     border: 1px solid var(--theme-stroke);
     border-radius: var(--border-radius-5);
     padding: var(--space-l) var(--space-2xl);
-    font-size: var(--font-size-h2);
+    text-align: center;
+    width: 60%;
+
+    .close-message {
+      border-top: 1px solid var(--theme-stroke);
+      margin-top: var(--space-s);
+      padding-top: var(--space-s);
+      color: var(--color-slate-400);
+    }
+
+    .joke-messages {
+      margin-top: var(--space-base);
+      font-size: var(--font-size-md);
+      color: var(--color-slate-500);
+    }
+
+    h2 {
+      font-size: var(--font-size-h2);
+      margin-bottom: var(--space-xl);
+    }
+
+    p {
+      font-size: var(--font-size-lg);
+    }
   }
 }
 
 // Tablet
-@media (width <= 1024px) {
+@media (width <= 1100px) {
+  .contacts-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > div {
+      flex: 1;
+    }
+
+    .syntax-break {
+      display: none;
+    }
+  }
+
+  .send-mail-success__anim {
+    > div {
+      padding: var(--space-l) var(--space-xl);
+      width: 80%;
+
+      h2 {
+        font-size: var(--font-size-h3);
+        margin-bottom: var(--space-base);
+      }
+
+      p {
+        font-size: var(--font-size-md);
+      }
+    }
+  }
+}
+
+// Phone
+@media (width <= 768px) {
   .contacts-section {
     display: flex;
     align-items: center;
@@ -59,18 +117,20 @@
       display: none;
     }
   }
-}
 
-// Phone
-@media (max-width: 768px) {
-  .contacts-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  .send-mail-success__anim {
+    > div {
+      padding: var(--space-l) var(--space-l);
+      width: 90vw;
 
-    .syntax-break {
-      display: none;
+      h2 {
+        font-size: var(--font-size-h4);
+        margin-bottom: var(--space-sm);
+      }
+
+      p {
+        font-size: var(--font-size-md);
+      }
     }
   }
 }
