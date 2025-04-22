@@ -131,6 +131,9 @@ const Sidebar = ({ children, bottomAction }: Props) => {
           </div>
         </motion.div>
       </div>
+      {!isScreenBig && isOpen && (
+        <div onClick={() => closeSidebar()} className="sidebar-backdrop"></div>
+      )}
     </AnimatePresence>
   );
 };

@@ -94,6 +94,7 @@ const EmailSentAnim = ({ show }: Props) => {
           }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
+          onClick={closeHandle}
         >
           <AnimatePresence>
             {stage >= 2 && stage < 5 && (
@@ -103,7 +104,6 @@ const EmailSentAnim = ({ show }: Props) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ duration: 0.5 }}
-                onClick={closeHandle}
               >
                 <h2>Your message is on the way!</h2>
                 <p>

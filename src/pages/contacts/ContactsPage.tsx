@@ -84,18 +84,19 @@ const ContactsPage = () => {
     }
   };
 
-  const normalCodeString = `const button = document.querySelector('#sendBtn');
+  const normalCodeString = `
+    const button = document.querySelector('#sendBtn');
 
-  const message = {
-    name: "${formData.name}",
-    email: "${formData.email}",
-    message: "${formData.message}",
-    date: "${new Date().toDateString()}"
-  }
-  
-  button.addEventListener('click', () => {
-    form.send(message);
-  })`;
+    const message = {
+      name: "${formData.name}",
+      email: "${formData.email}",
+      message: "${formData.message}",
+      date: "${new Date().toDateString()}"
+    }
+    
+    button.addEventListener('click', () => {
+      form.send(message);
+    })`;
 
   return (
     <>

@@ -44,8 +44,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="name"
           value={formData.name}
           onChange={handleChange}
+          errorMessage={errors.name}
         />
-        {errors.name && <p className="error-text">{errors.name}</p>}
       </div>
 
       <div className="relative">
@@ -56,8 +56,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="email"
           value={formData.email}
           onChange={handleChange}
+          errorMessage={errors.email}
         />
-        {errors.email && <p className="error-text">{errors.email}</p>}
       </div>
 
       <div className="relative">
@@ -70,8 +70,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="message"
           value={formData.message}
           onChange={handleChange}
+          errorMessage={errors.message}
         />
-        {errors.message && <p className="error-text">{errors.message}</p>}
       </div>
 
       <Button type="primary" size="big">
