@@ -1,4 +1,4 @@
-import Photo from "../../assets/me/BWPhoto.jpg";
+import Photo from "../../assets/me/MySelf.jpeg";
 
 import "./ProfilePic.scss";
 

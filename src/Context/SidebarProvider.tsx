@@ -11,8 +11,6 @@ export const SidebarContextProvider = ({
   const toggleSidebar = () => setIsOpen((prev) => !prev);
   const closeSidebar = () => setIsOpen(false);
 
-  console.log(isOpen);
-
   return (
     <SidebarContext.Provider value={{ isOpen, toggleSidebar, closeSidebar }}>
       {children}

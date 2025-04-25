@@ -96,45 +96,52 @@ const Sidebar = ({ children, bottomAction }: Props) => {
   }, [isScreenBig, closeSidebar, isOpen]);
 
   return (
-    <AnimatePresence mode="wait">
-      <div className="sidebar-wrapper">
-        <motion.div
-          variants={widthVariants}
-          initial={hasMounted.current ? "closed" : false}
-          animate={isOpen ? "open" : "closed"}
-          className={`sidebar ${isOpen ? "sidebar-opened" : "sidebar-closed"}`}
-        >
+    <>
+      <AnimatePresence mode="wait">
+        <div className="sidebar-wrapper">
           <motion.div
-            className="sidebar-toggle"
-            onClick={onOpenSidebarHandler}
-            variants={toggleVariants}
+            variants={widthVariants}
             initial={hasMounted.current ? "closed" : false}
             animate={isOpen ? "open" : "closed"}
-            whileTap={{ scale: 0.9 }}
+            className={`sidebar ${isOpen ? "sidebar-opened" : "sidebar-closed"}`}
           >
             <motion.div
-              className="sidebar-toggle-bg"
-              variants={backgroundVariants}
+              className="sidebar-toggle"
+              onClick={onOpenSidebarHandler}
+              variants={toggleVariants}
               initial={hasMounted.current ? "closed" : false}
               animate={isOpen ? "open" : "closed"}
-            />
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.div
+                className="sidebar-toggle-bg"
+                variants={backgroundVariants}
+                initial={hasMounted.current ? "closed" : false}
+                animate={isOpen ? "open" : "closed"}
+              />
 
-            {!isOpen ? (
-              <LuPanelLeftOpen title="Open sidebar" size={24} />
-            ) : (
-              <LuPanelRightOpen title="Close sidebar" size={24} />
-            )}
+              {!isOpen ? (
+                <LuPanelLeftOpen title="Open sidebar" size={24} />
+              ) : (
+                <LuPanelRightOpen title="Close sidebar" size={24} />
+              )}
+            </motion.div>
+            <div className="sidebar-content">
+              <div>{children}</div>
+              {bottomAction}
+            </div>
           </motion.div>
-          <div className="sidebar-content">
-            <div>{children}</div>
-            {bottomAction}
-          </div>
-        </motion.div>
-      </div>
-      {!isScreenBig && isOpen && (
-        <div onClick={() => closeSidebar()} className="sidebar-backdrop"></div>
-      )}
-    </AnimatePresence>
+        </div>
+      </AnimatePresence>
+      <AnimatePresence>
+        {!isScreenBig && isOpen && (
+          <div
+            onClick={() => closeSidebar()}
+            className="sidebar-backdrop"
+          ></div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

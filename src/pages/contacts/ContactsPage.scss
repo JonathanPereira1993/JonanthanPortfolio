@@ -1,24 +1,28 @@
 .contacts-section {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 600px));
-  align-items: center;
-  justify-content: center;
+  padding: var(--space-xl);
+  display: flex;
+  gap: var(--space-xl);
   margin: 0 auto;
-  max-width: var(--max-screen-size);
-  gap: var(--space-3xl);
   height: 100%;
+  flex: 1 1 100%;
+  max-width: 1600px;
+  width: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 
-  > * {
-    max-width: 600px;
+  .form {
+    width: 500px;
   }
 
   .syntax-break {
     display: block;
+    margin-top: 20px;
     overflow-wrap: anywhere !important;
     max-width: 100%;
     overflow-x: auto;
     white-space: normal !important;
+    min-width: 600px;
   }
 }
 
@@ -78,6 +82,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: var(--space-base);
 
     > div {
       flex: 1;
@@ -112,6 +117,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 0;
 
     .syntax-break {
       display: none;

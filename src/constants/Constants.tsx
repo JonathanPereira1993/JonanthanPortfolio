@@ -37,7 +37,7 @@ import Plane3 from "../assets/Hobbies/AviationFotos/Plane3.jpg";
 import SimulatorCockpit from "../assets/Hobbies/AviationFotos/SimulatorCockpit.jpg";
 import SimulatorCertification from "../assets/Hobbies/AviationFotos/SimulatorCertification.jpg";
 
-import TodoAppCover from "../assets/Projects/Cover/TODOAppProjectCover.jpg";
+import TodoAppCover from "../assets/Projects/TodoAppMobile/Cover/TODOAppProjectCover.jpg";
 import PersonalPortfolioCover from "../assets/Projects/Cover/PersonalPortfolioCover.jpg";
 import { YearsCalculator } from "../utils/Utils";
 
@@ -46,6 +46,14 @@ const imageProjectModules = import.meta.glob(
   { eager: true, import: "default" }
 );
 const projecProjectDetails = Object.values(imageProjectModules) as string[];
+
+const imageProjectTodoMobileModules = import.meta.glob(
+  "../assets/Projects/TodoAppMobile/DetailImages/*.{png,jpg,jpeg,webp}",
+  { eager: true, import: "default" }
+);
+const projecProjectTodoAppMobileDetails = Object.values(
+  imageProjectTodoMobileModules
+) as string[];
 
 const imageDrumsModules = import.meta.glob(
   "../assets/Hobbies/DrumsPhotos/*.{png,jpg,jpeg,webp}",
@@ -112,8 +120,7 @@ export const portfolioNavLinks = [
 // Biography
 export const biography = {
   title: "Hello, my name is Jonathan Pereira",
-  story:
-    "I’m Jonathan, a self-taught front-end developer passionate about crafting modern, user-friendly web experiences. Based in Portugal, I have over three years of experience in the tech industry, where I started working with OutSystems (a low-code platform) and closely collaborating with UX/UI teams. Beyond low-code, I write JavaScript, style with CSS/SCSS, and continuously explore new technologies to refine my craft. \n\n  Currently, I’m building personal projects with ReactJS and TailwindCSS, always pushing myself to grow as a developer. My journey into tech began with a background in Web Development & Multimedia, followed by a bachelor’s degree in Games & Multimedia. This academic foundation gave me a strong grasp of design, programming, and digital media—skills that allow me to bridge the gap between aesthetics and functionality in web development. \n\n  Creativity is at the core of everything I do. Whether it’s coding, designing, or playing the drums—one of my biggest hobbies—I love expressing myself through different forms of creation. I’m always eager to be part of projects that make a difference, collaborating with like-minded people to build meaningful and impactful experiences. Beyond tech, I’m constantly seeking personal growth. I love reading great books that challenge my thinking, expand my knowledge, and help me become a better version of myself.\n\n  For me, learning never stops—whether it’s through code, music, or the wisdom found in a good book. Driven by curiosity and a problem-solving mindset, I thrive on learning, adapting, and pushing boundaries to create seamless digital experiences.",
+  story: `Hey, I’m Jonathan — a self-taught front-end developer based in Portugal, passionate about turning ideas into slick, user-friendly web experiences. \n\n  I’ve been in the tech world for a little over ${YearsCalculator(2021)} years now. I kicked things off with OutSystems (yep, the low-code life), working side-by-side with UX/UI teams, and from there I dove deeper into the world of code. These days, I’m building personal projects using ReactJS and TailwindCSS, always looking for new ways to level up my skills and create cleaner, smarter interfaces. \n\n My background blends tech and creativity — I studied Web Development & Multimedia and later got my bachelor’s in Games & Multimedia. That mix gave me a solid foundation in design, programming, and digital media, which helps me bridge the gap between how things look and how they work. \n\n  Outside the front-end world, I’ve also started exploring C++. I’m still a total beginner, but I’m really enjoying the challenge and the new way of thinking it brings. \n\n When I’m not coding, you’ll probably find me jamming on the drums, deep into a book, or sketching out ideas for the next project. I’m a big believer in lifelong learning — whether it’s through tech, music, or mindset. I love challenges, working with passionate people, and being part of projects that have a real impact. \n\n I’m all about building things that feel good to use and make people’s lives a bit easier (and cooler). If that sounds like your vibe too, let’s create something great together.`,
   naturality: "Switzerland",
   from: "Portugal",
   skills: [
@@ -124,6 +131,7 @@ export const biography = {
     "SCSS",
     "CSS",
     "Wordpress",
+    "C++",
   ],
   yearsExperience: YearsCalculator(2021),
   objectives:
@@ -287,6 +295,7 @@ export const projects = [
         year: "2024",
         phrase: "Built with love, early mornings, and caffeine",
       },
+      images: projecProjectTodoAppMobileDetails,
     },
   },
 ];

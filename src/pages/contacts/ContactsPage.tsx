@@ -8,8 +8,9 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ContentLayout from "../../components/ContentLayout/ContentLayout";
 import EmailSentAnim from "./EmailSentAnim";
 
+import { useContact } from "../../Context/ContactContext/UseContact";
+
 import "./ContactsPage.scss";
-import Button from "../../components/UI/Button/Button";
 
 type FormData = {
   name: string;
@@ -18,6 +19,13 @@ type FormData = {
 };
 
 const ContactsPage = () => {
+  const {
+    isEmailSent,
+    isFormError,
+    setEmailSent,
+    closeSuccessMessage,
+    setFormError,
+  } = useContact();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -27,11 +35,10 @@ const ContactsPage = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [emailSent, setEmailSent] = useState<boolean>(false);
 
   const emailSentHandler = () => {
-    setEmailSent(true);
-    setTimeout(() => setEmailSent(false), 3000);
+    setEmailSent();
+    setTimeout(() => closeSuccessMessage(), 3000);
   };
 
   const validateForm = (): boolean => {
@@ -74,13 +81,16 @@ const ContactsPage = () => {
         setErrors({});
       } else {
         setIsSubmitting(false);
+
         console.error("Error sending email: ", data.error);
       }
     } catch (error) {
       setIsSubmitting(false);
+      setFormError();
       console.error("Failed to send email. Try again later.", error);
     } finally {
       setIsSubmitting(false);
+      setEmailSent();
     }
   };
 
@@ -102,14 +112,14 @@ const ContactsPage = () => {
     <>
       <ContentLayout title="" verticalCenter hasSidebar={false}>
         <div className="contacts-section">
-          <div>
+          <div className="form">
             <ContactForm
               formData={formData}
               setFormData={setFormData}
               errors={errors}
               onSubmit={handleSubmit}
               submitting={isSubmitting}
-              submitted={emailSent}
+              submitted={isEmailSent}
             />
           </div>
           <div className="syntax-break">
@@ -119,26 +129,19 @@ const ContactsPage = () => {
               showLineNumbers
               wrapLongLines={true}
               customStyle={{
+                backgroundColor: "var(--theme-backdrop-glossy-soft)",
                 whiteSpace: "pre-wrap",
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
                 overflowX: "hidden",
-                maxWidth: "600px",
               }}
             >
               {normalCodeString}
             </SyntaxHighlighter>
           </div>
         </div>
-        <Button
-          onClick={() => {
-            setEmailSent((prev) => !prev);
-          }}
-        >
-          {emailSent ? "Remove email sent state" : "Fire animation for Debug"}
-        </Button>
       </ContentLayout>
-      <EmailSentAnim show={emailSent} />
+      <EmailSentAnim show={isEmailSent} isError={isFormError} />
     </>
   );
 };

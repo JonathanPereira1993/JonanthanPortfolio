@@ -1,11 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
+import { useContact } from "../../Context/ContactContext/UseContact";
+
 type Props = {
   show: boolean;
+  isError?: boolean;
 };
 
-const EmailSentAnim = ({ show }: Props) => {
+const EmailSentAnim = ({ show, isError }: Props) => {
+  const { closeSuccessMessage, setFormError } = useContact();
   const [stage, setStage] = useState(0);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
@@ -78,6 +82,8 @@ const EmailSentAnim = ({ show }: Props) => {
   }, [stage, idleMessages.length]);
 
   const closeHandle = () => {
+    closeSuccessMessage();
+    setFormError();
     setStage(3);
     setStage(0);
   };
@@ -105,11 +111,15 @@ const EmailSentAnim = ({ show }: Props) => {
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2>Your message is on the way!</h2>
+                <h2>
+                  {isError
+                    ? "Sorry! Something went wrong!"
+                    : "Your message is on the way!"}
+                </h2>
                 <p>
-                  Thank you for taking the time to view my portfolio. I hope you
-                  enjoyed it, and I look forward to the opportunity to create
-                  something awesome together!
+                  {isError
+                    ? "I think the server does not want to work today! Please try again later :("
+                    : "Thank you for taking the time to view my portfolio. I hope you enjoyed it, and I look forward to the opportunity to create something awesome together!"}
                 </p>
 
                 <motion.div>
