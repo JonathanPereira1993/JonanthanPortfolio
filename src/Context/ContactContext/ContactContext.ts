@@ -2,9 +2,10 @@ import { createContext } from "react";
 
 export interface ContactContextProps {
   isEmailSent: boolean;
+  isShowMessage: boolean;
   isFormError: boolean;
+  setShowMessage: () => void;
   setEmailSent: () => void;
-  closeSuccessMessage: () => void;
   setFormError: () => void;
 }
 

@@ -5,11 +5,11 @@ import { useContact } from "../../Context/ContactContext/UseContact";
 
 type Props = {
   show: boolean;
-  isError?: boolean;
+  isError: boolean;
 };
 
 const EmailSentAnim = ({ show, isError }: Props) => {
-  const { closeSuccessMessage, setFormError } = useContact();
+  const { setFormError, setShowMessage, setEmailSent } = useContact();
   const [stage, setStage] = useState(0);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
@@ -82,8 +82,13 @@ const EmailSentAnim = ({ show, isError }: Props) => {
   }, [stage, idleMessages.length]);
 
   const closeHandle = () => {
-    closeSuccessMessage();
-    setFormError();
+    setShowMessage();
+    if (!isError) {
+      setEmailSent();
+    }
+    if (isError) {
+      setFormError();
+    }
     setStage(3);
     setStage(0);
   };
