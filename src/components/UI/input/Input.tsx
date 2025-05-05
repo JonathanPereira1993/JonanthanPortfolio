@@ -1,5 +1,7 @@
 import React from "react";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import "./Input.scss";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
@@ -12,12 +14,21 @@ type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 
 type Props = (InputProps | TextareaProps) & {
   label: string;
+  errorMessage?: string;
   valid?: boolean;
 };
 
-const Input = ({ label, valid = true, as = "input", ...props }: Props) => {
+const Input = ({
+  label,
+  valid = true,
+  as = "input",
+  errorMessage,
+  ...props
+}: Props) => {
   return (
-    <div className={`input-container ${!valid && "input-container--invalid"}`}>
+    <motion.div
+      className={`input-container ${!valid && "input-container--invalid"}`}
+    >
       <label className="input-container__label">{label}</label>
       {as === "textarea" ? (
         <textarea
@@ -27,7 +38,20 @@ const Input = ({ label, valid = true, as = "input", ...props }: Props) => {
       ) : (
         <input className="input-container__input" {...(props as InputProps)} />
       )}
-    </div>
+      <AnimatePresence>
+        {!valid && errorMessage && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="error-text"
+          >
+            {errorMessage}
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

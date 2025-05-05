@@ -6,6 +6,16 @@ import { Resend } from "resend";
 import { render } from "@react-email/render";
 import React from "react";
 import ContactEmail from "./emails/ContactEmail";
+import fetch from "node-fetch";
+
+interface RecaptchaResponse {
+  success: boolean;
+  score: number;
+  action: string;
+  challenge_ts: string;
+  hostname: string;
+  "error-codes"?: string[];
+}
 
 dotenv.config();
 
@@ -22,14 +32,37 @@ app.use(bodyParser.json());
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post("/send-email", async (req: Request, res: Response): Promise<void> => {
-  const { name, email, message } = req.body;
+  const { name, email, message, recaptchaToken } = req.body;
 
   if (!name || !email || !message) {
     res.status(400).json({ error: "Missing required fields" });
     return;
   }
 
+  if (!recaptchaToken) {
+    res.status(400).json({ error: "reCAPTCHA token missing" });
+    return;
+  }
+
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+
   try {
+    const recaptchaRes = await fetch(verificationURL, { method: "POST" });
+    const recaptchaData = (await recaptchaRes.json()) as RecaptchaResponse;
+
+    if (!recaptchaData.success) {
+      res.status(400).json({ error: "Failed reCAPTCHA verification" });
+      return;
+    }
+
+    if (recaptchaData.score < 0.5) {
+      res.status(400).json({ error: "Low reCAPTCHA score. Potential bot" });
+      return;
+    }
+
+    console.log("reCAPTCHA verification:", recaptchaData);
+
     const emailHtml = await render(
       React.createElement(ContactEmail, { name, email, message })
     );
@@ -50,5 +83,5 @@ app.post("/send-email", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-const PORT = process.env.PORT || 5001;
+const PORT = 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

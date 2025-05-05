@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
-import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { useLocation, NavLink, Link } from "react-router-dom";
 import useScreenSize from "../../../hooks/useScreenSize";
 
@@ -38,18 +38,24 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
   };
 
   useEffect(() => {
-    const newHeights: Record<string, string> = {};
+    const timeout = setTimeout(() => {
+      const newHeights: Record<string, string> = {};
 
-    navLinks.forEach((item) => {
-      if (item.hasSubmenu) {
-        const el = dropdownRefs.current[item.id];
-        if (el) {
-          newHeights[item.id] = `${el.scrollHeight}px`;
+      navLinks.forEach((item) => {
+        if (item.hasSubmenu && dropdownRefs.current[item.id]) {
+          const el = dropdownRefs.current[item.id];
+          const height = el?.scrollHeight;
+
+          if (height) {
+            newHeights[item.id] = `${height}px`;
+          }
         }
-      }
-    });
+      });
 
-    setDropdownHeights(newHeights);
+      setDropdownHeights(newHeights);
+    }, 0);
+
+    return () => clearTimeout(timeout);
   }, [navLinks]);
 
   useEffect(() => {
@@ -94,7 +100,7 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
                   onClick={() => toggleDropdown(item.id)}
                 >
                   {item.label}
-                  <IoMdArrowDropup />
+                  <IoMdArrowDropdown />
                 </div>
 
                 <div

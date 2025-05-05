@@ -1,5 +1,16 @@
 import { useState } from "react";
 
+declare global {
+  interface Window {
+    grecaptcha: {
+      execute: (
+        siteKey: string,
+        options: { action: string }
+      ) => Promise<string>;
+    };
+  }
+}
+
 import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -8,31 +19,36 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ContentLayout from "../../components/ContentLayout/ContentLayout";
 import EmailSentAnim from "./EmailSentAnim";
 
+import { useContact } from "../../Context/ContactContext/UseContact";
+
 import "./ContactsPage.scss";
-import Button from "../../components/UI/Button/Button";
 
 type FormData = {
   name: string;
   email: string;
   message: string;
+  website?: string;
 };
 
 const ContactsPage = () => {
+  const {
+    isEmailSent,
+    isFormError,
+    isShowMessage,
+    setShowMessage,
+    setEmailSent,
+    setFormError,
+  } = useContact();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
+    website: "",
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [emailSent, setEmailSent] = useState<boolean>(false);
-
-  const emailSentHandler = () => {
-    setEmailSent(true);
-    setTimeout(() => setEmailSent(false), 3000);
-  };
 
   const validateForm = (): boolean => {
     const newErrors: { [key: string]: string } = {};
@@ -42,6 +58,10 @@ const ContactsPage = () => {
       newErrors.email = "Email is required.";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Invalid email format.";
+    }
+    if (formData.website && formData.website.trim() !== "") {
+      console.warn("Spam detected. Submission blocked.");
+      return false;
     }
     if (!formData.message.trim())
       newErrors.message = "Message cannot be empty.";
@@ -57,58 +77,78 @@ const ContactsPage = () => {
     setIsSubmitting(true);
 
     try {
+      if (!window.grecaptcha) {
+        console.error("reCAPTCHA not loaded");
+        return;
+      }
+
+      const token = await window.grecaptcha.execute(
+        "6LcoPCYrAAAAAG3ZWjzXGDa9TcNpuJ4yjn4clQ1r",
+        {
+          action: "submit",
+        }
+      );
+
       const response = await fetch("http://localhost:5001/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token,
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         setFormData({ name: "", email: "", message: "" });
-        emailSentHandler();
+        setEmailSent();
         setIsSubmitting(false);
+        setShowMessage();
         setErrors({});
       } else {
         setIsSubmitting(false);
+
         console.error("Error sending email: ", data.error);
       }
     } catch (error) {
       setIsSubmitting(false);
+      setShowMessage();
+      setFormError();
       console.error("Failed to send email. Try again later.", error);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const normalCodeString = `const button = document.querySelector('#sendBtn');
+  const normalCodeString = `
+    const button = document.querySelector('#sendBtn');
 
-  const message = {
-    name: "${formData.name}",
-    email: "${formData.email}",
-    message: "${formData.message}",
-    date: "${new Date().toDateString()}"
-  }
-  
-  button.addEventListener('click', () => {
-    form.send(message);
-  })`;
+    const message = {
+      name: "${formData.name}",
+      email: "${formData.email}",
+      message: "${formData.message}",
+      date: "${new Date().toDateString()}"
+    }
+    
+    button.addEventListener('click', () => {
+      form.send(message);
+    })`;
 
   return (
     <>
       <ContentLayout title="" verticalCenter hasSidebar={false}>
         <div className="contacts-section">
-          <div>
+          <div className="form">
             <ContactForm
               formData={formData}
               setFormData={setFormData}
               errors={errors}
               onSubmit={handleSubmit}
               submitting={isSubmitting}
-              submitted={emailSent}
+              submitted={isEmailSent}
             />
           </div>
           <div className="syntax-break">
@@ -118,26 +158,19 @@ const ContactsPage = () => {
               showLineNumbers
               wrapLongLines={true}
               customStyle={{
+                backgroundColor: "var(--theme-backdrop-glossy-soft)",
                 whiteSpace: "pre-wrap",
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
                 overflowX: "hidden",
-                maxWidth: "600px",
               }}
             >
               {normalCodeString}
             </SyntaxHighlighter>
           </div>
         </div>
-        <Button
-          onClick={() => {
-            setEmailSent((prev) => !prev);
-          }}
-        >
-          {emailSent ? "Remove email sent state" : "Fire animation for Debug"}
-        </Button>
       </ContentLayout>
-      <EmailSentAnim show={emailSent} />
+      <EmailSentAnim show={isShowMessage} isError={isFormError} />
     </>
   );
 };

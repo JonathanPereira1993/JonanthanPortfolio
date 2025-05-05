@@ -8,20 +8,23 @@ import ProjectsPage from "./pages/projects/ProjectsPage";
 import ProjectDetailsPage from "./pages/projects/ProjectDetailsPage";
 import HobbieDetailsPage from "./pages/hobbies/HobbieDetailsPage";
 import { SidebarContextProvider } from "./Context/SidebarProvider";
+import { ContactContextProvider } from "./Context/ContactContext/ContactProvider";
 
 function App() {
   return (
     <SidebarContextProvider>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/about/hobbies/:hid" element={<HobbieDetailsPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:pid" element={<ProjectDetailsPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-        </Routes>
-      </Layout>
+      <ContactContextProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about/hobbies/:hid" element={<HobbieDetailsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:pid" element={<ProjectDetailsPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
+          </Routes>
+        </Layout>
+      </ContactContextProvider>
     </SidebarContextProvider>
   );
 }

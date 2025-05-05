@@ -9,6 +9,7 @@ type FormData = {
   name: string;
   email: string;
   message: string;
+  website?: string;
 };
 
 type ContactFormProps = {
@@ -44,8 +45,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="name"
           value={formData.name}
           onChange={handleChange}
+          errorMessage={errors.name}
         />
-        {errors.name && <p className="error-text">{errors.name}</p>}
       </div>
 
       <div className="relative">
@@ -56,8 +57,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="email"
           value={formData.email}
           onChange={handleChange}
+          errorMessage={errors.email}
         />
-        {errors.email && <p className="error-text">{errors.email}</p>}
       </div>
 
       <div className="relative">
@@ -70,8 +71,24 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="message"
           value={formData.message}
           onChange={handleChange}
+          errorMessage={errors.message}
         />
-        {errors.message && <p className="error-text">{errors.message}</p>}
+      </div>
+
+      {/* Spam detector */}
+      <div className="relative spam-detector">
+        <Input
+          label="Website"
+          type="text"
+          name="website"
+          value={formData.website || ""}
+          onChange={(e) =>
+            setFormData({ ...formData, website: e.target.value })
+          }
+          autoComplete="off"
+          aria-hidden="true"
+          tabIndex={-1}
+        />
       </div>
 
       <Button type="primary" size="big">
@@ -85,6 +102,26 @@ const ContactForm: React.FC<ContactFormProps> = ({
           "message-sent"
         )}
       </Button>
+
+      <p className="recaptcha-message">
+        This site is protected by reCAPTCHA and the Google{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://policies.google.com/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Terms of Service
+        </a>{" "}
+        apply.
+      </p>
     </form>
   );
 };

@@ -10,6 +10,29 @@
   }
 }
 
+.spam-detector {
+  display: none;
+}
+
+.recaptcha-message {
+  font-size: var(--font-size-sm);
+  font-weight: 200;
+  color: var(--color-grey-600);
+
+  a {
+    color: var(--color-slate-500);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .loader {
   width: 20px;
   height: 20px;

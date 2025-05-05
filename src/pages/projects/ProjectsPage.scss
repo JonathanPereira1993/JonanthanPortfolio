@@ -19,7 +19,21 @@
 }
 
 // Tablet
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
+  .projects-section {
+    width: 100%;
+    .columns-projects {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: unset;
+      width: 100%;
+    }
+  }
+}
+
+// Phone
+@media (width <= 768px) {
   .projects-section {
     width: 100%;
     .columns-projects {

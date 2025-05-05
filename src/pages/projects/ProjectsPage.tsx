@@ -53,7 +53,7 @@ const ProjectsPage = () => {
                   icon={project.icon}
                   image={project.image}
                   smallDescription={project.description}
-                  onClick={() => console.log(`Clicked on ${project.title}`)}
+                  onClick={() => {}}
                 />
               </div>
             ))

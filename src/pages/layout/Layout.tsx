@@ -35,8 +35,8 @@ export default function Layout({ children }: Props) {
               })}
             </div>
             <div className="nav-links-desktop">
-              {portfolioNavLinks.map((item) => (
-                <NavLink key={item.path} className="nav-link" to={item.path}>
+              {portfolioNavLinks.map((item, index) => (
+                <NavLink key={index} className="nav-link" to={item.path}>
                   {item.label}
                 </NavLink>
               ))}
