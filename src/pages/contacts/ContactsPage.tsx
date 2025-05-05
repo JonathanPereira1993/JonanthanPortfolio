@@ -89,7 +89,7 @@ const ContactsPage = () => {
         }
       );
 
-      const response = await fetch("http://localhost:5001/send-email", {
+      const response = await fetch("https://form-server-8fuy.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
