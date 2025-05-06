@@ -102,26 +102,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
           "message-sent"
         )}
       </Button>
-
-      <p className="recaptcha-message">
-        This site is protected by reCAPTCHA and the Google{" "}
-        <a
-          href="https://policies.google.com/privacy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Privacy Policy
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://policies.google.com/terms"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Terms of Service
-        </a>{" "}
-        apply.
-      </p>
     </form>
   );
 };

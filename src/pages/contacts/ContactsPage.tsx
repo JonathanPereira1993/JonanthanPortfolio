@@ -1,16 +1,5 @@
 import { useState } from "react";
 
-declare global {
-  interface Window {
-    grecaptcha: {
-      execute: (
-        siteKey: string,
-        options: { action: string }
-      ) => Promise<string>;
-    };
-  }
-}
-
 import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -77,28 +66,18 @@ const ContactsPage = () => {
     setIsSubmitting(true);
 
     try {
-      if (!window.grecaptcha) {
-        console.error("reCAPTCHA not loaded");
-        return;
-      }
-
-      const token = await window.grecaptcha.execute(
-        "6LcoPCYrAAAAAG3ZWjzXGDa9TcNpuJ4yjn4clQ1r",
+      const response = await fetch(
+        "https://form-server-8fuy.onrender.com/send-email",
         {
-          action: "submit",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+          }),
         }
       );
-
-      const response = await fetch("https://form-server-8fuy.onrender.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken: token,
-        }),
-      });
 
       const data = await response.json();
 
