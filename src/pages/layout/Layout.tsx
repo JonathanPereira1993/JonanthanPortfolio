@@ -4,6 +4,7 @@ import { IoLogoLinkedin, IoLogoInstagram } from "react-icons/io5";
 import MobileMenu from "./MobileMenu/MobileMenu";
 
 import { useTypingEffect } from "../../hooks/useTypingEffect";
+import { useNavigate } from "react-router-dom";
 
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -16,6 +17,8 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
+  const navigate = useNavigate();
+
   return (
     <>
       <BackdropGlowingEffect />
@@ -25,6 +28,9 @@ export default function Layout({ children }: Props) {
             <div
               className="nav-link nav-logo"
               title="My name is Jonathan Pereira"
+              onClick={() => {
+                navigate("/");
+              }}
             >
               {useTypingEffect({
                 text: "jonathan-pereira",

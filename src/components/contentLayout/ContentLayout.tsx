@@ -38,8 +38,10 @@ const ContentLayout = ({
         exit="exit"
         className={`content-layout ${hasSidebar ? (isOpen ? "sidebar--open" : "sidebar--close") : "without-sidebar"}`}
       >
-        <h1 className="content-layout__title">{title}</h1>
-        <p className="content-layout__subtitle">{subtitle}</p>
+        {title !== "" && <h1 className="content-layout__title">{title}</h1>}
+        {subtitle !== "" && (
+          <p className="content-layout__subtitle">{subtitle}</p>
+        )}
         <div
           className={`content-layout__content ${verticalCenter ? "content-layout__content--centered" : ""}`}
         >

@@ -7,7 +7,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  height: calc(100vh - calc(var(--margin-layout) * 2));
+  height: calc(100dvh - calc(var(--margin-layout) * 2));
   margin: var(--margin-layout);
   z-index: 10;
   backdrop-filter: blur(100px);

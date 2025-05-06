@@ -56,7 +56,7 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
     }, 0);
 
     return () => clearTimeout(timeout);
-  }, [navLinks]);
+  }, [navLinks, expanded]);
 
   useEffect(() => {
     if (screenSize) {
@@ -85,7 +85,7 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
   return (
     <div className={`mobile-menu ${expanded ? "mobile-menu--expanded" : ""}`}>
       <div className="mobile-menu__action" onClick={toggleMenu}>
-        {expanded ? <IoClose size={24} /> : <RxHamburgerMenu size={24} />}
+        {expanded ? <IoClose size={28} /> : <RxHamburgerMenu size={28} />}
       </div>
 
       <div className="mobile-menu__menu">
