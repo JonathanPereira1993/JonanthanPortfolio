@@ -1,27 +1,58 @@
 import { useEffect, useState } from "react";
 
-function useScreenSize(threshold: number) {
-  const [isAboveThreshold, setIsAboveThreshold] = useState(
+function useScreenSize(direction: string = "width", threshold: number) {
+  const [isAboveHorizontalThreshold, setIsAboveHorizontalThreshold] = useState(
     window.innerWidth >= threshold
   );
 
+  const [isAboveVerticalThreshold, setIsAboveVerticalThreshold] = useState(
+    window.innerHeight >= threshold
+  );
+
   useEffect(() => {
-    const mediaQuery = window.matchMedia(`(min-width: ${threshold}px)`);
+    const horizontalMediaQuery = window.matchMedia(
+      `(min-width: ${threshold}px)`
+    );
+    const verticalMediaQuery = window.matchMedia(
+      `(min-height: ${threshold}px)`
+    );
 
     const handleChange = (event: MediaQueryListEvent) => {
-      setIsAboveThreshold(event.matches);
+      if (direction === "width") {
+        setIsAboveHorizontalThreshold(event.matches);
+      } else if (direction == "height") {
+        setIsAboveVerticalThreshold(event.matches);
+      }
     };
 
-    setIsAboveThreshold(mediaQuery.matches);
+    if (direction === "width") {
+      setIsAboveHorizontalThreshold(horizontalMediaQuery.matches);
+    } else if (direction == "height") {
+      setIsAboveVerticalThreshold(verticalMediaQuery.matches);
+    }
 
-    mediaQuery.addEventListener("change", handleChange);
+    if (direction === "width") {
+      horizontalMediaQuery.addEventListener("change", handleChange);
+    } else if (direction == "height") {
+      verticalMediaQuery.addEventListener("change", handleChange);
+    }
 
     return () => {
-      mediaQuery.removeEventListener("change", handleChange);
+      if (direction === "width") {
+        horizontalMediaQuery.removeEventListener("change", handleChange);
+      } else if (direction == "height") {
+        verticalMediaQuery.removeEventListener("change", handleChange);
+      }
     };
-  }, [threshold]);
+  }, [threshold, direction]);
 
-  return isAboveThreshold;
+  if (direction === "width") {
+    return isAboveHorizontalThreshold;
+  } else if (direction == "height") {
+    return isAboveVerticalThreshold;
+  } else {
+    return isAboveHorizontalThreshold;
+  }
 }
 
 export default useScreenSize;

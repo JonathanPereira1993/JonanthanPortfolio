@@ -98,7 +98,7 @@ const Sidebar = ({ children, bottomAction }: Props) => {
   const { isOpen, toggleSidebar, closeSidebar } = useSidebar();
   const hasMounted = useRef(false);
 
-  const isScreenBig = useScreenSize(1620);
+  const isScreenBig = useScreenSize("width", 1620);
 
   const onOpenSidebarHandler = () => {
     toggleSidebar();
