@@ -20,7 +20,7 @@ const MobileMenu = ({ navLinks, isOpen = false }: Props) => {
   >({});
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const location = useLocation();
-  const screenSize = useScreenSize(1024);
+  const screenSize = useScreenSize("width", 1024);
 
   const activeSection = new URLSearchParams(location.search).get("section");
 

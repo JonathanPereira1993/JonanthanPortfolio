@@ -5,6 +5,9 @@
   overflow-y: auto;
   flex: 1;
   transition: all 1000ms ease;
+  will-change: opacity, transform;
+  position: relative;
+  backface-visibility: hidden;
 
   @include mixin.scrollbar;
 

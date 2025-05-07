@@ -21,7 +21,7 @@ const AboutPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isSmallScreen = useScreenSize(1400);
+  const isSmallScreen = useScreenSize("width", 1400);
   const sidebarOpen = isSmallScreen;
 
   const [itemSelected, setItemSelected] = useState<string>("bio");
