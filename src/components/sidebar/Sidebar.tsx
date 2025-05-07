@@ -59,6 +59,24 @@ const toggleVariants = {
   },
 };
 
+const CVButtonVariants = {
+  open: {
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      ease: "easeInOut",
+      delay: 0.6,
+    },
+  },
+  closed: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const backgroundVariants = {
   open: {
     opacity: 0,
@@ -128,7 +146,14 @@ const Sidebar = ({ children, bottomAction }: Props) => {
             </motion.div>
             <div className="sidebar-content">
               <div>{children}</div>
-              {bottomAction}
+              <motion.div
+                variants={CVButtonVariants}
+                initial={"open"}
+                animate={isOpen ? "open" : "closed"}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
+              >
+                {bottomAction}
+              </motion.div>
             </div>
           </motion.div>
         </div>
