@@ -239,7 +239,10 @@ export const projects = [
     },
     title: "My personal portfolio",
     icon: <FaReact />,
-    image: PersonalPortfolioCover,
+    image: {
+      src: PersonalPortfolioCover,
+      hash: "M02?ET*NB]6@4@$BozRzROXB00Lv+k=N={",
+    },
     description:
       "A personal portfolio site to showcase my work, built with React, TypeScript, and a sprinkle of space aesthetic.",
     tags: ["React", "TypeScript", "Web", "SCSS", "useContext"],
@@ -272,7 +275,7 @@ export const projects = [
     },
     title: "TODO mobile app",
     icon: <FaReact />,
-    image: TodoAppCover,
+    image: { src: TodoAppCover, hash: "MKFZB9s,00NHD%xvoLRkWCoy00WX_Ns,-;" },
     description:
       "TODO list made with React Native, Expo and implemented Firebase",
     tags: ["React", "ReactNative", "Expo", "Mobile", "Firebase"],
@@ -307,18 +310,21 @@ export const books = [
     title: "The 48 Laws of Power",
     author: "Robert Greene",
     image: FortyEightRulesOfPower,
+    hash: "M~OZmcjt{@jtF#j[fQf6fQfkayfQj[fQaz",
   },
   {
     id: 2,
     title: "4000 Weeks: Time Management for Mortals",
     author: "Oliver Burkeman",
     image: FourThousandWeeks,
+    hash: "MUQJGpoL?wkC%NxTaxR.fkofx]ayRPfkWB",
   },
   {
     id: 3,
     title: "Atomic Habits",
     author: "James Clear",
     image: AtomicHabits,
+    hash: "MDRV,-%g-;t7%N%gMdkWRjn%%jxus:ofax",
   },
   {
     id: 4,
@@ -326,24 +332,28 @@ export const books = [
       "Billions and Billions: Thoughts on Life and Death at the Brink of the Millennium",
     author: "Carl Sagan",
     image: BillionsAndBillions,
+    hash: "MFI#x_NG00WC0000ax_3f6?bD%xu~qofRj",
   },
   {
     id: 5,
     title: "Can't Hurt Me: Master Your Mind and Defy the Odds",
     author: "David Goggins",
     image: CantHurtMe,
+    hash: "MBIEhGV@00xu4T00WV-;jY?b00j[~pbI%M",
   },
   {
     id: 6,
     title: "Cosmos",
     author: "Carl Sagan",
     image: Cosmos,
+    hash: "M5BM795T00?H585hV?b{s;$$0L}[^+0Kw@",
   },
   {
     id: 7,
     title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
     author: "Ashlee Vance",
     image: ElonMusk,
+    hash: "MEFODm%257Nb={|b%29vof%1:QWC^jWBR+",
   },
   {
     id: 8,
@@ -351,12 +361,14 @@ export const books = [
       "How to Talk to Anyone: 92 Little Tricks for Big Success in Relationships",
     author: "Leil Lowndes",
     image: HowToTalkToAnyone,
+    hash: "M8Rv%U?wzTD%.-*dPBb^vfO[:4D%R.-oGa",
   },
   {
     id: 9,
     title: "Life 3.0: Being Human in the Age of Artificial Intelligence",
     author: "Max Tegmark",
     image: LifeThreePointZero,
+    hash: "MD9Qq0xw00ISpINEX9t8nNWA8wRi.Tx^R5",
   },
   {
     id: 10,
@@ -364,12 +376,14 @@ export const books = [
       "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
     author: "Morgan Housel",
     image: PsychologyOfMoney,
+    hash: "MMQ]==j]~qofM{t7axRkjst7-;j]D%a#xt",
   },
   {
     id: 11,
     title: "Rich Dad Poor Dad",
     author: "Robert T. Kiyosaki",
     image: RichDadPoorDad,
+    hash: "M7GR6f0406B;5T:wrr-:E99y0I}:?Q5EE9",
   },
   {
     id: 12,
@@ -377,18 +391,21 @@ export const books = [
       "Secrets of the Millionaire Mind: Mastering the Inner Game of Wealth",
     author: "T. Harv Eker",
     image: SecretsOfMillionaireMind,
+    hash: "M7RCxYt6~Ixux800WBIuof%M00ozIWaeo$",
   },
   {
     id: 13,
     title: "The Monk Who Sold His Ferrari",
     author: "Robin Sharma",
     image: TheMonkWhoSoldHisFerrari,
+    hash: "M6Qr][]$@s;{ozPp^34:S#;y.l=a57+]Eh",
   },
   {
     id: 14,
     title: "Think and Grow Rich",
     author: "Napoleon Hill",
     image: ThinkAndGrowRich,
+    hash: "M05#f7n-0BxZ0OvcNHOct3Sl0IR:=:R.-f",
   },
 ];
 

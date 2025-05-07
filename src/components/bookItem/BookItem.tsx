@@ -1,14 +1,17 @@
+import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
 import "./BookItem.scss";
 
 type Props = {
-  image?: string;
+  image: string;
   title: string;
   author?: string;
+  hash: string;
 };
 
-const BookItem = ({ image, title, author }: Props) => {
+const BookItem = ({ image, hash, title, author }: Props) => {
   return (
     <div className="book-item theme-shadow">
+      <ImagePlaceholder src={image} width={400} height={500} hash={hash} />
       <img className="book-item__image" src={image} alt={title} />
       <div className="book-item__content">
         <h3 className="book-item__content-title">{title}</h3>

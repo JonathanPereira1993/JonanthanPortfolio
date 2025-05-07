@@ -20,6 +20,7 @@ const BooksSection = () => {
             image={book.image}
             title={book.title}
             author={book.author}
+            hash={book.hash}
           />
         ))}
       </StaggeredListAnimation>

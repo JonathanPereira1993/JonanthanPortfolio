@@ -5,12 +5,14 @@ import "./ProjectItem.scss";
 import Button from "../UI/Button/Button";
 
 import { useNavigate } from "react-router";
+import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
 
 type Props = {
   projNum: string;
-  image?: string;
+  image: string;
   icon?: React.ReactNode;
   title: string;
+  hash: string;
   smallDescription?: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   buttonText?: string;
@@ -21,6 +23,7 @@ const ProjectItem = ({
   image,
   icon,
   title,
+  hash,
   smallDescription,
   onClick,
   buttonText = "view-project",
@@ -33,14 +36,23 @@ const ProjectItem = ({
   };
 
   return (
-    <div className="project-item-wrapper theme-shadow">
+    <div className="project-item-wrapper">
       <h3 className="project-item-title">
         <span className="project-number">Project {projNum} </span>
         // {title}
       </h3>
-      <div className="project-item">
+      <div className="project-item theme-shadow">
         <span className="project-item-icon">{icon}</span>
-        <img className="project-item__image" src={image} alt={title} />
+        <div className="project-item__image-cover">
+          <ImagePlaceholder
+            src={image}
+            alt={title}
+            width={500}
+            height={450}
+            hash={hash}
+          />
+        </div>
+
         <div className="project-item__content">
           <p className="project-item__content-smallDescription">
             {smallDescription}
