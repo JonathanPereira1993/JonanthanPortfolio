@@ -218,6 +218,13 @@ export const certifications = [
     image: Udemy,
     link: "https://www.udemy.com/certificate/UC-9334df47-d795-457b-8937-8677dfe8185f/",
   },
+  {
+    id: 6,
+    title: "Next.js 15 & React - The Complete Guide",
+    tech: "Next.js & React",
+    image: Udemy,
+    link: "https://www.udemy.com/certificate/UC-8704a6e1-60f3-4ae2-b815-a935d86f1f2d/",
+  },
 ];
 
 // ProjectFilters
