@@ -164,7 +164,7 @@ export const education = [
     image: IpleiriaLogo,
     title: "Bachelor in Games and Multimedia",
     school: "IPL - School of Technology and Management",
-    year: "2018 - present",
+    year: "2018 - 2025",
     tech: [
       "Visual Code",
       "C++",
@@ -259,9 +259,9 @@ export const projects = [
       why: "I used this project as a playground to explore new technologies and experiment outside my comfort zone—my portfolio felt like the perfect place for that.",
       mainDescription:
         "This is my second portfolio, created with the goal of elevating my work and building something that truly resonates with me.\n\n" +
-        "While the original design wasn’t mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
+        "While the original design wasn't mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
-        "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
+        "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I'm always expanding my knowledge. (Though unlike a black hole, I promise my code doesn't just suck and never return anything useful!) ",
       features: [
         "Animation done with Framer Motion",
         "Added a 3D object using TREE.js",
@@ -289,11 +289,11 @@ export const projects = [
     gitHub: "https://github.com/JonathanPereira1993/ToDevList",
     details: {
       subtitle:
-        "A Beginner’s First Leap into Mobile App Development with React Native",
+        "A Beginner's First Leap into Mobile App Development with React Native",
       why: "Getting into mobile development felt daunting, so I started with the classic TODO app—because sometimes the best way to learn is by building the thing everyone else already has.",
       mainDescription:
         "This mobile TODO app was built as a practical introduction to mobile development using React Native. The goal was to create a functional and clean application while exploring essential concepts like authentication, database integration, and user interaction—all within a familiar project structure.\n\n" +
-        "The app allows users to register and log in via Firebase Authentication, and securely manage their task list using Firebase’s Firestore database. Users can add, update, and delete tasks, all within a minimalist UI designed to prioritize clarity and ease of use.\n\n" +
+        "The app allows users to register and log in via Firebase Authentication, and securely manage their task list using Firebase's Firestore database. Users can add, update, and delete tasks, all within a minimalist UI designed to prioritize clarity and ease of use.\n\n" +
         "Though simple in concept, the app offered a hands-on environment to explore state management, backend integration, and the joys of mobile development—including the not-so-glamorous process of simulator setup and cross-platform testing between iOS and Android.\n\n" +
         "This project not only reinforced core development skills, but also gave me a clearer understanding of building responsive, cross-platform interfaces and handling backend services in a mobile environment.",
       features: [
