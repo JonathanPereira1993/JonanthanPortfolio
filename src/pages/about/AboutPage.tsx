@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarItem from "../../components/Sidebar/SidebarItem";
 import { useLocation, useNavigate } from "react-router";
 import useScreenSize from "../../hooks/useScreenSize";
+import MyCV from "../../assets/JonathanPereira_CV.pdf";
 
 import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/UI/Button/Button";
@@ -20,7 +21,7 @@ const AboutPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isSmallScreen = useScreenSize(1400);
+  const isSmallScreen = useScreenSize("width", 1400);
   const sidebarOpen = isSmallScreen;
 
   const [itemSelected, setItemSelected] = useState<string>("bio");
@@ -28,6 +29,10 @@ const AboutPage = () => {
   const onItemClickHandler = (id: string, sectionName: string) => {
     setItemSelected(id);
     navigate(`/about?section=${sectionName}`);
+  };
+
+  const handleCVDownload = () => {
+    window.open(MyCV, "_blank");
   };
 
   useEffect(() => {
@@ -59,7 +64,12 @@ const AboutPage = () => {
       <Sidebar
         open={sidebarOpen}
         bottomAction={
-          <Button type="ghost" size="small">
+          <Button
+            className="cv-button"
+            type="ghost"
+            onClick={() => handleCVDownload()}
+            size="small"
+          >
             Download CV
           </Button>
         }

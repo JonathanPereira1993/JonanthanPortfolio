@@ -164,7 +164,7 @@ export const education = [
     image: IpleiriaLogo,
     title: "Bachelor in Games and Multimedia",
     school: "IPL - School of Technology and Management",
-    year: "2018 - present",
+    year: "2018 - 2025",
     tech: [
       "Visual Code",
       "C++",
@@ -218,6 +218,13 @@ export const certifications = [
     image: Udemy,
     link: "https://www.udemy.com/certificate/UC-9334df47-d795-457b-8937-8677dfe8185f/",
   },
+  {
+    id: 6,
+    title: "Next.js 15 & React - The Complete Guide",
+    tech: "Next.js & React",
+    image: Udemy,
+    link: "https://www.udemy.com/certificate/UC-8704a6e1-60f3-4ae2-b815-a935d86f1f2d/",
+  },
 ];
 
 // ProjectFilters
@@ -239,7 +246,10 @@ export const projects = [
     },
     title: "My personal portfolio",
     icon: <FaReact />,
-    image: PersonalPortfolioCover,
+    image: {
+      src: PersonalPortfolioCover,
+      hash: "M02?ET*NB]6@4@$BozRzROXB00Lv+k=N={",
+    },
     description:
       "A personal portfolio site to showcase my work, built with React, TypeScript, and a sprinkle of space aesthetic.",
     tags: ["React", "TypeScript", "Web", "SCSS", "useContext"],
@@ -249,9 +259,9 @@ export const projects = [
       why: "I used this project as a playground to explore new technologies and experiment outside my comfort zone—my portfolio felt like the perfect place for that.",
       mainDescription:
         "This is my second portfolio, created with the goal of elevating my work and building something that truly resonates with me.\n\n" +
-        "While the original design wasn’t mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
+        "While the original design wasn't mine, I loved its structure and aesthetic, so I adopted it and made intentional changes to better suit my style, workflow, and personality.\n\n" +
         "I wanted this portfolio to not just be a showcase of my projects, but a reflection of how I think and work. By tweaking details, refining interactions, and adding personal touches, I transformed it into something that feels authentic and uniquely mine—a space that not only represents my skills but also the way I approach design and development.\n\n" +
-        "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I’m always expanding my knowledge. (Though unlike a black hole, I promise my code doesn’t just suck and never return anything useful!) ",
+        "Also, I love space, the universe, the stars, the endless possibilities of the unknown. And much like the cosmos, I'm always expanding my knowledge. (Though unlike a black hole, I promise my code doesn't just suck and never return anything useful!) ",
       features: [
         "Animation done with Framer Motion",
         "Added a 3D object using TREE.js",
@@ -272,18 +282,18 @@ export const projects = [
     },
     title: "TODO mobile app",
     icon: <FaReact />,
-    image: TodoAppCover,
+    image: { src: TodoAppCover, hash: "MKFZB9s,00NHD%xvoLRkWCoy00WX_Ns,-;" },
     description:
       "TODO list made with React Native, Expo and implemented Firebase",
     tags: ["React", "ReactNative", "Expo", "Mobile", "Firebase"],
     gitHub: "https://github.com/JonathanPereira1993/ToDevList",
     details: {
       subtitle:
-        "A Beginner’s First Leap into Mobile App Development with React Native",
+        "A Beginner's First Leap into Mobile App Development with React Native",
       why: "Getting into mobile development felt daunting, so I started with the classic TODO app—because sometimes the best way to learn is by building the thing everyone else already has.",
       mainDescription:
         "This mobile TODO app was built as a practical introduction to mobile development using React Native. The goal was to create a functional and clean application while exploring essential concepts like authentication, database integration, and user interaction—all within a familiar project structure.\n\n" +
-        "The app allows users to register and log in via Firebase Authentication, and securely manage their task list using Firebase’s Firestore database. Users can add, update, and delete tasks, all within a minimalist UI designed to prioritize clarity and ease of use.\n\n" +
+        "The app allows users to register and log in via Firebase Authentication, and securely manage their task list using Firebase's Firestore database. Users can add, update, and delete tasks, all within a minimalist UI designed to prioritize clarity and ease of use.\n\n" +
         "Though simple in concept, the app offered a hands-on environment to explore state management, backend integration, and the joys of mobile development—including the not-so-glamorous process of simulator setup and cross-platform testing between iOS and Android.\n\n" +
         "This project not only reinforced core development skills, but also gave me a clearer understanding of building responsive, cross-platform interfaces and handling backend services in a mobile environment.",
       features: [
@@ -307,18 +317,21 @@ export const books = [
     title: "The 48 Laws of Power",
     author: "Robert Greene",
     image: FortyEightRulesOfPower,
+    hash: "M~OZmcjt{@jtF#j[fQf6fQfkayfQj[fQaz",
   },
   {
     id: 2,
     title: "4000 Weeks: Time Management for Mortals",
     author: "Oliver Burkeman",
     image: FourThousandWeeks,
+    hash: "MUQJGpoL?wkC%NxTaxR.fkofx]ayRPfkWB",
   },
   {
     id: 3,
     title: "Atomic Habits",
     author: "James Clear",
     image: AtomicHabits,
+    hash: "MDRV,-%g-;t7%N%gMdkWRjn%%jxus:ofax",
   },
   {
     id: 4,
@@ -326,24 +339,28 @@ export const books = [
       "Billions and Billions: Thoughts on Life and Death at the Brink of the Millennium",
     author: "Carl Sagan",
     image: BillionsAndBillions,
+    hash: "MFI#x_NG00WC0000ax_3f6?bD%xu~qofRj",
   },
   {
     id: 5,
     title: "Can't Hurt Me: Master Your Mind and Defy the Odds",
     author: "David Goggins",
     image: CantHurtMe,
+    hash: "MBIEhGV@00xu4T00WV-;jY?b00j[~pbI%M",
   },
   {
     id: 6,
     title: "Cosmos",
     author: "Carl Sagan",
     image: Cosmos,
+    hash: "M5BM795T00?H585hV?b{s;$$0L}[^+0Kw@",
   },
   {
     id: 7,
     title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
     author: "Ashlee Vance",
     image: ElonMusk,
+    hash: "MEFODm%257Nb={|b%29vof%1:QWC^jWBR+",
   },
   {
     id: 8,
@@ -351,12 +368,14 @@ export const books = [
       "How to Talk to Anyone: 92 Little Tricks for Big Success in Relationships",
     author: "Leil Lowndes",
     image: HowToTalkToAnyone,
+    hash: "M8Rv%U?wzTD%.-*dPBb^vfO[:4D%R.-oGa",
   },
   {
     id: 9,
     title: "Life 3.0: Being Human in the Age of Artificial Intelligence",
     author: "Max Tegmark",
     image: LifeThreePointZero,
+    hash: "MD9Qq0xw00ISpINEX9t8nNWA8wRi.Tx^R5",
   },
   {
     id: 10,
@@ -364,12 +383,14 @@ export const books = [
       "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
     author: "Morgan Housel",
     image: PsychologyOfMoney,
+    hash: "MMQ]==j]~qofM{t7axRkjst7-;j]D%a#xt",
   },
   {
     id: 11,
     title: "Rich Dad Poor Dad",
     author: "Robert T. Kiyosaki",
     image: RichDadPoorDad,
+    hash: "M7GR6f0406B;5T:wrr-:E99y0I}:?Q5EE9",
   },
   {
     id: 12,
@@ -377,18 +398,21 @@ export const books = [
       "Secrets of the Millionaire Mind: Mastering the Inner Game of Wealth",
     author: "T. Harv Eker",
     image: SecretsOfMillionaireMind,
+    hash: "M7RCxYt6~Ixux800WBIuof%M00ozIWaeo$",
   },
   {
     id: 13,
     title: "The Monk Who Sold His Ferrari",
     author: "Robin Sharma",
     image: TheMonkWhoSoldHisFerrari,
+    hash: "M6Qr][]$@s;{ozPp^34:S#;y.l=a57+]Eh",
   },
   {
     id: 14,
     title: "Think and Grow Rich",
     author: "Napoleon Hill",
     image: ThinkAndGrowRich,
+    hash: "M05#f7n-0BxZ0OvcNHOct3Sl0IR:=:R.-f",
   },
 ];
 

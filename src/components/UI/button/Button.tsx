@@ -22,6 +22,7 @@ type Props = {
   type?: ButtonType;
   size?: ButtonSize;
   title?: string;
+  className?: string;
 };
 
 export default function Button({
@@ -30,6 +31,7 @@ export default function Button({
   type = "primary",
   size = "medium",
   title,
+  className,
   ...props
 }: Props) {
   return (
@@ -40,7 +42,7 @@ export default function Button({
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.92 }}
       transition={{ duration: 0.05, ease: "linear" }}
-      className={`btn btn-${type} btn-${size}`}
+      className={`btn btn-${type} btn-${size} ${className ? className : ""}`}
       {...props}
     >
       {children}

@@ -5,6 +5,9 @@
   overflow-y: auto;
   flex: 1;
   transition: all 1000ms ease;
+  will-change: opacity, transform;
+  position: relative;
+  backface-visibility: hidden;
 
   @include mixin.scrollbar;
 
@@ -31,9 +34,16 @@
     padding-top: var(--space-xl);
     max-width: var(--max-screen-size);
     margin: 0 auto;
+    height: 100%;
 
     &--centered {
       align-items: center;
+      padding-top: var(--space-base);
+      padding-bottom: var(--space-base);
+
+      .contacts-section {
+        align-items: center;
+      }
     }
   }
 

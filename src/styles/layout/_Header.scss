@@ -68,6 +68,9 @@
 
   .nav-logo {
     min-width: var(--sidebar-width);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
 }
 

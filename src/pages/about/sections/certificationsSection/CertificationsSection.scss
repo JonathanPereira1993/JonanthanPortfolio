@@ -1,7 +1,8 @@
 .columns.columns-certifications {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 200px));
-  gap: var(--space-2xl);
+  column-gap: var(--space-2xl);
+  row-gap: var(--space-l);
   justify-content: flex-start;
   padding-bottom: var(--space-xl);
 }

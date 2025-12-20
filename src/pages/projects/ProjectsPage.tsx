@@ -51,9 +51,10 @@ const ProjectsPage = () => {
                   projNum={String(project.id)}
                   title={project.title}
                   icon={project.icon}
-                  image={project.image}
+                  image={project.image.src}
                   smallDescription={project.description}
                   onClick={() => {}}
+                  hash={project.image.hash}
                 />
               </div>
             ))

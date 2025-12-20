@@ -90,7 +90,7 @@ const ProjectDetailsPage = () => {
               onClick={() => modalOpenHandler(project.id)}
               title="Click to open modal with more images"
             >
-              <img src={project.image} alt={project.title} />
+              <img src={project.image.src} alt={project.title} />
             </div>
 
             <div className="project-details__content__inner-tech">

@@ -213,6 +213,10 @@
       "features     features     features     features     features     features     features     features     features     features     features     features"
       "footer       footer       footer       footer       footer       footer       footer       footer       footer       footer       footer       footer";
 
+    > *:not(.project-details__content__inner-image) {
+      padding: var(--space-m);
+    }
+
     &-github {
       aspect-ratio: unset;
     }
@@ -236,5 +240,9 @@
       "features    features"
       "github      difficulty"
       "footer      footer";
+
+    > *:not(.project-details__content__inner-image) {
+      padding: var(--space-base);
+    }
   }
 }
